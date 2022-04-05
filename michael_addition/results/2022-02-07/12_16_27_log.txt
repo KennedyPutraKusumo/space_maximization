@@ -1,0 +1,116 @@
+====================================================================================================
+[      0.00 s]: Computing the optimal input orthogonality design...
+[      0.03 s]: Complete.
+[      0.03 s]: Complete. Maximal Input Design:
+[           Input Orthogonality]: 63.99999999999884
+[               Output Coverage]: 5.7248E-05
+[           Experimental Design]:
+====================================================================================================
+[      0.03 s]: Computing the optimal output coverage design...
+[      0.16 s]: Complete. Maximal Output Design:
+[           Input Orthogonality]: 1.6191694626954278
+[               Output Coverage]: 5.7189E-06
+[           Experimental Design]:
+====================================================================================================
+[      0.16 s]: Checking validity of extreme points...
+[WARNING]: the output coverage of the optimal input design (5.724780920419643e-05) is greater than the optimal output design (5.718877240063436e-06)
+[      0.16 s]: Complete, generating epsilon values of output objective values.
+[5.15223723e-05 4.57969354e-05 4.00714985e-05 3.43460617e-05
+ 2.86206248e-05 2.28951879e-05 1.71697510e-05 1.14443141e-05]
+====================================================================================================
+[      0.16 s]: Computing Pareto Point 1...
+[      4.28 s]: Complete, Pareto Point 1:
+[           Input Orthogonality]: 19.10509198193637
+[               Output Coverage]: 1.3074E-03
+[           Experimental Design]:
+[[  30.          438.0066427 ]
+ [  12.33563151  400.        ]
+ [  10.          900.3329415 ]
+ [  29.94119229 1076.89830582]]
+====================================================================================================
+[      4.28 s]: Computing Pareto Point 2...
+Fsolve failed at R: 10.0 and tau: 1053.47122240042
+[WARNING]: Convex Hull computation error, returning 0 coverage volume.
+[     25.25 s]: Complete, Pareto Point 2:
+[           Input Orthogonality]: 11.445991415936296
+[               Output Coverage]: 3.0867E-05
+[           Experimental Design]:
+[[  29.9986869   696.55567464]
+ [  13.85260434  407.90049862]
+ [  10.          929.0447659 ]
+ [  29.98876203 1039.75172762]]
+====================================================================================================
+[     25.25 s]: Computing Pareto Point 3...
+[     50.93 s]: Complete, Pareto Point 3:
+[           Input Orthogonality]: 6.982241429897184
+[               Output Coverage]: 1.8078E-05
+[           Experimental Design]:
+[[  29.17147004  702.60058559]
+ [  16.11945744  601.59831674]
+ [  10.00906708  994.65392898]
+ [  29.99058581 1064.40127979]]
+====================================================================================================
+[     50.93 s]: Computing Pareto Point 4...
+Fsolve failed at R: 10.06578096119697 and tau: 975.1787078803186
+[WARNING]: Convex Hull computation error, returning 0 coverage volume.
+[     62.29 s]: Complete, Pareto Point 4:
+[           Input Orthogonality]: 12.896819482551614
+[               Output Coverage]: 7.9868E-04
+[           Experimental Design]:
+[[  29.28610044  710.39728926]
+ [  12.05925472  400.        ]
+ [  10.05918316  975.17950767]
+ [  29.89169349 1052.35016644]]
+====================================================================================================
+[     62.29 s]: Computing Pareto Point 5...
+Fsolve failed at R: 10.000000000000048 and tau: 989.1187528950587
+[WARNING]: Convex Hull computation error, returning 0 coverage volume.
+Fsolve failed at R: 10.000021496185315 and tau: 992.2615644524606
+[WARNING]: Convex Hull computation error, returning 0 coverage volume.
+Fsolve failed at R: 10.003664267645247 and tau: 988.7630754596256
+[WARNING]: Convex Hull computation error, returning 0 coverage volume.
+[     83.66 s]: Complete, Pareto Point 5:
+[           Input Orthogonality]: 9.192552980171625
+[               Output Coverage]: 2.1279E-05
+[           Experimental Design]:
+[[  29.69711074  704.39990615]
+ [  15.05117044  547.34540119]
+ [  10.00054488  989.19232223]
+ [  29.94093413 1089.95887182]]
+====================================================================================================
+[     83.66 s]: Computing Pareto Point 6...
+Fsolve failed at R: 10.082632204779449 and tau: 1001.6444276776068
+[WARNING]: Convex Hull computation error, returning 0 coverage volume.
+Fsolve failed at R: 10.057997885582667 and tau: 1001.5960847376143
+[WARNING]: Convex Hull computation error, returning 0 coverage volume.
+[    105.19 s]: Complete, Pareto Point 6:
+[           Input Orthogonality]: 7.292115010556437
+[               Output Coverage]: 1.8189E-05
+[           Experimental Design]:
+[[  29.94039445  715.66553175]
+ [  15.2676502   601.85982681]
+ [  10.05973643 1001.60149371]
+ [  29.99796553 1059.18232825]]
+====================================================================================================
+[    105.19 s]: Computing Pareto Point 7...
+[    113.50 s]: Complete, Pareto Point 7:
+[           Input Orthogonality]: 15.853624444282579
+[               Output Coverage]: 1.6704E-05
+[           Experimental Design]:
+[[  29.96847576 1013.66579334]
+ [  19.93096118  501.74051182]
+ [  10.         1054.51332906]
+ [  29.99999999 1398.49694518]]
+====================================================================================================
+[    113.50 s]: Computing Pareto Point 8...
+Fsolve failed at R: 10.0 and tau: 1154.5529312139615
+[WARNING]: Convex Hull computation error, returning 0 coverage volume.
+[    118.94 s]: Complete, Pareto Point 8:
+[           Input Orthogonality]: 63.99999999999981
+[               Output Coverage]: 5.7248E-05
+[           Experimental Design]:
+[[  30.  400.]
+ [  10.  400.]
+ [  10. 1400.]
+ [  30. 1400.]]
+====================================================================================================

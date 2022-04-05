@@ -1,0 +1,57 @@
+Academic license - for non-commercial use only - expires 2022-05-16
+Using license file C:\Users\kenne\gurobi.lic
+Parameter OutputFlag unchanged
+   Value: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter QCPDual to 1
+   Prev: 0  Min: 0  Max: 1  Default: 0
+Gurobi Optimizer version 9.1.1 build v9.1.1rc0 (win64)
+Thread count: 6 physical cores, 12 logical processors, using up to 12 threads
+Optimize a model with 3241 rows, 82 columns and 9801 nonzeros
+Model fingerprint: 0x79fb83a1
+Variable types: 1 continuous, 81 integer (81 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 3e+00]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [3e+00, 8e+00]
+Found heuristic solution: objective -0.0347851
+Found heuristic solution: objective -0.4008219
+Presolve time: 0.02s
+Presolved: 3241 rows, 82 columns, 9801 nonzeros
+Found heuristic solution: objective -0.4008219
+Variable types: 1 continuous, 81 integer (81 binary)
+
+Root relaxation: objective -5.460884e+00, 184 iterations, 0.01 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   -5.46088    0   81   -0.40082   -5.46088  1262%     -    0s
+H    0     0                      -0.5871939   -5.46088   830%     -    0s
+H    0     0                      -0.6955519   -5.46088   685%     -    0s
+H    0     0                      -1.2754342   -5.46088   328%     -    0s
+     0     0   -4.80276    0   20   -1.27543   -4.80276   277%     -    0s
+H    0     0                      -1.3429437   -4.80276   258%     -    0s
+H    0     0                      -1.4604682   -4.80276   229%     -    0s
+     0     0   -4.12646    0   12   -1.46047   -4.12646   183%     -    0s
+     0     0   -2.87316    0    6   -1.46047   -2.87316  96.7%     -    0s
+H    0     0                      -1.4655756   -2.87316  96.0%     -    0s
+     0     0   -2.84751    0    6   -1.46558   -2.84751  94.3%     -    0s
+     0     0   -2.39960    0    4   -1.46558   -2.39960  63.7%     -    0s
+     0     0     cutoff    0        -1.46558   -1.46558  0.00%     -    0s
+
+Cutting planes:
+  Clique: 10
+  MIR: 90
+  RLT: 1
+  Relax-and-lift: 11
+
+Explored 1 nodes (439 simplex iterations) in 0.43 seconds
+Thread count was 12 (of 12 available processors)
+
+Solution count 9: -1.46558 -1.46047 -1.34294 ... -0.0347851
+No other solutions better than -1.46558
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective -1.465575551174e+00, best bound -1.465575551174e+00, gap 0.0000%
+Optimization took 5.05 seconds.

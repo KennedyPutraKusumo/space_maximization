@@ -1,0 +1,54 @@
+Academic license - for non-commercial use only - expires 2022-05-16
+Using license file C:\Users\kenne\gurobi.lic
+Parameter OutputFlag unchanged
+   Value: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter QCPDual to 1
+   Prev: 0  Min: 0  Max: 1  Default: 0
+Gurobi Optimizer version 9.1.1 build v9.1.1rc0 (win64)
+Thread count: 6 physical cores, 12 logical processors, using up to 12 threads
+Optimize a model with 1177 rows, 50 columns and 3577 nonzeros
+Model fingerprint: 0x9b28ea24
+Variable types: 1 continuous, 49 integer (49 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 3e+00]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [3e+00, 8e+00]
+Found heuristic solution: objective -0.0501374
+Found heuristic solution: objective -0.2793117
+Presolve time: 0.00s
+Presolved: 1177 rows, 50 columns, 3577 nonzeros
+Found heuristic solution: objective -0.2793117
+Variable types: 1 continuous, 49 integer (49 binary)
+
+Root relaxation: objective -5.358498e+00, 95 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   -5.35850    0   49   -0.27931   -5.35850  1818%     -    0s
+H    0     0                      -1.0602505   -5.35850   405%     -    0s
+H    0     0                      -1.2625550   -5.35850   324%     -    0s
+H    0     0                      -1.4594226   -5.35850   267%     -    0s
+     0     0   -4.97199    0   25   -1.45942   -4.97199   241%     -    0s
+     0     0   -4.04597    0   10   -1.45942   -4.04597   177%     -    0s
+     0     0   -2.86516    0    4   -1.45942   -2.86516  96.3%     -    0s
+     0     0     cutoff    0        -1.45942   -1.45942  0.00%     -    0s
+
+Cutting planes:
+  Gomory: 6
+  Implied bound: 2
+  Clique: 7
+  MIR: 88
+  RLT: 1
+  Relax-and-lift: 11
+
+Explored 1 nodes (255 simplex iterations) in 0.16 seconds
+Thread count was 12 (of 12 available processors)
+
+Solution count 6: -1.45942 -1.26256 -1.06025 ... -0.0501374
+No other solutions better than -1.45942
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective -1.459422551907e+00, best bound -1.459422551907e+00, gap 0.0000%
+Optimization took 1.86 seconds.

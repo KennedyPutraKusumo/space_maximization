@@ -1,0 +1,52 @@
+Version identifier: 20.1.0.0 | 2020-11-10 | 9bedb6d68
+CPXPARAM_Read_DataCheck                          1
+Found incumbent of value -0.267678 after 0.00 sec. (0.39 ticks)
+Tried aggregator 1 time.
+Reduced MIP has 7261 rows, 122 columns, and 21901 nonzeros.
+Reduced MIP has 121 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.02 sec. (6.60 ticks)
+Probing time = 0.00 sec. (5.16 ticks)
+Cover probing fixed 0 vars, tightened 1 bounds.
+Tried aggregator 1 time.
+Detecting symmetries...
+MIP Presolve modified 26356 coefficients.
+Reduced MIP has 7261 rows, 122 columns, and 21901 nonzeros.
+Reduced MIP has 121 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.02 sec. (10.35 ticks)
+Probing time = 0.00 sec. (5.10 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 12 threads.
+Root relaxation solution time = 0.00 sec. (10.93 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+*     0+    0                           -0.2677       -2.9573              --- 
+*     0+    0                           -1.0211       -2.9573           189.62%
+      0     0       -2.9573     7       -1.0211       -2.9573       22  189.62%
+      0     0       -2.9573     7       -1.0211      Cuts: 95       47  189.62%
+      0     0       -2.9573     6       -1.0211      Cuts: 53       65  189.62%
+*     0+    0                           -1.4120       -2.9573           109.45%
+*     0+    0                           -1.4120       -2.9573           109.45%
+      0     0  -1.00000e+75     0       -1.4120       -2.9573       65  109.45%
+Detecting symmetries...
+      0     2       -2.9573     6       -1.4120       -2.9573       65  109.45%
+Elapsed time = 0.17 sec. (154.07 ticks, tree = 0.02 MB, solutions = 3)
+*   295     2      integral     0       -1.4599       -2.9453     1379  101.74%
+*   302     3      integral     0       -1.4729       -2.9453     1394   99.96%
+    563    34    infeasible             -1.4729       -2.9453     2899   99.96%
+
+Implied bound cuts applied:  7
+Flow cuts applied:  9
+Mixed integer rounding cuts applied:  104
+
+Root node processing (before b&c):
+  Real time             =    0.16 sec. (151.79 ticks)
+Parallel b&c, 12 threads:
+  Real time             =    0.38 sec. (359.88 ticks)
+  Sync time (average)   =    0.21 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =    0.53 sec. (511.66 ticks)
+Optimization took 11.23 seconds.

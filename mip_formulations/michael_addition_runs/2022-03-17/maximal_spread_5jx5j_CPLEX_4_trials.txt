@@ -1,0 +1,53 @@
+Version identifier: 20.1.0.0 | 2020-11-10 | 9bedb6d68
+CPXPARAM_Read_DataCheck                          1
+Found incumbent of value -0.207222 after 0.01 sec. (0.02 ticks)
+Tried aggregator 1 time.
+Reduced MIP has 301 rows, 26 columns, and 925 nonzeros.
+Reduced MIP has 25 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.02 sec. (0.43 ticks)
+Probing time = 0.00 sec. (0.20 ticks)
+Cover probing fixed 0 vars, tightened 2 bounds.
+Tried aggregator 1 time.
+Detecting symmetries...
+MIP Presolve modified 996 coefficients.
+Reduced MIP has 301 rows, 26 columns, and 925 nonzeros.
+Reduced MIP has 25 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.02 sec. (0.87 ticks)
+Probing time = 0.00 sec. (0.19 ticks)
+Clique table members: 10.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 12 threads.
+Root relaxation solution time = 0.01 sec. (0.51 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+*     0+    0                           -0.2072       -3.1257              --- 
+*     0+    0                           -0.2097       -3.1257              --- 
+      0     0       -3.1257     9       -0.2097       -3.1257       30     --- 
+*     0+    0                           -0.3891       -3.1257           703.23%
+      0     0       -3.1257     9       -0.3891      Cuts: 35       54  703.23%
+*     0+    0                           -0.6543       -3.1257           377.75%
+      0     0       -3.1144    21       -0.6543      Cuts: 14       84  376.02%
+*     0+    0                           -0.7068       -3.1144           340.64%
+      0     0       -3.1094    21       -0.7068   Impl Bds: 1       87  339.93%
+      0     0       -3.1094    21       -0.7068       Cuts: 9       88  339.93%
+*     0+    0                           -0.9715       -3.1094           220.07%
+      0     0        cutoff             -0.9715       -0.9715       88    0.00%
+Elapsed time = 0.09 sec. (12.08 ticks, tree = 0.01 MB, solutions = 6)
+
+Implied bound cuts applied:  2
+Mixed integer rounding cuts applied:  14
+Zero-half cuts applied:  1
+Gomory fractional cuts applied:  1
+
+Root node processing (before b&c):
+  Real time             =    0.09 sec. (12.08 ticks)
+Parallel b&c, 12 threads:
+  Real time             =    0.00 sec. (0.00 ticks)
+  Sync time (average)   =    0.00 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =    0.09 sec. (12.08 ticks)
+Optimization took 0.57 seconds.

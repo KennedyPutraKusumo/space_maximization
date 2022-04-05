@@ -1,0 +1,101 @@
+
+
+Problem
+  Name                   :                 
+  Objective sense        : min             
+  Type                   : LO (linear optimization problem)
+  Constraints            : 14643           
+  Cones                  : 0               
+  Scalar variables       : 122             
+  Matrix variables       : 0               
+  Integer variables      : 121             
+
+Optimizer started.
+Mixed integer optimizer started.
+Threads used: 6
+Presolve started.
+Presolve terminated. Time = 0.30
+Presolved problem: 122 variables, 7382 constraints, 22143 non-zeros
+Presolved problem: 0 general integer, 121 binary, 1 continuous
+Clique table size: 0
+BRANCHES RELAXS   ACT_NDS  DEPTH    BEST_INT_OBJ         BEST_RELAX_OBJ       REL_GAP(%)  TIME  
+0        0        1        0        0.0000000000e+00     NA                   NA          0.4   
+0        1        1        0        0.0000000000e+00     -5.3763490801e+00    5.38e+12    0.5   
+Cut generation started.
+0        1        1        0        0.0000000000e+00     -5.3763490801e+00    5.38e+12    0.8   
+0        2        1        0        0.0000000000e+00     -5.1075316261e+00    5.11e+12    0.9   
+0        3        1        0        0.0000000000e+00     -4.8521550448e+00    4.85e+12    1.0   
+0        4        1        0        0.0000000000e+00     -4.6095472925e+00    4.61e+12    1.1   
+0        5        1        0        0.0000000000e+00     -4.3790699279e+00    4.38e+12    1.2   
+0        6        1        0        0.0000000000e+00     -4.1601164315e+00    4.16e+12    1.3   
+0        7        1        0        0.0000000000e+00     -3.9521106099e+00    3.95e+12    1.4   
+0        8        1        0        0.0000000000e+00     -3.7545050795e+00    3.75e+12    1.5   
+Cut generation terminated. Time = 0.28
+0        12       1        0        0.0000000000e+00     -3.7528726859e+00    3.75e+12    2.2   
+0        23       1        0        0.0000000000e+00     -3.7528726859e+00    3.75e+12    2.4   
+10       34       1        0        0.0000000000e+00     -3.7528726859e+00    3.75e+12    2.6   
+21       45       1        0        0.0000000000e+00     -3.7528726859e+00    3.75e+12    2.8   
+33       57       1        0        0.0000000000e+00     -3.7528726859e+00    3.75e+12    2.9   
+44       68       1        0        0.0000000000e+00     -3.7528726859e+00    3.75e+12    3.0   
+55       79       1        0        0.0000000000e+00     -3.7528726859e+00    3.75e+12    3.2   
+67       91       1        0        0.0000000000e+00     -3.7528726859e+00    3.75e+12    3.3   
+79       103      1        0        0.0000000000e+00     -3.7528726859e+00    3.75e+12    3.4   
+91       115      1        0        0.0000000000e+00     -3.7528726859e+00    3.75e+12    3.5   
+103      127      1        0        0.0000000000e+00     -3.7528726859e+00    3.75e+12    3.6   
+115      139      1        0        0.0000000000e+00     -3.7528726859e+00    3.75e+12    3.7   
+127      151      1        0        0.0000000000e+00     -3.7528726859e+00    3.75e+12    3.7   
+139      163      1        0        0.0000000000e+00     -3.7528726859e+00    3.75e+12    3.8   
+151      175      1        0        0.0000000000e+00     -3.7528726859e+00    3.75e+12    3.9   
+163      187      1        0        0.0000000000e+00     -3.7528726859e+00    3.75e+12    4.0   
+175      199      1        0        0.0000000000e+00     -3.7528726859e+00    3.75e+12    4.1   
+187      211      1        0        0.0000000000e+00     -3.7528726859e+00    3.75e+12    4.2   
+199      223      1        0        0.0000000000e+00     -3.7528726859e+00    3.75e+12    4.3   
+211      235      1        0        0.0000000000e+00     -3.7528726859e+00    3.75e+12    4.4   
+223      247      1        0        0.0000000000e+00     -3.7528726859e+00    3.75e+12    4.5   
+234      258      2        1        0.0000000000e+00     -3.7512274108e+00    3.75e+12    4.7   
+245      269      1        7        0.0000000000e+00     -3.7425720290e+00    3.74e+12    5.0   
+256      280      2        12       0.0000000000e+00     -3.7311379020e+00    3.73e+12    5.2   
+267      291      1        18       0.0000000000e+00     -3.7206021570e+00    3.72e+12    5.5   
+278      302      2        23       0.0000000000e+00     -3.7065409244e+00    3.71e+12    5.7   
+289      313      1        29       0.0000000000e+00     -3.6934380506e+00    3.69e+12    5.8   
+300      324      2        34       0.0000000000e+00     -3.6757277819e+00    3.68e+12    6.0   
+311      335      1        40       0.0000000000e+00     -3.6589906880e+00    3.66e+12    6.2   
+322      346      2        45       0.0000000000e+00     -3.6360012182e+00    3.64e+12    6.3   
+333      357      1        51       0.0000000000e+00     -3.6138774013e+00    3.61e+12    6.6   
+344      368      2        56       0.0000000000e+00     -3.5828396193e+00    3.58e+12    6.8   
+355      379      1        62       0.0000000000e+00     -3.5522370735e+00    3.55e+12    7.0   
+366      390      2        67       0.0000000000e+00     -3.5080406801e+00    3.51e+12    7.3   
+377      401      1        73       0.0000000000e+00     -3.4629511909e+00    3.46e+12    7.4   
+388      412      2        78       0.0000000000e+00     -3.3950193002e+00    3.40e+12    7.6   
+399      423      1        84       0.0000000000e+00     -3.3220449779e+00    3.32e+12    7.8   
+410      434      2        89       0.0000000000e+00     -3.2044233115e+00    3.20e+12    7.9   
+421      445      1        95       0.0000000000e+00     -3.0665496656e+00    3.07e+12    8.0   
+432      456      2        100      0.0000000000e+00     -2.8146545145e+00    2.81e+12    8.2   
+443      467      1        106      0.0000000000e+00     -2.4609001219e+00    2.46e+12    8.3   
+454      478      2        111      0.0000000000e+00     -1.5801569204e+00    1.58e+12    8.4   
+An optimal solution satisfying the relative gap tolerance of 1.00e-02(%) has been located.
+The relative gap is 0.00e+00(%).
+An optimal solution satisfying the absolute gap tolerance of 0.00e+00 has been located.
+The absolute gap is 0.00e+00.
+
+Objective of best integer solution : 0.000000000000e+00      
+Best objective bound               : 0.000000000000e+00      
+Construct solution objective       : Not employed
+User objective cut value           : Not employed
+Number of cuts generated           : 848
+  Number of Gomory cuts            : 848
+Number of branches                 : 462
+Number of relaxations solved       : 486
+Number of interior point iterations: 10
+Number of simplex iterations       : 12222
+Time spend presolving the root     : 0.30
+Time spend optimizing the root     : 0.06
+Mixed integer optimizer terminated. Time: 8.45
+
+Optimizer terminated. Time: 8.48    
+
+
+Integer solution solution summary
+  Problem status  : PRIMAL_FEASIBLE
+  Solution status : INTEGER_OPTIMAL
+  Primal.  obj: 0.0000000000e+00    nrm: 6e+00    Viol.  con: 0e+00    var: 0e+00    itg: 0e+00  

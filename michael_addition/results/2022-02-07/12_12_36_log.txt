@@ -1,0 +1,119 @@
+====================================================================================================
+[      0.00 s]: Computing the optimal input orthogonality design...
+[      0.03 s]: Complete.
+[      0.03 s]: Complete. Maximal Input Design:
+[           Input Orthogonality]: 63.99999999999884
+[               Output Coverage]: 5.7248E-05
+[           Experimental Design]:
+====================================================================================================
+[      0.03 s]: Computing the optimal output coverage design...
+[      0.16 s]: Complete. Maximal Output Design:
+[           Input Orthogonality]: 1.6191694626954278
+[               Output Coverage]: 5.7189E-06
+[           Experimental Design]:
+====================================================================================================
+[      0.16 s]: Checking validity of extreme points...
+[WARNING]: the output coverage of the optimal input design (5.724780920419643e-05) is greater than the optimal output design (5.718877240063436e-06)
+[      0.16 s]: Complete, generating epsilon values of input objective values.
+[ 7.29015406 12.96113865 18.63212325 24.30310784 29.97409243 35.64507703
+ 41.31606162 46.98704622 52.65803081 58.32901541]
+====================================================================================================
+[      0.16 s]: Computing Pareto Point 1...
+[      0.30 s]: Complete, Pareto Point 1:
+[           Input Orthogonality]: 32.0
+[               Output Coverage]: 5.3216E-06
+[           Experimental Design]:
+[[  30.          400.        ]
+ [  30.         1400.        ]
+ [  10.         1382.77336877]
+ [  30.          400.        ]]
+====================================================================================================
+[      0.30 s]: Computing Pareto Point 2...
+[      0.55 s]: Complete, Pareto Point 2:
+[           Input Orthogonality]: 13.00183564202648
+[               Output Coverage]: 1.4190E-05
+[           Experimental Design]:
+[[  30.          400.        ]
+ [  30.         1129.58154303]
+ [  10.          766.82736384]
+ [  30.          680.586004  ]]
+====================================================================================================
+[      0.55 s]: Computing Pareto Point 3...
+[      0.89 s]: Complete, Pareto Point 3:
+[           Input Orthogonality]: 19.95191383822954
+[               Output Coverage]: 1.6454E-05
+[           Experimental Design]:
+[[  30.          400.        ]
+ [  30.         1286.78430645]
+ [  10.          766.73604856]
+ [  30.          659.7961216 ]]
+====================================================================================================
+[      0.89 s]: Computing Pareto Point 4...
+[      1.54 s]: Complete, Pareto Point 4:
+[           Input Orthogonality]: 30.06313895443229
+[               Output Coverage]: 1.7882E-05
+[           Experimental Design]:
+[[  29.99995373  400.00042845]
+ [  29.9999569  1399.9867583 ]
+ [  10.00002956  766.77604475]
+ [  29.99995424  464.67692422]]
+====================================================================================================
+[      1.54 s]: Computing Pareto Point 5...
+[      2.22 s]: Complete, Pareto Point 5:
+[           Input Orthogonality]: 31.447186770133158
+[               Output Coverage]: 1.7881E-05
+[           Experimental Design]:
+[[  30.          400.00000001]
+ [  30.         1399.99999894]
+ [  10.          766.8329401 ]
+ [  30.          417.58463036]]
+====================================================================================================
+[      2.22 s]: Computing Pareto Point 6...
+[     20.99 s]: Complete, Pareto Point 6:
+[           Input Orthogonality]: 32.0
+[               Output Coverage]: 1.7880E-05
+[           Experimental Design]:
+[[  30.          400.        ]
+ [  30.         1400.        ]
+ [  10.          766.86213377]
+ [  30.          400.        ]]
+====================================================================================================
+[     20.99 s]: Computing Pareto Point 7...
+[     36.55 s]: Complete, Pareto Point 7:
+[           Input Orthogonality]: 32.0
+[               Output Coverage]: 1.7879E-05
+[           Experimental Design]:
+[[  30.          400.        ]
+ [  30.         1400.        ]
+ [  10.          766.86966316]
+ [  30.          400.        ]]
+====================================================================================================
+[     36.55 s]: Computing Pareto Point 8...
+[     48.79 s]: Complete, Pareto Point 8:
+[           Input Orthogonality]: 32.0
+[               Output Coverage]: 1.7879E-05
+[           Experimental Design]:
+[[  30.          400.        ]
+ [  30.         1400.        ]
+ [  10.          766.86571938]
+ [  30.          400.        ]]
+====================================================================================================
+[     48.79 s]: Computing Pareto Point 9...
+[     68.64 s]: Complete, Pareto Point 9:
+[           Input Orthogonality]: 32.0
+[               Output Coverage]: 1.7880E-05
+[           Experimental Design]:
+[[  30.          400.        ]
+ [  30.         1400.        ]
+ [  10.          766.85656706]
+ [  30.          400.        ]]
+====================================================================================================
+[     68.64 s]: Computing Pareto Point 10...
+[     79.31 s]: Complete, Pareto Point 10:
+[           Input Orthogonality]: 32.0
+[               Output Coverage]: 1.7881E-05
+[           Experimental Design]:
+[[  30.          400.        ]
+ [  30.         1400.        ]
+ [  10.          766.81561613]
+ [  30.          400.        ]]

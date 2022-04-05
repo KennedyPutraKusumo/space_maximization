@@ -1,0 +1,48 @@
+Academic license - for non-commercial use only - expires 2022-05-16
+Using license file C:\Users\kenne\gurobi.lic
+Parameter OutputFlag unchanged
+   Value: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter QCPDual to 1
+   Prev: 0  Min: 0  Max: 1  Default: 0
+Gurobi Optimizer version 9.1.1 build v9.1.1rc0 (win64)
+Thread count: 6 physical cores, 12 logical processors, using up to 12 threads
+Optimize a model with 2017 rows, 65 columns and 6112 nonzeros
+Model fingerprint: 0xe6a5012e
+Variable types: 1 continuous, 64 integer (64 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 3e+00]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [3e+00, 8e+00]
+Found heuristic solution: objective -0.0415728
+Found heuristic solution: objective -0.5483255
+Presolve time: 0.01s
+Presolved: 2017 rows, 65 columns, 6112 nonzeros
+Variable types: 1 continuous, 64 integer (64 binary)
+
+Root relaxation: objective -5.420992e+00, 144 iterations, 0.01 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   -5.42099    0   63   -0.54833   -5.42099   889%     -    0s
+H    0     0                      -0.6497630   -5.42099   734%     -    0s
+H    0     0                      -0.9724610   -5.42099   457%     -    0s
+H    0     0                      -1.4585531   -5.42099   272%     -    0s
+H    0     0                      -1.4604540   -5.30579   263%     -    0s
+     0     0   -5.11069    0   30   -1.46045   -5.11069   250%     -    0s
+H    0     0                      -1.4604540   -5.11069   250%     -    0s
+     0     0   -2.78245    0    2   -1.46045   -2.78245  90.5%     -    0s
+
+Cutting planes:
+  Clique: 7
+
+Explored 1 nodes (281 simplex iterations) in 0.18 seconds
+Thread count was 12 (of 12 available processors)
+
+Solution count 6: -1.46045 -1.45855 -0.972461 ... -0.0415728
+No other solutions better than -1.46045
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective -1.460454043692e+00, best bound -1.460454043692e+00, gap 0.0000%
+Optimization took 3.16 seconds.
