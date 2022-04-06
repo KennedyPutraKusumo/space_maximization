@@ -3,7 +3,7 @@ from oop_classes.point_normalizer import Normalizer
 import numpy as np
 
 
-def create_model():
+def create_model(n_trials):
     model = po.ConcreteModel()
 
     model.tau = po.Var(bounds=(0, None))
@@ -27,8 +27,12 @@ def create_model():
         5,
     ]))
 
-    model.c = po.Var(model.i, within=po.NonNegativeReals)
-    model.c_in = po.Var(model.i)
+    model.trials = po.Set(
+        initialize=np.arange(0, n_trials)
+    )
+
+    model.c = po.Var(model.trials, model.i, within=po.NonNegativeReals)
+    model.c_in = po.Var(model.trials, model.i)
 
     k = {
         1: 49.7796,
@@ -84,28 +88,16 @@ def create_model():
     }
     model.nu = po.Param(model.i, model.j, initialize=nu)
 
-    def _mass_bal(m, i):
+    def _mass_bal(m, trials, i):
         r = {
-            1: m.k[1] * m.cqa["AH"] * m.cqa["B"],
-            2: m.k[2] * m.cqa["A-"] * m.cqa["C"],
-            3: m.k[3] * m.cqa["AC-"],
-            4: m.k[4] * m.cqa["AC-"] * m.cqa["AH"],
-            5: m.k[5] * m.cqa["AC-"] * m.cqa["BH+"],
+            1: m.k[1] * m.c[trials, "AH"] * m.c[trials, "B"],
+            2: m.k[2] * m.c[trials, "A-"] * m.c[trials, "C"],
+            3: m.k[3] * m.c[trials, "AC-"],
+            4: m.k[4] * m.c[trials, "AC-"] * m.c[trials, "AH"],
+            5: m.k[5] * m.c[trials, "AC-"] * m.c[trials, "BH+"],
         }
         return m.c_in[i] - m.cqa[i] + m.tau * sum(m.nu[i, j] * r[j] for j in m.j) == 0
-    model.mass_bal = po.Constraint(model.i, rule=_mass_bal)
-
-    def _cqa_cons_1(m):
-        return m.cqa["C"] + m.cqa["AC-"] - 0.1 * m.c_in["C"] <= 0
-    model.cqa_cons_1 = po.Constraint(rule=_cqa_cons_1)
-
-    def _cqa_cons_2(m):
-        return m.cqa["AC-"] <= 0.002
-    model.cqa_cons_2 = po.Constraint(rule=_cqa_cons_2)
-
-    def _dummy_obj(m):
-        return 0
-    model.dummy_obj = po.Objective(rule=_dummy_obj, sense=po.maximize)
+    model.mass_bal = po.Constraint(model.trials, model.i, rule=_mass_bal)
 
     return model
 

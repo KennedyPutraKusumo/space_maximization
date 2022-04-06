@@ -89,22 +89,14 @@ def simulate(d):
 
     def _mass_bal(m, i):
         r = {
-            1: m.k[1] * m.cqa["AH"] * m.cqa["B"],
-            2: m.k[2] * m.cqa["A-"] * m.cqa["C"],
-            3: m.k[3] * m.cqa["AC-"],
-            4: m.k[4] * m.cqa["AC-"] * m.cqa["AH"],
-            5: m.k[5] * m.cqa["AC-"] * m.cqa["BH+"],
+            1: m.k[1] * m.c["AH"] * m.c["B"],
+            2: m.k[2] * m.c["A-"] * m.c["C"],
+            3: m.k[3] * m.c["AC-"],
+            4: m.k[4] * m.c["AC-"] * m.c["AH"],
+            5: m.k[5] * m.c["AC-"] * m.c["BH+"],
         }
         return m.c_in[i] - m.cqa[i] + m.tau * sum(m.nu[i, j] * r[j] for j in m.j) == 0
     model.mass_bal = po.Constraint(model.i, rule=_mass_bal)
-
-    def _cqa_cons_1(m):
-        return m.cqa["C"] + m.cqa["AC-"] - 0.1 * m.c_in["C"] <= 0
-    model.cqa_cons_1 = po.Constraint(rule=_cqa_cons_1)
-
-    def _cqa_cons_2(m):
-        return m.cqa["AC-"] <= 0.002
-    model.cqa_cons_2 = po.Constraint(rule=_cqa_cons_2)
 
     def _dummy_obj(m):
         return 0

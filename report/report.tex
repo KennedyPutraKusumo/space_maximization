@@ -1,14 +1,16 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
-\usepackage{amsmath}
+\usepackage{amsmath, amssymb}
+\usepackage{dsfont}
 \usepackage{booktabs}
+\usepackage{natbib}
 
 \title{Input-Output Space Exploration}
 \author{Kennedy Putra Kusumo}
 \date{January 2022}
 
+
 \begin{document}
-	
 	\maketitle
 	
 	\section{Introduction}
@@ -20,38 +22,46 @@
 	
 	The input objective is associated with 
 	
-	\subsection{Output Space Exploration Objective}
-	We assume a discretized formulation where a discrete set of samples in the input space are generated through a sampling procedure and the model has been used to generate the mapped locations of these samples in the output space.
+	\section{Output Space Exploration Objective}
+	We present alternative criteria for operable space maximization with design of experiments, as introduced by \citet{Chen2018}.
 	
-	A key feature of the optimization problem is the presence of the binary variables which defined whether a point sample is chosen as part of the final solution, let's call them $p$ with an index $i$ to refer to the point samples. Thus, notations like $p_1 = 1$ means that point sample number 1 is part of the final design and $p_1 = 0$ means it is NOT chosen. 
+	\subsection{Criteria Which Searches Over Controls}
+	The goal is to find the locations of $M$ points of inputs/controls of dimension $n_x$ $\mathbf{x} \in \mathcal{X} \subset \mathbb{R}^{M \times n_x}$ that minimize or maximize a certain metric of the associated $M$ points of the outputs of dimension $n_y$ $\mathbf{y} \in \mathcal{Y} \subset \mathbb{R}^{M \times n_y}$. We assume a model (mapping) $f:\mathcal{X} \rightarrow \mathcal{Y}$ is available. The following is a list of formulations populated.
 	
-	\subsubsection{Centroid Formulation}
-	
-	We first compute the centroid of the chosen points. Let's assume a simple 2D example, and let's call the centroid $C$ with two elements $C_x$ and $C_y$ for the x and y axes, respectively. Let $x_i$ and $y_i$ be the x-, and y-coordinates of the $i$-th point sample.
-	
+	\subsubsection{Maximal Spread Design}
+	Spread is defined as the minimal distance between the chosen points. A formulation is as follows:
 	\begin{align}
-		C_x &= \frac{\sum_i p_i x_i}{\sum_i p_i}  \\
-		C_y &= \frac{\sum_i p_i y_i}{\sum_i p_i}  \\
+		\max_{\mathbf{x}} \	& \eta  \\
+		\text{s.t. } 		& \eta \leq \lVert \boldsymbol{y}_i - \boldsymbol{y}_j \rVert, \quad i = 1 \dots M, \ j=i+1 \\
+							& \boldsymbol{y}_i = f(\boldsymbol{x}_i), \quad i = 1 \dots M
 	\end{align}
 	
-	The centroid helps us compute the "volume" or "spread" ($V$) of the points in the output space, which we define in this subsection as follows.
+	\subsection{Criteria Which Involves Discretization of Controls}
+	We assume that a finite set of candidate points $\mathbf{p}_i\in \mathbb{R}^{n}, \ i=1 \dots N$ --- possibly rescaled in the unit hypercube $[0, 1]^n$. The goal is to select a subset of $M$ points that minimize or maximize a certain metric. The following is a list of formulations and metrics populated.
 	
-	\begin{align} \label{eq:centroid_formulation}
-		V = \sum_i \left(p_i\left(\left(x_i - C_x\right)^2 + \left(y_i - C_y\right)^2\right)\right)
+	\subsubsection{Maximal Orthogonality Design}
+	This criterion maximizes the \emph{orthogonality} of the chosen points. It involves a
+	
+	\subsubsection{Maximal Covering Design}
+	This criterion selects $M$ centroids among the $N$ candidates in such a way that the maximal distance between any candidate point to their closest centroid is minimized. An (pure) integer programming formulation for this criterion is the following.
+	\begin{align}
+		\min_{\mathbf{y}, \mathbf{z}, \eta} \ & \eta  \\
+		\text{s.t. } & \eta \geq \sum_{i=1}^N z_{i,j} \lVert \mathbf{p}_i - \mathbf{p}_j \rVert, \quad j = 1 \dots N  \\
+					 & 1 = \sum_{i=1}^{N} z_{i,j}, \quad j = 1\dots N  \\
+					 & y_i \geq z_{i,j}, \forall i,j = 1 \dots N  \\
+					 & M \geq \sum_{i=1}^{N} y_i  \\
+					 & y_i, z_{i,j} \in \{0, 1\}, \quad i,j = 1 \dots N
 	\end{align}
-	
-	Notice that the $p_i$ appears as cubed terms when expanded out. Using sympy also confirms that the $p_i$ terms come as cubed terms when expanded out, while $x_i$ and $y_i$ terms come as quadratic terms.
-	
-	\subsubsection{Centroid of the Feasible Space Formulation}
-	
-	An alternative and similar formulation is to precompute an appropriate replacement for the centroid to simply the expression from before. The idea is very simple, we compute the centroid of the precomputed response points first. This will mean that we will use the centroid of the feasible space in place of the centroid of the actual computed selected points.
-	
-	In this formulation, because the centroid is precomputed, the $p_i$ terms appear in order 1 in the final optimization problem. It takes exactly the same expression as \eqref{eq:centroid_formulation} but the centroids are given parameters.
-	
-	A problem though, is that the optimization will simply yield repeated points. It will simply determine the point which is furthest away (euclidean distance) and repeat it for all the selected experimental points. There is simply no incentive for the points to not be repeated; unlike the previous formulation where centroid of the selected points are used.
-	
-	\subsubsection{Augmented HR Criterion}
-	Another possible criterion formulation is 
+	where the selected points $\mathbf{p}_i$ are those with $y_i = 1$. $z_{i,j} = 1$ indicates the closest centroid $\mathbf{p}_i$ to point $\mathbf{p}_j$. This problem is also known as the uncapacitated vertex k-center problem \citep{Cornejo2020Solving}, for which heuristics algorithms exist that could be used to warm-start the MIP solution.
+	\subsubsection{Maximal Spread Design}
+	Spread is defined as the minimal distance between the chosen points. $M$ points amongst the $N$ candidates are chosen to maximize spread. A pure integer programming formulation is:
+	\begin{align}
+		\max_{\mathbf{y}, \eta} & \eta  \\
+		\text{s.t. } 			& \eta \leq \lVert \mathbf{p}_i - \mathbf{p}_j \rVert + (1 - y_i) D + (1 - y_j) D, \quad i,j = 1 \dots N  \\
+								& M \geq \sum_{i=1}^N y_i  \\
+								& y_i \in \{0, 1\}, \quad i = 1 \dots N
+	\end{align}
+	where the selected points $p_i$ are those with $y_i = 1$. The scalar $D$ is chosen and should be no smaller than the \emph{diameter} of the set of candidates points. A recommended value is $D= \max_{i,j} \lVert \mathbf{p}_i - \mathbf{p}_j \rVert$.
 	
 	\section{Numerical Statistics of Different Alternatives}
 	\begin{table}[]
@@ -106,5 +116,6 @@
 		\caption{Caption}
 		\label{tab:my_label}
 	\end{table}
-	
+	\bibliographystyle{plainnat}
+	\bibliography{report}	
 \end{document}

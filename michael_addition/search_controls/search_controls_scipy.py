@@ -26,7 +26,7 @@ def orthogonality(x):
 
 if __name__ == '__main__':
     n_trials = 4
-    n_seeds = 10
+    n_seeds = 100
     spread_results = []
     orthogonality_results = []
 
