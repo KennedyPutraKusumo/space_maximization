@@ -1,36 +1,36 @@
-﻿Criterion,Solver,Grid Size,N Trials,Computational Time (s),
-Maximal Spread,CPLEX,25,3,0.59,
-Maximal Spread,CPLEX,36,3,0.91,
-Maximal Spread,CPLEX,49,3,1.72,
-Maximal Spread,CPLEX,64,3,3.12,
-Maximal Spread,CPLEX,81,3,4.89,
-Maximal Spread,CPLEX,100,3,7.44,
-Maximal Spread,CPLEX,121,3,11.23,
-Maximal Spread,CPLEX,441,3,277.75,
-,,,,,
-Maximal Spread,GUROBI,25,3,0.45,
-Maximal Spread,GUROBI,36,3,0.94,
-Maximal Spread,GUROBI,49,3,1.86,
-Maximal Spread,GUROBI,64,3,3.16,
-Maximal Spread,GUROBI,81,3,5.05,
-Maximal Spread,GUROBI,100,3,7.85,
-Maximal Spread,GUROBI,121,3,13.47,
-Maximal Spread,GUROBI,441,3,,
-,,,,,
-Maximal Covering,CPLEX,25,3,0.78,
-Maximal Covering,CPLEX,36,3,1.35,
-Maximal Covering,CPLEX,49,3,2.73,
-Maximal Covering,CPLEX,64,3,5.11,
-Maximal Covering,CPLEX,81,3,8.73,
-Maximal Covering,CPLEX,100,3,17.12,
-Maximal Covering,CPLEX,121,3,27.43,
-Maximal Covering,CPLEX,441,3,,
-,,,,,
-Maximal Covering,GUROBI,25,3,,
-Maximal Covering,GUROBI,36,3,,
-Maximal Covering,GUROBI,49,3,,
-Maximal Covering,GUROBI,64,3,,
-Maximal Covering,GUROBI,81,3,,
-Maximal Covering,GUROBI,100,3,,
-Maximal Covering,GUROBI,121,3,,
-Maximal Covering,GUROBI,441,3,,
+﻿Criterion,Solver,Grid Size,N Trials,Computational Time (s)
+Maximal Spread,CPLEX,25,3,0.59
+Maximal Spread,CPLEX,36,3,0.91
+Maximal Spread,CPLEX,49,3,1.72
+Maximal Spread,CPLEX,64,3,3.12
+Maximal Spread,CPLEX,81,3,4.89
+Maximal Spread,CPLEX,100,3,7.44
+Maximal Spread,CPLEX,121,3,11.23
+Maximal Spread,CPLEX,441,3,277.75
+,,,,
+Maximal Spread,GUROBI,25,3,0.45
+Maximal Spread,GUROBI,36,3,0.94
+Maximal Spread,GUROBI,49,3,1.86
+Maximal Spread,GUROBI,64,3,3.16
+Maximal Spread,GUROBI,81,3,5.05
+Maximal Spread,GUROBI,100,3,7.85
+Maximal Spread,GUROBI,121,3,13.47
+Maximal Spread,GUROBI,441,3,
+,,,,
+Maximal Covering,CPLEX,25,3,0.78
+Maximal Covering,CPLEX,36,3,1.35
+Maximal Covering,CPLEX,49,3,2.73
+Maximal Covering,CPLEX,64,3,5.11
+Maximal Covering,CPLEX,81,3,8.73
+Maximal Covering,CPLEX,100,3,17.12
+Maximal Covering,CPLEX,121,3,27.43
+Maximal Covering,CPLEX,441,3,
+,,,,
+Maximal Covering,GUROBI,25,3,
+Maximal Covering,GUROBI,36,3,
+Maximal Covering,GUROBI,49,3,
+Maximal Covering,GUROBI,64,3,
+Maximal Covering,GUROBI,81,3,
+Maximal Covering,GUROBI,100,3,
+Maximal Covering,GUROBI,121,3,
+Maximal Covering,GUROBI,441,3,
