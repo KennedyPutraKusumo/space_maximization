@@ -1,0 +1,124 @@
+C:\ProgramData\Anaconda3\pythonw.exe C:/Users/kenne/Documents/GitHub/space_maximization/michael_addition/goal_oriented_michael_addition.py
+====================================================================================================
+Initialization complete: designer ready.
+----------------------------------------------------------------------------------------------------
+Number of model parameters              : 3
+Number of candidates                    : 121
+Number of responses                     : 2
+Number of measured responses            : 2
+Number of time-invariant controls       : 2
+====================================================================================================
+############################### Computing Optimal Experiment Design ################################
+Started on                              : 2022-05-05 09:49:09.989395
+Criterion                               : d_opt_criterion
+Pseudo-bayesian                         : False
+Dynamic                                 : False
+Time-invariant Controls                 : True
+Time-varying Controls                   : False
+Number of Candidates                    : 121
+---------------------------------------[Sensitivity Analysis]---------------------------------------
+Use Finite Difference                   : True
+Richardson Extrapolation Steps          : 5
+----------------------------------------------------------------------------------------------------
+[Candidate     13/121]: time elapsed            0.58 seconds.
+[Candidate     26/121]: time elapsed            1.29 seconds.
+[Candidate     39/121]: time elapsed            1.99 seconds.
+[Candidate     52/121]: time elapsed            2.67 seconds.
+[Candidate     65/121]: time elapsed            3.38 seconds.
+C:\ProgramData\Anaconda3\lib\site-packages\scipy\optimize\minpack.py:175: RuntimeWarning: The iteration is not making good progress, as measured by the
+  improvement from the last ten iterations.
+  warnings.warn(msg, RuntimeWarning)
+[Candidate     78/121]: time elapsed            4.13 seconds.
+[Candidate     91/121]: time elapsed            4.84 seconds.
+[Candidate    104/121]: time elapsed            5.55 seconds.
+C:\ProgramData\Anaconda3\lib\site-packages\scipy\optimize\minpack.py:175: RuntimeWarning: The iteration is not making good progress, as measured by the
+  improvement from the last five Jacobian evaluations.
+  warnings.warn(msg, RuntimeWarning)
+[Candidate    117/121]: time elapsed            6.34 seconds.
+[Candidate    121/121]: time elapsed            6.64 seconds.
+----------------------------------------------------------------------------------------------------
+
+
+Problem
+  Name                   :
+  Objective sense        : min
+  Type                   : CONIC (conic optimization problem)
+  Constraints            : 330
+  Cones                  : 3
+  Scalar variables       : 166
+  Matrix variables       : 2
+  Integer variables      : 0
+
+Optimizer started.
+Problem
+  Name                   :
+  Objective sense        : min
+  Type                   : CONIC (conic optimization problem)
+  Constraints            : 330
+  Cones                  : 3
+  Scalar variables       : 166
+  Matrix variables       : 2
+  Integer variables      : 0
+
+Optimizer  - threads                : 6
+Optimizer  - solved problem         : the primal
+Optimizer  - Constraints            : 52
+Optimizer  - Cones                  : 4
+Optimizer  - Scalar variables       : 141               conic                  : 19
+Optimizer  - Semi-definite variables: 2                 scalarized             : 27
+Factor     - setup time             : 0.00              dense det. time        : 0.00
+Factor     - ML order time          : 0.00              GP order time          : 0.00
+Factor     - nonzeros before factor : 892               after factor           : 892
+Factor     - dense dim.             : 0                 flops                  : 5.74e+04
+ITE PFEAS    DFEAS    GFEAS    PRSTATUS   POBJ              DOBJ              MU       TIME
+0   1.3e+00  1.3e+00  5.9e+00  0.00e+00   2.483515197e+00   -2.415306005e+00  1.0e+00  0.02
+1   3.8e-01  3.8e-01  1.2e+00  4.41e-01   1.296931538e+00   -4.840359787e-01  2.9e-01  0.02
+2   1.1e-01  1.1e-01  2.8e-01  4.80e-01   1.669625489e+00   1.029186477e+00   8.7e-02  0.02
+3   4.4e-02  4.4e-02  9.7e-02  3.82e-01   1.834056709e+00   1.541046665e+00   3.4e-02  0.02
+4   1.7e-02  1.7e-02  1.7e-02  9.63e-01   1.944102376e+00   1.814670188e+00   1.3e-02  0.02
+5   1.1e-02  1.1e-02  1.0e-02  8.87e-01   2.212634821e+00   2.126480635e+00   8.1e-03  0.02
+6   3.4e-03  3.4e-03  1.9e-03  1.34e+00   2.345668547e+00   2.322243629e+00   2.7e-03  0.02
+7   1.1e-03  1.1e-03  3.2e-04  1.10e+00   2.313818960e+00   2.307012690e+00   8.1e-04  0.02
+8   1.8e-04  1.8e-04  2.2e-05  9.88e-01   2.300648502e+00   2.299515823e+00   1.4e-04  0.02
+9   4.8e-06  4.8e-06  1.0e-07  9.96e-01   2.297853067e+00   2.297822613e+00   3.7e-06  0.02
+10  1.9e-07  1.9e-07  8.3e-10  9.99e-01   2.297761639e+00   2.297760415e+00   1.5e-07  0.02
+11  2.9e-08  2.9e-08  4.8e-11  1.00e+00   2.297759409e+00   2.297759228e+00   2.2e-08  0.02
+12  3.2e-09  3.2e-09  1.7e-12  1.00e+00   2.297759128e+00   2.297759108e+00   2.4e-09  0.02
+Optimizer terminated. Time: 0.02
+
+
+Interior-point solution summary
+  Problem status  : PRIMAL_AND_DUAL_FEASIBLE
+  Solution status : OPTIMAL
+  Primal.  obj: 2.2977591280e+00    nrm: 1e+01    Viol.  con: 8e-09    var: 0e+00    barvar: 0e+00    cones: 0e+00
+  Dual.    obj: 2.2977591081e+00    nrm: 3e+01    Viol.  con: 4e-16    var: 3e-15    barvar: 6e-09    cones: 0e+00
+---------------------------------[Optimization Complete in 0.93 s]----------------------------------
+Complete:
+ ~ sensitivity analysis took 6.64 CPU seconds.
+ ~ optimization with MOSEK via cvxpy took 0.93 CPU seconds.
+####################################################################################################
+
+######################################## Optimal Candidates ########################################
+Obtained on                             : 2022-05-05 09:49:17.554088
+Criterion                               : d_opt_criterion
+Criterion Value                         : -2.2977591279821064
+Pseudo-bayesian                         : False
+CVaR Problem                            : False
+Dynamic                                 : False
+Time-invariant Controls                 : True
+Time-varying Controls                   : False
+Number of Candidates                    : 121
+Number of Optimal Candidates            : 2
+Information Matrix Regularized          : False
+Minimum Effort Threshold                : 0.0001
+-------------------------------------------[Candidate 1]--------------------------------------------
+                             Recommended Effort: 34.07% of experiments
+Time-invariant Controls:
+[ 10. 400.]
+------------------------------------------[Candidate 111]-------------------------------------------
+                             Recommended Effort: 65.93% of experiments
+Time-invariant Controls:
+[ 30. 400.]
+####################################################################################################
+
+Process finished with exit code 0

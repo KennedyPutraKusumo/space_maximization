@@ -15,4 +15,4 @@ def draw_cvxhull(points, axes, color="tab:red", ls=(1, (1, 1))):
                 ls=ls,
             )
 
-    return hull
+    return hull_lines, hull

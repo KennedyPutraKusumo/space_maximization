@@ -44,8 +44,6 @@ def plot_feasible_spaces(
         axis2.set_xlabel(output_axes_labels[0])
         axis2.set_ylabel(output_axes_labels[1])
 
-    plt.show()
-
     return [axis1, axis2]
 
 def plot_results(

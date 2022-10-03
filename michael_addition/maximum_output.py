@@ -107,6 +107,7 @@ if __name__ == '__main__':
     """ Optional Routines """
     show_feasible_hull = True
     show_factorial_performance = True
+    show_maximal_output = False
 
     """ Optimization Settings """
     random_seed = 12345             # benchmark: 12345
@@ -115,7 +116,7 @@ if __name__ == '__main__':
     multistart_sites = 1000          # benchmark: [20, 99, 200, 500]
 
     """ Plotting Settings """
-    markersize = 250
+    markersize = 125
     markeralpha = 0.50
 
     if show_feasible_hull:
@@ -141,7 +142,8 @@ if __name__ == '__main__':
                 figb = pickle.load(file)
                 axes1b, axes2b = figb.get_axes()
         else:
-            figb = plt.figure(figsize=(13, 5))
+            # figb = plt.figure(figsize=(13, 5))
+            figb = plt.figure(figsize=(8, 3))
             axes1b = figb.add_subplot(121)
             axes1b.set_xlabel("Feed Ratio (AH/B)")
             axes1b.set_ylabel("Residence Time (min)")
@@ -190,49 +192,50 @@ if __name__ == '__main__':
         )
         figb.tight_layout()
 
-    opt_exp = multistart_opt_output(
-        n_exp=n_exp,
-        multistart_sites=multistart_sites,
-        optimizer=optimizer,
-        random_seed=random_seed,
-    )
-    hullVol, CQAs, convHull = output_coverage(opt_exp, full_output=True)
-    print(f"The maximal output_design leads to {hullVol:.4E} output coverage in volume.")
-
-    cmap = np.linspace(0, 1, opt_exp.shape[0])
-    axes1.scatter(
-        opt_exp[:, 0],
-        opt_exp[:, 1],
-        c=cm.gist_rainbow(cmap),
-        alpha=markeralpha,
-        s=markersize,
-    )
-    axes2.scatter(
-        CQAs[:, 0],
-        CQAs[:, 1],
-        c=cm.gist_rainbow(cmap),
-        alpha=markeralpha,
-        s=markersize,
-    )
-    axes1.set_xlim([9, 31])
-    axes1.set_ylim([350, 1450])
-    for simplex in convHull.simplices:
-        axes2.plot(
-            CQAs[simplex, 0],
-            CQAs[simplex, 1],
-            c="tab:red",
-            ls=(1, (1, 1)),
+    if show_maximal_output:
+        opt_exp = multistart_opt_output(
+            n_exp=n_exp,
+            multistart_sites=multistart_sites,
+            optimizer=optimizer,
+            random_seed=random_seed,
         )
-    axes2.text(
-        x=0.17,
-        y=0.0015,
-        s=f"Volume: {convHull.volume:.2E}",
-        c="tab:red",
-        fontsize="large",
-    )
+        hullVol, CQAs, convHull = output_coverage(opt_exp, full_output=True)
+        print(f"The maximal output_design leads to {hullVol:.4E} output coverage in volume.")
 
-    fig.tight_layout()
-    fig.savefig("ma_maximal_output.png", dpi=360)
+        cmap = np.linspace(0, 1, opt_exp.shape[0])
+        axes1.scatter(
+            opt_exp[:, 0],
+            opt_exp[:, 1],
+            c=cm.gist_rainbow(cmap),
+            alpha=markeralpha,
+            s=markersize,
+        )
+        axes2.scatter(
+            CQAs[:, 0],
+            CQAs[:, 1],
+            c=cm.gist_rainbow(cmap),
+            alpha=markeralpha,
+            s=markersize,
+        )
+        axes1.set_xlim([9, 31])
+        axes1.set_ylim([350, 1450])
+        for simplex in convHull.simplices:
+            axes2.plot(
+                CQAs[simplex, 0],
+                CQAs[simplex, 1],
+                c="tab:red",
+                ls=(1, (1, 1)),
+            )
+        axes2.text(
+            x=0.17,
+            y=0.0015,
+            s=f"Volume: {convHull.volume:.2E}",
+            c="tab:red",
+            fontsize="large",
+        )
+
+        fig.tight_layout()
+        fig.savefig("ma_maximal_output.png", dpi=360)
     if show_factorial_performance:
         figb.savefig("ma_factorial.png", dpi=360)
     plt.show()

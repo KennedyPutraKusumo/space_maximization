@@ -1,0 +1,140 @@
+C:\ProgramData\Anaconda3\pythonw.exe C:/Users/kenne/Documents/GitHub/space_maximization/michael_addition/goal_oriented_michael_addition.py
+====================================================================================================
+Initialization complete: designer ready.
+----------------------------------------------------------------------------------------------------
+Number of model parameters              : 3
+Number of candidates                    : 549
+Number of responses                     : 2
+Number of measured responses            : 2
+Number of time-invariant controls       : 2
+====================================================================================================
+Note: scipy's optimizer l-bfgs-b requires unconstrained form.
+############################### Computing Optimal Experiment Design ################################
+Started on                              : 2022-05-13 12:33:49.108007
+Criterion                               : vdi_criterion
+Pseudo-bayesian                         : False
+Dynamic                                 : False
+Time-invariant Controls                 : True
+Time-varying Controls                   : False
+Number of Candidates                    : 549
+---------------------------------------[Sensitivity Analysis]---------------------------------------
+Use Finite Difference                   : True
+Richardson Extrapolation Steps          : 5
+----------------------------------------------------------------------------------------------------
+C:\ProgramData\Anaconda3\lib\site-packages\scipy\optimize\minpack.py:175: RuntimeWarning: The iteration is not making good progress, as measured by the
+  improvement from the last ten iterations.
+  warnings.warn(msg, RuntimeWarning)
+[Candidate     55/549]: time elapsed            2.60 seconds.
+[Candidate    110/549]: time elapsed            5.44 seconds.
+C:\ProgramData\Anaconda3\lib\site-packages\numpy\lib\nanfunctions.py:1114: RuntimeWarning: All-NaN slice encountered
+  overwrite_input=overwrite_input)
+C:\ProgramData\Anaconda3\lib\site-packages\numpy\lib\nanfunctions.py:1390: RuntimeWarning: All-NaN slice encountered
+  overwrite_input, interpolation)
+C:\ProgramData\Anaconda3\lib\site-packages\numdifftools\limits.py:149: UserWarning: All-NaN slice encountered
+  warnings.warn(str(msg))
+[Candidate    165/549]: time elapsed            8.35 seconds.
+[Candidate    220/549]: time elapsed           11.37 seconds.
+[Candidate    275/549]: time elapsed           14.27 seconds.
+[Candidate    330/549]: time elapsed           17.19 seconds.
+[Candidate    385/549]: time elapsed           20.31 seconds.
+C:\ProgramData\Anaconda3\lib\site-packages\scipy\optimize\minpack.py:175: RuntimeWarning: The iteration is not making good progress, as measured by the
+  improvement from the last five Jacobian evaluations.
+  warnings.warn(msg, RuntimeWarning)
+[Candidate    440/549]: time elapsed           23.49 seconds.
+[Candidate    495/549]: time elapsed           26.69 seconds.
+[Candidate    549/549]: time elapsed           29.90 seconds.
+----------------------------------------------------------------------------------------------------
+====================================================================================================
+Initialization complete: designer ready.
+----------------------------------------------------------------------------------------------------
+Number of model parameters              : 3
+Number of candidates                    : 148
+Number of responses                     : 2
+Number of measured responses            : 2
+Number of time-invariant controls       : 3
+====================================================================================================
+---------------------------------------[Sensitivity Analysis]---------------------------------------
+Use Finite Difference                   : True
+Richardson Extrapolation Steps          : 5
+----------------------------------------------------------------------------------------------------
+[Candidate     15/148]: time elapsed            0.77 seconds.
+[Candidate     30/148]: time elapsed            1.59 seconds.
+[Candidate     45/148]: time elapsed            2.42 seconds.
+[Candidate     60/148]: time elapsed            3.29 seconds.
+[Candidate     75/148]: time elapsed            4.16 seconds.
+[Candidate     90/148]: time elapsed            5.01 seconds.
+[Candidate    105/148]: time elapsed            5.88 seconds.
+[Candidate    120/148]: time elapsed            6.75 seconds.
+[Candidate    135/148]: time elapsed            7.65 seconds.
+[Candidate    148/148]: time elapsed            8.56 seconds.
+----------------------------------------------------------------------------------------------------
+C:\ProgramData\Anaconda3\lib\site-packages\numpy\linalg\linalg.py:2098: RuntimeWarning: invalid value encountered in slogdet
+  sign, logdet = _umath_linalg.slogdet(a, signature=signature)
+ This problem is unconstrained.
+RUNNING THE L-BFGS-B CODE
+
+           * * *
+
+Machine precision = 2.220D-16
+ N =          549     M =           10
+
+At X0         0 variables are exactly at the bounds
+
+At iterate    0    f=  3.62860D+02    |proj g|=  1.53976D+03
+
+At iterate    5    f=  9.47907D+01    |proj g|=  1.50437D+01
+
+At iterate   10    f=  7.07691D+01    |proj g|=  2.83558D+00
+
+At iterate   15    f=  6.72360D+01    |proj g|=  6.54907D-01
+
+At iterate   20    f=  6.67363D+01    |proj g|=  3.05207D-01
+
+At iterate   25    f=  6.66463D+01    |proj g|=  1.02526D-01
+
+At iterate   30    f=  6.66438D+01    |proj g|=  1.09011D-02
+
+At iterate   35    f=  6.66437D+01    |proj g|=  1.11555D-03
+
+           * * *
+
+Tit   = total number of iterations
+Tnf   = total number of function evaluations
+Tnint = total number of segments explored during Cauchy searches
+Skip  = number of BFGS updates skipped
+Nact  = number of active bounds at final generalized Cauchy point
+Projg = norm of the final projected gradient
+F     = final function value
+
+           * * *
+
+   N    Tit     Tnf  Tnint  Skip  Nact     Projg        F
+  549     39     42      1     0     0   2.075D-04   6.664D+01
+  F =   66.643685082328801
+
+CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH
+
+######################################## Optimal Candidates ########################################
+Obtained on                             : 2022-05-13 12:36:36.267301
+Criterion                               : vdi_criterion
+Criterion Value                         : 66.6436850823288
+Pseudo-bayesian                         : False
+CVaR Problem                            : False
+Dynamic                                 : False
+Time-invariant Controls                 : True
+Time-varying Controls                   : False
+Number of Candidates                    : 549
+Number of Optimal Candidates            : 2
+Information Matrix Regularized          : False
+Minimum Effort Threshold                : 0.0001
+-------------------------------------------[Candidate 94]-------------------------------------------
+                             Recommended Effort: 17.92% of experiments
+Time-invariant Controls:
+[ 12. 400.]
+------------------------------------------[Candidate 546]-------------------------------------------
+                             Recommended Effort: 82.08% of experiments
+Time-invariant Controls:
+[  30. 1300.]
+####################################################################################################
+
+Process finished with exit code 0

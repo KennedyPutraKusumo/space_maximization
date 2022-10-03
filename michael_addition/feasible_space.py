@@ -16,9 +16,16 @@ if __name__ == '__main__':
     R_grid = R_grid.flatten()
     tau_grid = tau_grid.flatten()
 
+    mp = {
+        1: 49.7796,
+        2: 8.9316,
+        3: 1.3177,
+        4: 0.3109,
+        5: 3.8781,
+    }
     cqa_list = []
     for R, tau in zip(R_grid, tau_grid):
-        cqa, infodict, ier, mesg = simulate_cqa(d=[R, tau], full_output=True)
+        cqa, infodict, ier, mesg = simulate_cqa(d=[R, tau], p=mp, full_output=True)
         if ier != 1:
             print(f"Fsolve failed at R: {R:.10E} and tau: {tau:.10E}")
             cqa_list.append(np.full_like(cqa, fill_value=np.nan))
@@ -26,7 +33,8 @@ if __name__ == '__main__':
             cqa_list.append(cqa)
     cqa_list = np.array(cqa_list)
 
-    fig = plt.figure(figsize=(13, 5))
+    # fig = plt.figure(figsize=(13, 5))
+    fig = plt.figure(figsize=(8, 3))
     axes1 = fig.add_subplot(121)
     axes2 = fig.add_subplot(122)
     cmap = np.linspace(0, 1, R_grid.shape[0])

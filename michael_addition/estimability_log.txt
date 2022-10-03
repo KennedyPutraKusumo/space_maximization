@@ -1,0 +1,29 @@
+C:\ProgramData\Anaconda3\pythonw.exe C:/Users/kenne/Documents/GitHub/pydex/bracketing/estimability.py
+====================================================================================================
+Initialization complete: designer ready.
+----------------------------------------------------------------------------------------------------
+Number of model parameters              : 5
+Number of candidates                    : 121
+Number of responses                     : 2
+Number of measured responses            : 2
+Number of time-invariant controls       : 2
+====================================================================================================
+---------------------------------------[Sensitivity Analysis]---------------------------------------
+Use Finite Difference                   : True
+Richardson Extrapolation Steps          : 5
+----------------------------------------------------------------------------------------------------
+[Candidate     13/121]: time elapsed            0.95 seconds.
+[Candidate     26/121]: time elapsed            1.98 seconds.
+[Candidate     39/121]: time elapsed            3.37 seconds.
+[Candidate     52/121]: time elapsed            4.66 seconds.
+[Candidate     65/121]: time elapsed            5.93 seconds.
+[Candidate     78/121]: time elapsed            7.11 seconds.
+[Candidate     91/121]: time elapsed            8.38 seconds.
+[Candidate    104/121]: time elapsed            9.65 seconds.
+[Candidate    117/121]: time elapsed           10.88 seconds.
+[Candidate    121/121]: time elapsed           11.30 seconds.
+----------------------------------------------------------------------------------------------------
+Identified estimable parameters are: [3, 2, 4]
+Degree of Estimability: [697.2,   4.7,   1.8]
+
+Process finished with exit code 0

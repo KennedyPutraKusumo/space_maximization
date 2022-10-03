@@ -1,0 +1,134 @@
+C:\ProgramData\Anaconda3\pythonw.exe C:/Users/kenne/Documents/GitHub/space_maximization/michael_addition/goal_oriented_michael_addition.py
+====================================================================================================
+Initialization complete: designer ready.
+----------------------------------------------------------------------------------------------------
+Number of model parameters              : 3
+Number of candidates                    : 121
+Number of responses                     : 2
+Number of measured responses            : 2
+Number of time-invariant controls       : 2
+====================================================================================================
+Note: scipy's optimizer l-bfgs-b requires unconstrained form.
+############################### Computing Optimal Experiment Design ################################
+Started on                              : 2022-05-05 00:52:02.000156
+Criterion                               : vdi_criterion
+Pseudo-bayesian                         : False
+Dynamic                                 : False
+Time-invariant Controls                 : True
+Time-varying Controls                   : False
+Number of Candidates                    : 121
+---------------------------------------[Sensitivity Analysis]---------------------------------------
+Use Finite Difference                   : True
+Richardson Extrapolation Steps          : 5
+----------------------------------------------------------------------------------------------------
+[Candidate     13/121]: time elapsed            0.72 seconds.
+[Candidate     26/121]: time elapsed            1.50 seconds.
+[Candidate     39/121]: time elapsed            2.20 seconds.
+[Candidate     52/121]: time elapsed            2.92 seconds.
+[Candidate     65/121]: time elapsed            3.66 seconds.
+C:\ProgramData\Anaconda3\lib\site-packages\scipy\optimize\minpack.py:175: RuntimeWarning: The iteration is not making good progress, as measured by the
+  improvement from the last ten iterations.
+  warnings.warn(msg, RuntimeWarning)
+[Candidate     78/121]: time elapsed            4.44 seconds.
+[Candidate     91/121]: time elapsed            5.16 seconds.
+[Candidate    104/121]: time elapsed            5.90 seconds.
+C:\ProgramData\Anaconda3\lib\site-packages\scipy\optimize\minpack.py:175: RuntimeWarning: The iteration is not making good progress, as measured by the
+  improvement from the last five Jacobian evaluations.
+  warnings.warn(msg, RuntimeWarning)
+[Candidate    117/121]: time elapsed            6.69 seconds.
+[Candidate    121/121]: time elapsed            7.01 seconds.
+----------------------------------------------------------------------------------------------------
+====================================================================================================
+Initialization complete: designer ready.
+----------------------------------------------------------------------------------------------------
+Number of model parameters              : 3
+Number of candidates                    : 64
+Number of responses                     : 2
+Number of measured responses            : 2
+Number of time-invariant controls       : 3
+====================================================================================================
+---------------------------------------[Sensitivity Analysis]---------------------------------------
+Use Finite Difference                   : True
+Richardson Extrapolation Steps          : 5
+----------------------------------------------------------------------------------------------------
+[Candidate       7/64]: time elapsed            0.36 seconds.
+[Candidate      14/64]: time elapsed            0.78 seconds.
+[Candidate      21/64]: time elapsed            1.23 seconds.
+[Candidate      28/64]: time elapsed            1.64 seconds.
+[Candidate      35/64]: time elapsed            2.03 seconds.
+[Candidate      42/64]: time elapsed            2.43 seconds.
+[Candidate      49/64]: time elapsed            2.82 seconds.
+[Candidate      56/64]: time elapsed            3.24 seconds.
+[Candidate      63/64]: time elapsed            3.73 seconds.
+[Candidate      64/64]: time elapsed            3.80 seconds.
+----------------------------------------------------------------------------------------------------
+ This problem is unconstrained.
+RUNNING THE L-BFGS-B CODE
+
+           * * *
+
+Machine precision = 2.220D-16
+ N =          121     M =           10
+
+At X0         0 variables are exactly at the bounds
+
+At iterate    0    f=  2.98632D+00    |proj g|=  1.07209D+03
+
+At iterate    5    f= -1.22478D+02    |proj g|=  1.84759D+01
+
+At iterate   10    f= -1.32751D+02    |proj g|=  2.06271D+00
+
+At iterate   15    f= -1.33399D+02    |proj g|=  8.27768D-01
+
+At iterate   20    f= -1.33602D+02    |proj g|=  2.49707D-01
+
+At iterate   25    f= -1.33693D+02    |proj g|=  1.08551D-01
+
+At iterate   30    f= -1.33719D+02    |proj g|=  7.40840D-02
+
+At iterate   35    f= -1.33720D+02    |proj g|=  6.94058D-03
+
+At iterate   40    f= -1.33720D+02    |proj g|=  1.65983D-03
+
+At iterate   45    f= -1.33720D+02    |proj g|=  4.48210D-03
+
+           * * *
+
+Tit   = total number of iterations
+Tnf   = total number of function evaluations
+Tnint = total number of segments explored during Cauchy searches
+Skip  = number of BFGS updates skipped
+Nact  = number of active bounds at final generalized Cauchy point
+Projg = norm of the final projected gradient
+F     = final function value
+
+           * * *
+
+   N    Tit     Tnf  Tnint  Skip  Nact     Projg        F
+  121     45     49      1     0     0   4.482D-03  -1.337D+02
+  F =  -133.71993991407172
+
+CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH
+
+######################################## Optimal Candidates ########################################
+Obtained on                             : 2022-05-03 01:32:50.308500
+Criterion                               : vdi_criterion
+Criterion Value                         : -133.71993991407172
+Pseudo-bayesian                         : False
+CVaR Problem                            : False
+Dynamic                                 : False
+Time-invariant Controls                 : True
+Time-varying Controls                   : False
+Number of Candidates                    : 121
+Number of Optimal Candidates            : 2
+Information Matrix Regularized          : False
+Minimum Effort Threshold                : 0.0001
+-------------------------------------------[Candidate 12]-------------------------------------------
+                             Recommended Effort: 26.05% of experiments
+Time-invariant Controls:
+[ 12. 400.]
+------------------------------------------[Candidate 111]-------------------------------------------
+                             Recommended Effort: 73.95% of experiments
+Time-invariant Controls:
+[ 30. 400.]
+####################################################################################################

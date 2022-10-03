@@ -2,9 +2,22 @@ from scipy.optimize import fsolve
 from matplotlib import pyplot as plt
 import numpy as np
 
-def model(x, d=None):
+def model(x, d=None, p=None, identifiable_only=False):
     if d is None:
         d = [10, 400]
+    if p is None:
+        k = {
+            1: 49.7796,
+            2: 8.9316,
+            3: 1.3177,
+            4: 0.3109,
+            5: 3.8781,
+        }
+    else:
+        k = p
+        if identifiable_only:
+            k[1] = 49.7796
+            k[2] = 8.9316
 
     R = d[0]
     tau = d[1]
@@ -82,14 +95,6 @@ def model(x, d=None):
         ("P", 5):  1,
     }
 
-    k = {
-        1: 49.7796,
-        2:  8.9316,
-        3:  1.3177,
-        4:  0.3109,
-        5:  3.8781,
-    }
-
     c_in = {
         "AH": 0.3955,
         "B": 0.3955 / R,
@@ -127,14 +132,14 @@ def jacobian(x, d=None):
 
     return jac
 
-def simulate_c(d, full_output=False):
+def simulate_c(d, p=None, full_output=False):
     R = d[0]
     tau = d[1]
 
     fsolve_out = fsolve(
         model,
         np.ones(7),
-        args=d,
+        args=(d, p),
         full_output=full_output,
     )
     if full_output:
@@ -143,11 +148,11 @@ def simulate_c(d, full_output=False):
     else:
         return fsolve_out
 
-def simulate_g(d, full_output=False):
+def simulate_g(d, full_output=False, p=None):
     R = d[0]
     tau = d[1]
 
-    fsolve_out = fsolve(model, np.ones(7), args=d, full_output=full_output)
+    fsolve_out = fsolve(model, np.ones(7), args=(d, p), full_output=full_output)
 
     if full_output:
         c, infodict, ier, mesg = fsolve_out
@@ -163,11 +168,14 @@ def simulate_g(d, full_output=False):
     else:
         return g
 
-def simulate_cqa(d, full_output=False):
+def simulate_cqa(d, full_output=False, p=None, identifiable_only=False):
     R = d[0]
     tau = d[1]
 
-    fsolve_out = fsolve(model, np.ones(7), args=d, full_output=full_output)
+    if p is not None:
+        fsolve_out = fsolve(model, np.ones(7), args=(d, p, identifiable_only), full_output=full_output)
+    else:
+        fsolve_out = fsolve(model, np.ones(7), args=(d, None, identifiable_only), full_output=full_output)
 
     if full_output:
         c, infodict, ier, mesg = fsolve_out
@@ -202,7 +210,44 @@ def multvar_sim_cqa(exp):
     return cqa_list
 
 
+def pydex_simulate(ti_controls, model_parameters, identifiable_only=False):
+    if identifiable_only:
+        mp = {
+            i + 3: param for i, param in enumerate(model_parameters)
+        }
+    else:
+        mp = {
+            i + 1: param for i, param in enumerate(model_parameters)
+        }
+    c = simulate_cqa(ti_controls, p=mp, identifiable_only=identifiable_only)
+    error = np.array([1e-1, 1e-3])
+
+    # cqa = simulate_g(ti_controls, p=mp)
+    # error = np.array([1e-2, 1e-6, 1e-3, 1e-4, 1e-4, 1e-4, 1e-2]) / 1000
+    if np.all(c / error < 10):
+        return c / error
+    else:
+        return np.full_like(c, np.nan)
+
+
+
+
+def ds_simulate(ti_controls, model_parameters):
+    mp = {
+        i+1: param for i, param in enumerate(model_parameters)
+    }
+    cqa = simulate_g(ti_controls, p=mp)
+    return cqa
+
+
 if __name__ == '__main__':
     d = np.array([10.948678713150818, 1075.7103186259467])
-    cqa = simulate_cqa(d)
-    print(cqa)
+    mp = [
+        49.7796,
+        8.9316,
+        1.3177,
+        0.3109,
+        3.8781,
+    ]
+    c = pydex_simulate(d, mp)
+    print(c)
