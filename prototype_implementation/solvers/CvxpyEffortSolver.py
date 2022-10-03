@@ -11,13 +11,14 @@ class CvxpyEffortSolver(EffortSolver):
         self.criterion = criterion()
         self.n_runs = n_runs
         self.problem = None
+        self.optimizer = "CPLEX"
         super().__init__()
 
     def solve(self):
         self.criterion.points = self.points
         self.criterion.n_runs = self.n_runs
         self.problem = self.criterion.construct_cxvpy_problem()
-        self.problem.solve(verbose=True)
+        self.problem.solve(solver=self.optimizer, verbose=True)
 
 
 if __name__ == '__main__':
@@ -41,9 +42,11 @@ if __name__ == '__main__':
         n_runs=n_centroids,
     )
     solver1.solve()
+    print(solver1.problem)
     solver2 = CvxpyEffortSolver(
         points=Y,
         criterion=MaximalSpread,
         n_runs=n_centroids,
     )
     solver2.solve()
+    print(solver2.problem)
