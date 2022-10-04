@@ -7,6 +7,7 @@ import cvxpy as cp
 class MaximalCovering(DiscreteBasalCriterion):
     def __init__(self):
         super().__init__()
+        self.name = "Maximal Covering"
 
     def construct_cxvpy_problem(self):
         normalizer = Normalizer(self.points)

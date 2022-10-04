@@ -5,6 +5,7 @@ from abc import ABC, abstractmethod
 # type
 class CriterionType(ABC):
     def __init__(self):
+        self.name = None
         self.criterion_value = None
         return
 

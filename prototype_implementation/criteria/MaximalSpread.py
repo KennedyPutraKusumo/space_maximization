@@ -7,6 +7,7 @@ import cvxpy as cp
 class MaximalSpread(DiscreteBasalCriterion):
     def __init__(self):
         super().__init__()
+        self.name = "Maximal Spread"
 
     def construct_cxvpy_problem(self):
         normalizer = Normalizer(self.points)

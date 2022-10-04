@@ -236,6 +236,7 @@ if __name__ == '__main__':
 
         fig.tight_layout()
         fig.savefig("ma_maximal_output.png", dpi=360)
+
     if show_factorial_performance:
         figb.savefig("ma_factorial.png", dpi=360)
     plt.show()
