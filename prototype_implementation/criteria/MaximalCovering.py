@@ -1,10 +1,10 @@
-from prototype_implementation.criteria.BasalCriterion import DiscreteBasalCriterion
+from prototype_implementation.criteria.Criterion import DiscreteCriterion
 from prototype_implementation.utilities.PointNormalizer import Normalizer
 from scipy.spatial.distance import cdist
 import cvxpy as cp
 
 
-class MaximalCovering(DiscreteBasalCriterion):
+class MaximalCovering(DiscreteCriterion):
     def __init__(self):
         super().__init__()
         self.name = "Maximal Covering"

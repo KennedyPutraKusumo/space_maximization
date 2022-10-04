@@ -1,6 +1,6 @@
-from prototype_implementation.criteria.BasalCriterion import BasalCriterion
+from prototype_implementation.criteria.Criterion import Criterion
 
 
-class ConvexHullVolume(BasalCriterion):
+class ConvexHullVolume(Criterion):
     def __init__(self):
         super().__init__()

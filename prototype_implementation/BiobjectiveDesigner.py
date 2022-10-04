@@ -2,7 +2,7 @@ from abc import ABC, abstractmethod
 import numpy as np
 
 
-class BiObjectiveSolver(ABC):
+class BiObjectiveDesigner(ABC):
     def __init__(self):
         self.single_objective_solver = None
         pass
@@ -12,7 +12,7 @@ class BiObjectiveSolver(ABC):
         pass
 
 
-class EpsilonConstraintSolver(BiObjectiveSolver, ABC):
+class EpsilonConstraintSolver(BiObjectiveDesigner, ABC):
     def __init__(self, bound, n_epsilon):
         super().__init__()
         self.bound = bound
