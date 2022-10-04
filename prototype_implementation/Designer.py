@@ -106,17 +106,21 @@ class Designer:
                 verbose=verbose,
             )
             self.solver.solve()
+            if isinstance(self.criterion(), MaximalCovering):
+                self.y = self.solver.problem.variables()[2].value
+            elif isinstance(self.criterion(), MaximalSpread):
+                self.y = self.solver.problem.variables()[1].value
         else:
             print(f"[WARNING]: unrecognized solution package: '{self.package}', reverting "
                   f"to the default: 'cvxpy'.")
             self.package = "cvxpy"
             self._effort_design_solve()
 
-    def plot_results(self, title=None, in_labels=None, out_labels=None):
-        if isinstance(self.criterion(), MaximalCovering):
-            self.y = self.solver.problem.variables()[2].value
-        elif isinstance(self.criterion(), MaximalSpread):
-            self.y = self.solver.problem.variables()[1].value
+    def plot_results(self, title=None, in_labels=None, out_labels=None, marker_labels=None):
+        if self.pd_df is None:
+            self.get_optimal_candidates()
+        if marker_labels is None:
+            marker_labels = self.pd_df.index
         self.plotter = BispacePlotter(
             self.candidate_experiments[0],
             self.candidate_experiments[1],
@@ -124,6 +128,7 @@ class Designer:
             title=title + f". {self.criterion().name} Design, Objective: {self.solver.problem.objective.value:.3e} Number of Runs: {self.n_run}, Number of Candidates: {self.candidate_experiments[0].shape[0]}",
             in_labels=in_labels,
             out_labels=out_labels,
+            marker_labels=marker_labels.values + 1,
         )
         self.plotter.plot()
 
@@ -131,6 +136,8 @@ class Designer:
         self.plotter.show_plots()
 
     def get_optimal_candidates(self):
+        if self.y is None:
+            raise SyntaxError(f"[WARNING]: please solve an experimental design problem first!")
         data = []
         cols = []
         for i in range(self.indim):
@@ -149,6 +156,8 @@ class Designer:
         self.opt_candidates = self.pd_df.query("Repetitions >= 1")
 
     def print_results(self):
+        if self.pd_df is None:
+            self.get_optimal_candidates()
         print(f"[{self.criterion().name} Design]".center(100, "="))
         print(f"{'Obtained on':<40}: {datetime.datetime.utcfromtimestamp(designer1.end_time)}")
         print(f"{'Criterion Value':<40}: {self.solver.problem.objective.value}")
@@ -199,6 +208,8 @@ if __name__ == '__main__':
             designer1.design_experiments(
                 method="effort",
             )
+            designer1.get_optimal_candidates()
+            designer1.print_results()
             designer1.plot_results(
                 title="Michael Addition",
                 in_labels=[
@@ -210,6 +221,4 @@ if __name__ == '__main__':
                     "Concentration of AC- (mol/L)",
                 ],
             )
-            designer1.get_optimal_candidates()
-            designer1.print_results()
     designer1.show_plots()

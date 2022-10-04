@@ -4,7 +4,7 @@ import numpy as np
 
 
 class BispacePlotter:
-    def __init__(self, X, Y, y, in_labels=None, out_labels=None, title=None):
+    def __init__(self, X, Y, y, in_labels=None, out_labels=None, title=None, marker_labels=None):
         self.X = X
         self.Y = Y
         self.y = y
@@ -15,11 +15,14 @@ class BispacePlotter:
         # default options
         self.figsize = (15, 8)
         self.tight_layout = True
-        self.cmap = cm.gist_rainbow
+        self.cmap = cm.viridis
         self.colour_scale = np.linspace(0, 1, X.shape[0])
-        self.markersize = None
-        self.markersize_selected = 500
+        self.markersize = 300
+        self.markersize_selected = 700
         self.title = title
+        self.marker_labels = marker_labels
+        self.fontsize = "small"
+        self.fontweight = "bold"
 
     def plot(self):
         if self.ndim == 2:
@@ -74,6 +77,28 @@ class BispacePlotter:
             axes2.set_ylabel(self.out_labels[1])
         if self.tight_layout:
             fig.tight_layout()
+        if self.marker_labels is not None:
+            for i, ml in enumerate(self.marker_labels):
+                axes1.text(
+                    s=ml,
+                    x=self.X[i, 0],
+                    y=self.X[i, 1],
+                    verticalalignment="center_baseline",
+                    horizontalalignment="center",
+                    c="white",
+                    fontsize=self.fontsize,
+                    fontweight=self.fontweight,
+                )
+                axes2.text(
+                    s=ml,
+                    x=self.Y[i, 0],
+                    y=self.Y[i, 1],
+                    verticalalignment="center_baseline",
+                    horizontalalignment="center",
+                    c="white",
+                    fontsize=self.fontsize,
+                    fontweight=self.fontweight,
+                )
         return fig
 
     @staticmethod
