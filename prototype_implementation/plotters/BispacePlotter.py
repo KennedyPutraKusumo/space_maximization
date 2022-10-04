@@ -18,11 +18,12 @@ class BispacePlotter:
         self.cmap = cm.viridis
         self.colour_scale = np.linspace(0, 1, X.shape[0])
         self.markersize = 300
-        self.markersize_selected = 700
+        self.markersize_selected = 800
         self.title = title
         self.marker_labels = marker_labels
         self.fontsize = "small"
         self.fontweight = "bold"
+        self.linewidth = 2
 
     def plot(self):
         if self.ndim == 2:
@@ -46,28 +47,12 @@ class BispacePlotter:
             c=self.cmap(self.colour_scale),
             s=self.markersize,
         )
-        axes1.scatter(
-            self.X[:, 0],
-            self.X[:, 1],
-            marker="H",
-            edgecolor="tab:red",
-            facecolor="none",
-            s=self.markersize_selected * self.y,
-        )
         axes2 = fig.add_subplot(122)
         axes2.scatter(
             self.Y[:, 0],
             self.Y[:, 1],
             c=self.cmap(self.colour_scale),
             s=self.markersize,
-        )
-        axes2.scatter(
-            self.Y[:, 0],
-            self.Y[:, 1],
-            marker="H",
-            edgecolor="tab:red",
-            facecolor="none",
-            s=self.markersize_selected * self.y,
         )
         if self.in_labels:
             axes1.set_xlabel(self.in_labels[0])
@@ -99,6 +84,24 @@ class BispacePlotter:
                     fontsize=self.fontsize,
                     fontweight=self.fontweight,
                 )
+        axes1.scatter(
+            self.X[:, 0],
+            self.X[:, 1],
+            marker="H",
+            edgecolor="tab:red",
+            facecolor="none",
+            s=self.markersize_selected * self.y,
+            lw=self.linewidth,
+        )
+        axes2.scatter(
+            self.Y[:, 0],
+            self.Y[:, 1],
+            marker="H",
+            edgecolor="tab:red",
+            facecolor="none",
+            s=self.markersize_selected * self.y,
+            lw=self.linewidth,
+        )
         return fig
 
     @staticmethod

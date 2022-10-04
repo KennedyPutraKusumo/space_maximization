@@ -161,6 +161,8 @@ class Designer:
         print(f"[{self.criterion().name} Design]".center(100, "="))
         print(f"{'Obtained on':<40}: {datetime.datetime.utcfromtimestamp(designer1.end_time)}")
         print(f"{'Criterion Value':<40}: {self.solver.problem.objective.value}")
+        print(f"{'Package':<40}: {self.package}")
+        print(f"{'Optimizer':<40}: {self.optimizer}")
         print(f"{'Number of candidate points':<40}: {self.npoints}")
         print(f"{'Number of input dimensions':<40}: {self.indim}")
         print(f"{'Number of output dimensions':<40}: {self.outdim}")
@@ -182,7 +184,7 @@ if __name__ == '__main__':
     from mip_formulations.ma_maximal_spread import multvar_sim_cqa
     import numpy as np
 
-    grid_reso = 5j
+    grid_reso = 11j
     x1, x2 = np.mgrid[10:30:grid_reso, 400:1400:grid_reso]
     x1 = x1.flatten()
     x2 = x2.flatten()
