@@ -75,7 +75,7 @@ class BiObjectiveDesigner:
                 f"has been declared correctly, terminating."
             )
 
-    def solve(self, plot=True):
+    def design_experiments(self, plot=True, print_results=True):
         if self.verbosity >= 1:
             print(f"".center(100, "+"))
             print(
@@ -88,10 +88,13 @@ class BiObjectiveDesigner:
             print(f"Designer 1 is running...")
             print(f"".center(100, "+"))
             y0, obj0 = self.designers[0].design_experiments()
+            if print_results:
+                self.designers[0].print_results()
             print(f"Designer 2 is running...")
             print(f"".center(100, "+"))
             y1, obj1 = self.designers[1].design_experiments()
-
+            if print_results:
+                self.designers[1].print_results()
             obj01 = self.designers[1].solver.criterion.evaluate_criterion(y0)
             obj10 = self.designers[0].solver.criterion.evaluate_criterion(y1)
             if self.verbosity >= 1:
@@ -222,6 +225,8 @@ class BiObjectiveDesigner:
                 temp_prob.solve(
                     verbose=True,
                 )
+                if print_results:
+                    self.print_results()
                 par_obj1 = temp_prob.objective.value
                 assert np.array_equal(y_ids[0].value, y_ids[1].value), "y from designer 1 and 2 don't match!"
                 par_y = y_ids[1]
@@ -280,13 +285,18 @@ class BiObjectiveDesigner:
     def show_plots():
         plt.show()
 
+    def print_results(self):
+        for designer in self.designers:
+            designer.print_results()
+
+
 if __name__ == '__main__':
     from mip_formulations.ma_maximal_spread import multvar_sim_cqa
     from criteria.MaximalSpread import MaximalSpread
     from criteria.MaximalCovering import MaximalCovering
     import numpy as np
 
-    grid_reso = 7j
+    grid_reso = 11j
     x1, x2 = np.mgrid[10:30:grid_reso, 400:1400:grid_reso]
     x1 = x1.flatten()
     x2 = x2.flatten()
@@ -295,13 +305,12 @@ if __name__ == '__main__':
 
     designer1 = EffortDesigner()
     designer1.package = "cvxpy"
-    designer1.optimizer = "CPLEX"
+    designer1.optimizer = "GUROBI"
     designer1.criterion = MaximalSpread
     # designer1.criterion = MaximalCovering
     designer1.space_of_interest = "input"
 
     designer2 = EffortDesigner()
-
     designer2.package = "cvxpy"
     designer2.optimizer = "CPLEX"
     designer2.criterion = MaximalSpread
@@ -321,8 +330,8 @@ if __name__ == '__main__':
         "Concentration of AC- (mol/L)",
     ]
     biobj_designer1.n_runs = 4
-    biobj_designer1.n_epsilon_points = 5
+    biobj_designer1.n_epsilon_points = 10
     biobj_designer1.initialize(verbose=2)
-    biobj_designer1.solve()
+    biobj_designer1.design_experiments()
     biobj_designer1.plot_pareto_frontier()
     biobj_designer1.show_plots()

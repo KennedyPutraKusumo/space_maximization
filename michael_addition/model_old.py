@@ -141,7 +141,7 @@ if True:
                 # print('p_count' + str(p_count))
                 m.k['r1'].fix(p[n_p, 0])
                 m.k['r2'].fix(p[n_p, 1])
-                results = solver.solve(m)
+                results = solver.design_experiments(m)
                 evaluations += 1
                 g1 = po.value(m.g_1)
                 g2 = po.value(m.g_2)
