@@ -60,7 +60,6 @@ if __name__ == '__main__':
     model.V["Reactor 1"].fix(0.729)
     model.V["Reactor 2"].fix(2.000)
     model.q.fix(0.025)
-    model.C_in["A", ]
-    
+
     solver = po.SolverFactory("ipopt")
     solver.solve(model)

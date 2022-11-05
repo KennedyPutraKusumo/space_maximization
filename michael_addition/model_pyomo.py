@@ -112,7 +112,7 @@ def simulate(d):
     model.c_in["P"].fix(0)
 
     solver = po.SolverFactory("ipopt")
-    solver.solve(model)
+    solver.design_experiments(model)
 
     return np.array([
         -po.value(model.c["C"] + model.c["AC-"] - 0.1 * model.c_in["C"]),

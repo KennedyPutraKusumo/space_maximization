@@ -8,7 +8,7 @@ import pickle
 
 
 def output_coverage(exp, full_output=False, normalize_cqa=False):
-    if exp.ndim == 1:
+    if exp.indim == 1:
         exp = exp.reshape(int(exp.shape[0]/2), 2)
 
     cqa_list = multvar_sim_cqa(exp)

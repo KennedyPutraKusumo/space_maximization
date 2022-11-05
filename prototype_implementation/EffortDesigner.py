@@ -1,7 +1,7 @@
-from solvers.CvxpyEffortSolver import CvxpyEffortSolver
-from plotters.BispacePlotter import BispacePlotter
-from criteria.MaximalCovering import MaximalCovering
-from criteria.MaximalSpread import MaximalSpread
+from prototype_implementation.solvers.CvxpyEffortSolver import CvxpyEffortSolver
+from prototype_implementation.plotters.BispacePlotter import BispacePlotter
+from prototype_implementation.criteria.MaximalCovering import MaximalCovering
+from prototype_implementation.criteria.MaximalSpread import MaximalSpread
 from time import time
 import datetime
 import numpy as np
@@ -74,14 +74,17 @@ class EffortDesigner:
         if self.space_of_interest is None:
             print(f"[REMINDER]: the space of interest is still not declared")
             self.status += 1
-        in_shape = self.input_points.shape
-        out_shape = self.output_points.shape
-        assert in_shape[0] == out_shape[0], \
-            f"Number of points in the input points ({in_shape[0]}) is different from " \
-            f"the number of points in the output points ({out_shape}), please check " \
-            f"the provided input and output points."
-        self.npoints, self.indim = in_shape
-        self.npoints, self.outdim = out_shape
+        if "input" in self.space_of_interest:
+            in_shape = self.input_points.shape
+            self.npoints, self.indim = in_shape
+        if "output" in self.space_of_interest:
+            out_shape = self.output_points.shape
+            self.npoints, self.outdim = out_shape
+        if "input" in self.space_of_interest and "output" in self.space_of_interest:
+            assert in_shape[0] == out_shape[0], \
+                f"Number of points in the input points ({in_shape[0]}) is different from " \
+                f"the number of points in the output points ({out_shape}), please check " \
+                f"the provided input and output points."
         self.verbosity = verbose
         self.start_time = time()
         if self.status <= 0:
@@ -94,8 +97,10 @@ class EffortDesigner:
                     print(f"{'Number of runs':<40}: {self.n_runs}")
                     print(f"{'Design Criterion':<40}: {self.criterion().name}")
                     print(f"{'Space of interest':<40}: {self.space_of_interest}")
-                    print(f"{'Number of input dimension':<40}: {self.indim} ")
-                    print(f"{'Number of output dimension':<40}: {self.outdim} ")
+                    if "input" in self.space_of_interest:
+                        print(f"{'Number of input dimension':<40}: {self.indim} ")
+                    if "output" in self.space_of_interest:
+                        print(f"{'Number of output dimension':<40}: {self.outdim} ")
                     print(f"{'Package':<40}: {self.package}")
                     print(f"{'Optimizer':<40}: {self.optimizer}")
                 print(f"".center(100, "="))
@@ -150,9 +155,9 @@ class EffortDesigner:
             )
             self.solver.optimizer = self.optimizer
             self.solver.solve()
-            if isinstance(self.criterion(), MaximalCovering):
+            if self.criterion.__name__ == "MaximalCovering":
                 self.y = self.solver.problem.variables()[2].value
-            elif isinstance(self.criterion(), MaximalSpread):
+            elif self.criterion.__name__ == "MaximalSpread":
                 self.y = self.solver.problem.variables()[1].value
             self.objective_value = self.solver.problem.objective.value
         else:
@@ -189,12 +194,14 @@ class EffortDesigner:
             raise SyntaxError(f"[WARNING]: please solve an experimental design problem first!")
         data = []
         cols = []
-        for i in range(self.indim):
-            data.append(self.input_points[:, i])
-            cols.append(f"Input {i+1}")
-        for j in range(self.outdim):
-            data.append(self.output_points[:, j])
-            cols.append(f"Output {j+1}")
+        if "input" in self.space_of_interest:
+            for i in range(self.indim):
+                data.append(self.input_points[:, i])
+                cols.append(f"Input {i+1}")
+        if "output" in self.space_of_interest:
+            for j in range(self.outdim):
+                data.append(self.output_points[:, j])
+                cols.append(f"Output {j+1}")
         data.append(self.y)
         cols.append("Repetitions")
         data = np.array(data).T
@@ -214,8 +221,10 @@ class EffortDesigner:
         print(f"{'Package':<40}: {self.package}")
         print(f"{'Optimizer':<40}: {self.optimizer}")
         print(f"{'Number of candidate points':<40}: {self.npoints}")
-        print(f"{'Number of input dimensions':<40}: {self.indim}")
-        print(f"{'Number of output dimensions':<40}: {self.outdim}")
+        if "input" in self.space_of_interest:
+            print(f"{'Number of input dimensions':<40}: {self.indim}")
+        if "output" in self.space_of_interest:
+            print(f"{'Number of output dimensions':<40}: {self.outdim}")
         print(f"{'Number of runs':<40}: {self.n_runs}")
         for i, (j, candidate) in enumerate(self.opt_candidates.iterrows()):
             print(f"[Candidate {j+1} - (Run {i+1}/{self.n_runs} Runs)]".center(100, "-"))

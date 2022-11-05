@@ -1,5 +1,6 @@
 from matplotlib import pyplot as plt
 from matplotlib import cm
+from mpl_toolkits.mplot3d import Axes3D
 import numpy as np
 
 
@@ -8,7 +9,8 @@ class BispacePlotter:
         self.X = X
         self.Y = Y
         self.y = y
-        self.npoints, self.ndim = self.X.shape
+        self.npoints, self.indim = self.X.shape
+        self.npoints, self.outdim = self.Y.shape
         # optional plotting attribute
         self.in_labels = in_labels
         self.out_labels = out_labels
@@ -26,83 +28,109 @@ class BispacePlotter:
         self.linewidth = 2
 
     def plot(self):
-        if self.ndim == 2:
-            fig = self.plot2d()
-            return fig
-        else:
-            print(
-                f"[WARNING]: plotting for {self.ndim} number of dimensional points not"
-                f"implemented yet, skipping command."
-            )
-            pass
-
-    def plot2d(self):
         fig = plt.figure(figsize=self.figsize)
         if self.title:
             fig.suptitle(self.title)
-        axes1 = fig.add_subplot(121)
-        axes1.scatter(
-            self.X[:, 0],
-            self.X[:, 1],
-            c=self.cmap(self.colour_scale),
-            s=self.markersize,
-        )
-        axes2 = fig.add_subplot(122)
-        axes2.scatter(
-            self.Y[:, 0],
-            self.Y[:, 1],
-            c=self.cmap(self.colour_scale),
-            s=self.markersize,
-        )
-        if self.in_labels:
-            axes1.set_xlabel(self.in_labels[0])
-            axes1.set_ylabel(self.in_labels[1])
-        if self.out_labels:
-            axes2.set_xlabel(self.out_labels[0])
-            axes2.set_ylabel(self.out_labels[1])
+        if self.indim == 2:
+            axes1 = fig.add_subplot(121)
+            self.plot2d(axes1, self.X, self.in_labels)
+        elif self.indim == 3:
+            axes1 = fig.add_subplot(121, projection="3d")
+            self.plot3d(axes1, self.X, self.in_labels)
+        else:
+            print(
+                f"[WARNING]: plotting for {self.indim} number of dimensional points not "
+                f"implemented yet, skipping command."
+            )
+            pass
+        if self.outdim == 2:
+            axes2 = fig.add_subplot(122)
+            self.plot2d(axes2, self.Y, self.out_labels)
+        elif self.outdim == 3:
+            axes2 = fig.add_subplot(122, projection="3d")
+            self.plot3d(axes2, self.Y, self.out_labels)
+        else:
+            print(
+                f"[WARNING]: plotting for {self.indim} number of dimensional points not "
+                f"implemented yet, skipping command."
+            )
+            pass
         if self.tight_layout:
             fig.tight_layout()
+        return fig
+
+    def plot2d(self, axes, points, labels=None):
+        axes.scatter(
+            points[:, 0],
+            points[:, 1],
+            c=self.cmap(self.colour_scale),
+            s=self.markersize,
+        )
+        if labels is not None:
+            axes.set_xlabel(labels[0])
+            axes.set_ylabel(labels[1])
+
         if self.marker_labels is not None:
             for i, ml in enumerate(self.marker_labels):
-                axes1.text(
+                axes.text(
                     s=ml,
-                    x=self.X[i, 0],
-                    y=self.X[i, 1],
+                    x=points[i, 0],
+                    y=points[i, 1],
                     verticalalignment="center_baseline",
                     horizontalalignment="center",
                     c="white",
                     fontsize=self.fontsize,
                     fontweight=self.fontweight,
                 )
-                axes2.text(
+        axes.scatter(
+            points[:, 0],
+            points[:, 1],
+            marker="H",
+            edgecolor="tab:red",
+            facecolor="none",
+            s=self.markersize_selected * self.y,
+            lw=self.linewidth,
+        )
+        return axes
+
+    def plot3d(self, axes, points, labels):
+        axes.scatter(
+            points[:, 0],
+            points[:, 1],
+            points[:, 2],
+            c=self.cmap(self.colour_scale),
+            s=self.markersize,
+        )
+        if labels is not None:
+            axes.set_xlabel(labels[0])
+            axes.set_ylabel(labels[1])
+            axes.set_zlabel(labels[2])
+
+        if self.marker_labels is not None:
+            for i, ml in enumerate(self.marker_labels):
+                axes.text(
                     s=ml,
-                    x=self.Y[i, 0],
-                    y=self.Y[i, 1],
+                    x=points[i, 0],
+                    y=points[i, 1],
+                    z=points[i, 2],
                     verticalalignment="center_baseline",
                     horizontalalignment="center",
                     c="white",
                     fontsize=self.fontsize,
                     fontweight=self.fontweight,
+                    zdir=None,
                 )
-        axes1.scatter(
-            self.X[:, 0],
-            self.X[:, 1],
+        axes.scatter(
+            points[:, 0],
+            points[:, 1],
+            points[:, 2],
             marker="H",
             edgecolor="tab:red",
             facecolor="none",
             s=self.markersize_selected * self.y,
             lw=self.linewidth,
         )
-        axes2.scatter(
-            self.Y[:, 0],
-            self.Y[:, 1],
-            marker="H",
-            edgecolor="tab:red",
-            facecolor="none",
-            s=self.markersize_selected * self.y,
-            lw=self.linewidth,
-        )
-        return fig
+        return axes
 
     @staticmethod
     def show_plots():

@@ -1,9 +1,16 @@
-from EffortDesigner import EffortDesigner
-from plotters.BispacePlotter import BispacePlotter
+from prototype_implementation.EffortDesigner import EffortDesigner
+from prototype_implementation.plotters.BispacePlotter import BispacePlotter
+from prototype_implementation.utilities.BiObjectiveWeaklyDominatedPointFilter import BiObjectiveWeaklyDominatedPointFilter
 from time import time
 from matplotlib import pyplot as plt
+from matplotlib import cm
+from prototype_implementation.Logger import Logger
+from datetime import datetime
+from os import path, makedirs, getcwd
 import cvxpy as cp
 import numpy as np
+import sys
+import __main__ as main
 
 
 class BiObjectiveDesigner:
@@ -34,6 +41,15 @@ class BiObjectiveDesigner:
 
         self.in_labels = None
         self.out_labels = None
+        self.result_dir = None
+        self.result_dir_daily = None
+
+        # saving options
+        self.dpi = 160
+
+    def force_new_result_dir(self):
+        self.result_dir = None
+        self.result_dir_daily = None
 
     def initialize(self, verbose=0):
         self.verbosity = verbose
@@ -66,7 +82,7 @@ class BiObjectiveDesigner:
                     designer.n_runs = self.n_runs
                     designer.input_points = self.input_points
                     designer.output_points = self.output_points
-                    designer.initialize(verbose=self.verbosity)
+                    designer.initialize(verbose=0)
             print(f"Individual single-objective designer are successfully initialized")
             print(f"".center(100, "+"))
         else:
@@ -75,7 +91,7 @@ class BiObjectiveDesigner:
                 f"has been declared correctly, terminating."
             )
 
-    def design_experiments(self, plot=True, print_results=True):
+    def design_experiments(self, plot=True, print_results=True, write=True, filter_weakly_dominated_points=False):
         if self.verbosity >= 1:
             print(f"".center(100, "+"))
             print(
@@ -137,7 +153,11 @@ class BiObjectiveDesigner:
                     out_labels=self.out_labels,
                     marker_labels=self.designers[0].pd_df.index.values + 1,
                 )
-                plotter.plot()
+                fig1 = plotter.plot()
+                if write:
+                    fn = f"extreme_point_1"
+                    fp = self._generate_result_path(fn, "png")
+                    fig1.savefig(fname=fp, dpi=self.dpi)
                 plotter = BispacePlotter(
                     self.designers[1].input_points,
                     self.designers[1].output_points,
@@ -147,7 +167,11 @@ class BiObjectiveDesigner:
                     out_labels=self.out_labels,
                     marker_labels=self.designers[0].pd_df.index.values + 1,
                 )
-                plotter.plot()
+                fig2 = plotter.plot()
+                if write:
+                    fn = f"extreme_point_2"
+                    fp = self._generate_result_path(fn, "png")
+                    fig2.savefig(fname=fp, dpi=self.dpi)
             # generating the epsilon constraints
             obj = [
                 [obj0, obj01],
@@ -250,7 +274,17 @@ class BiObjectiveDesigner:
                         out_labels=self.out_labels,
                         marker_labels=self.designers[0].pd_df.index.values + 1,
                     )
-                    plotter.plot()
+                    fig3 = plotter.plot()
+                    if write:
+                        fn = f"pareto_point_{k+1}_out_of_{self.n_epsilon_points}"
+                        fp = self._generate_result_path(fn, "png")
+                        fig3.savefig(fname=fp, dpi=self.dpi)
+            if filter_weakly_dominated_points:
+                filter1 = BiObjectiveWeaklyDominatedPointFilter()
+                filter1.points = self.pareto_points
+                filter1.sense = [designer.solver.problem.objective.NAME for designer in self.designers]
+                filter1.identify_weakly_dominated_points()
+                self.pareto_points = filter1.permeate
             print(f"".center(100, "+"))
             print(f"Completed bi-objective optimization for {self.n_epsilon_points} Pareto points after {time() - self.start_time:.2f} seconds")
             print(f"".center(100, "+"))
@@ -260,13 +294,31 @@ class BiObjectiveDesigner:
                 f"'epsilon-constraint'."
             )
 
-    def plot_pareto_frontier(self):
+    def plot_pareto_frontier(self, write=True):
         fig = plt.figure()
         axes = fig.add_subplot(111)
         axes.scatter(
             self.pareto_points[:, 0],
             self.pareto_points[:, 1],
+            c=cm.viridis(np.linspace(0, 1, self.pareto_points.shape[0])),
+            s=300,
         )
+        marker_labels = np.arange(
+            start=1,
+            stop=self.pareto_points.shape[0]+1,
+            step=1,
+        )
+        for i, ml in enumerate(marker_labels):
+            axes.text(
+                s=ml,
+                x=self.pareto_points[i, 0],
+                y=self.pareto_points[i, 1],
+                verticalalignment="center_baseline",
+                horizontalalignment="center",
+                c="white",
+                fontsize="small",
+                fontweight="bold",
+            )
 
         def _annotate_sense(designer):
             if designer.solver.problem.objective.NAME == "maximize":
@@ -279,6 +331,10 @@ class BiObjectiveDesigner:
         axes.set_xlabel(f"{self.designers[0].solver.criterion.name} ({s0})")
         axes.set_ylabel(f"{self.designers[1].solver.criterion.name} ({s1})")
         fig.tight_layout()
+        if write:
+            fn = f"pareto_frontier_{self.n_epsilon_points}_paretos"
+            fp = self._generate_result_path(fn, "png")
+            fig.savefig(fname=fp, dpi=self.dpi)
         return fig
 
     @staticmethod
@@ -289,6 +345,41 @@ class BiObjectiveDesigner:
         for designer in self.designers:
             designer.print_results()
 
+    def start_logging(self):
+        fn = f"log"
+        fp = self._generate_result_path(fn, "txt")
+        sys.stdout = Logger(file_path=fp)
+
+    def stop_logging(self):
+        sys.stdout = sys.__stdout__
+
+    def _generate_result_path(self, name, extension, iteration=None):
+        self.create_result_dir()
+
+        while True:
+            now = datetime.now()
+            if self.result_dir is None:
+                self.result_dir = self.result_dir_daily + f"time_{now.hour:d}-{now.minute:d}-{now.second}/"
+                if not path.exists(self.result_dir):
+                    makedirs(self.result_dir)
+            fn = f"{name}.{extension}"
+            if iteration is not None:
+                fn = f"iter_{iteration:d}_" + fn
+            fp = self.result_dir + fn
+            return fp
+
+    def create_result_dir(self):
+        if self.result_dir_daily is None:
+            now = datetime.now()
+            self.result_dir_daily = getcwd() + "/"
+            self.result_dir_daily += path.splitext(path.basename(main.__file__))[0] + "_result/"
+            self.result_dir_daily += f'date_{now.year:d}-{now.month:d}-{now.day:d}/'
+            self.create_result_dir()
+        else:
+            if path.exists(self.result_dir_daily):
+                return
+            else:
+                makedirs(self.result_dir_daily)
 
 if __name__ == '__main__':
     from mip_formulations.ma_maximal_spread import multvar_sim_cqa
@@ -331,7 +422,9 @@ if __name__ == '__main__':
     ]
     biobj_designer1.n_runs = 4
     biobj_designer1.n_epsilon_points = 10
+    biobj_designer1.start_logging()
     biobj_designer1.initialize(verbose=2)
-    biobj_designer1.design_experiments()
-    biobj_designer1.plot_pareto_frontier()
+    biobj_designer1.design_experiments(plot=True, write=True, filter_weakly_dominated_points=False)
+    biobj_designer1.plot_pareto_frontier(write=True)
+    biobj_designer1.stop_logging()
     biobj_designer1.show_plots()

@@ -9,7 +9,7 @@ def input_orthogonality(exp, bounds=None):
             [10, 30],
             [400, 1400],
         ]).T
-    if exp.ndim == 1:
+    if exp.indim == 1:
         exp = exp.reshape(int(exp.shape[0]/2), 2)
     n_exp = exp.shape[0]
     n_dim = exp.shape[1]

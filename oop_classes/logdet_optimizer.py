@@ -74,3 +74,22 @@ if __name__ == '__main__':
     r, obj = opt1.optimize()
     print(obj)
     print(r)
+
+    from matplotlib import pyplot as plt
+
+    fig = plt.figure()
+    axes = fig.add_subplot(111)
+    axes.scatter(
+        x1,
+        x2,
+    )
+    axes.scatter(
+        x1,
+        x2,
+        s=1000 * r,
+        marker="H",
+        facecolor="none",
+        edgecolor="tab:red",
+    )
+    fig.tight_layout()
+    plt.show()
