@@ -4,7 +4,7 @@ import numpy as np
 
 
 class BispacePlotter:
-    def __init__(self, X, Y, y, in_xlim=None, in_ylim=None, out_xlim=None, out_ylim=None, in_labels=None, out_labels=None, title=None, marker_labels=None):
+    def __init__(self, X, Y, y, in_labels=None, out_labels=None, title=None, marker_labels=None):
         self.X = X
         self.Y = Y
         self.y = y
