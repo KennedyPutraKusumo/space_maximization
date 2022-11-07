@@ -4,7 +4,7 @@ import numpy as np
 
 
 class BispacePlotter:
-    def __init__(self, X, Y, y, in_labels=None, out_labels=None, title=None, marker_labels=None):
+    def __init__(self, X, Y, y, in_xlim=None, in_ylim=None, out_xlim=None, out_ylim=None, in_labels=None, out_labels=None, title=None, marker_labels=None):
         self.X = X
         self.Y = Y
         self.y = y
@@ -12,6 +12,10 @@ class BispacePlotter:
         # optional plotting attribute
         self.in_labels = in_labels
         self.out_labels = out_labels
+        self.in_xlim = [np.min(X, axis=0)[0], np.max(X, axis=0)[0]]
+        self.in_ylim = [np.min(X, axis=0)[1], np.max(X, axis=0)[1]]
+        self.out_xlim = [np.min(Y, axis=0)[0], np.max(Y, axis=0)[0]]
+        self.out_ylim = [np.min(Y, axis=0)[1], np.max(Y, axis=0)[1]]
         # default options
         self.figsize = (15, 8)
         self.tight_layout = True
@@ -54,6 +58,12 @@ class BispacePlotter:
             c=self.cmap(self.colour_scale),
             s=self.markersize,
         )
+        in_scale = [self.in_xlim[1] - self.in_xlim[0], self.in_ylim[1] - self.in_ylim[0]]
+        out_scale = [self.out_xlim[1] - self.out_xlim[0], self.out_ylim[1] - self.out_ylim[0]]
+        axes1.set_xlim(left=self.in_xlim[0] - 0.05 * in_scale[0], right=self.in_xlim[1] + 0.05 * in_scale[0])
+        axes1.set_ylim(bottom=self.in_ylim[0] - 0.05 * in_scale[1], top=self.in_ylim[1] + 0.05 * in_scale[1])
+        axes2.set_xlim(left=self.out_xlim[0] - 0.05 * out_scale[0], right=self.out_xlim[1] + 0.05 * out_scale[0])
+        axes2.set_ylim(bottom=self.out_ylim[0] - 0.05 * out_scale[1], top=self.out_ylim[1] + 0.05 * out_scale[1])
         if self.in_labels:
             axes1.set_xlabel(self.in_labels[0])
             axes1.set_ylabel(self.in_labels[1])
