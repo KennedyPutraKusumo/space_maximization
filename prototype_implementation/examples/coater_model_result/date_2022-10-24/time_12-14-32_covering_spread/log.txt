@@ -1,0 +1,1828 @@
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+[      0.00 s]: Bi-objective designer initialized successfully. Overall start time recorded. Status: READY
+====================================================================================================
+[      0.00 s]: Initialization completed successfully. Start time recorded. Status: READY
+----------------------------------------------------------------------------------------------------
+Number of points                        : 102 
+Number of runs                          : 4
+Design Criterion                        : Maximal Covering
+Space of interest                       : input
+Number of input dimension               : 3 
+Package                                 : cvxpy
+Optimizer                               : GUROBI
+====================================================================================================
+====================================================================================================
+[      0.00 s]: Initialization completed successfully. Start time recorded. Status: READY
+----------------------------------------------------------------------------------------------------
+Number of points                        : 102 
+Number of runs                          : 4
+Design Criterion                        : Maximal Spread
+Space of interest                       : output
+Number of output dimension              : 2 
+Package                                 : cvxpy
+Optimizer                               : GUROBI
+====================================================================================================
+Individual single-objective designer are successfully initialized
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Solving the end-points of the Pareto Frontier by solving two single-objective optimization problems
+Designer 1 is running...
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+====================================================================================================
+[      0.00 s] Computing the Maximal Covering design using GUROBI interfaced via cvxpy
+----------------------------------------------------------------------------------------------------
+Parameter OutputFlag unchanged
+   Value: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter QCPDual to 1
+   Prev: 0  Min: 0  Max: 1  Default: 0
+Gurobi Optimizer version 9.1.1 build v9.1.1rc0 (win64)
+Thread count: 6 physical cores, 12 logical processors, using up to 12 threads
+Optimize a model with 10609 rows, 10507 columns and 41718 nonzeros
+Model fingerprint: 0x7ba8e1a9
+Variable types: 1 continuous, 10506 integer (10506 binary)
+Coefficient statistics:
+  Matrix range     [5e-01, 3e+00]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 4e+00]
+Presolve time: 0.07s
+Presolved: 10609 rows, 10507 columns, 41718 nonzeros
+Variable types: 1 continuous, 10506 integer (10506 binary)
+Found heuristic solution: objective 2.8722813
+
+Root relaxation: objective 8.933297e-01, 6621 iterations, 0.67 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0    0.89333    0 1222    2.87228    0.89333  68.9%     -    1s
+H    0     0                       2.0000000    0.89333  55.3%     -    1s
+H    0     0                       1.5000000    0.89333  40.4%     -    1s
+     0     0    0.90405    0 1318    1.50000    0.90405  39.7%     -    1s
+     0     0    0.90405    0 1100    1.50000    0.90405  39.7%     -    2s
+     0     0    0.90444    0 1484    1.50000    0.90444  39.7%     -    3s
+     0     0    0.90450    0 1533    1.50000    0.90450  39.7%     -    3s
+     0     0    0.90802    0 1256    1.50000    0.90802  39.5%     -    4s
+     0     0    0.90852    0 1443    1.50000    0.90852  39.4%     -    4s
+     0     0    0.92315    0 1319    1.50000    0.92315  38.5%     -    4s
+     0     0    0.92360    0 1251    1.50000    0.92360  38.4%     -    4s
+     0     0    0.92858    0 1169    1.50000    0.92858  38.1%     -    4s
+     0     0    0.93006    0 1243    1.50000    0.93006  38.0%     -    5s
+     0     0    0.93448    0 1274    1.50000    0.93448  37.7%     -    5s
+H    0     0                       1.4142136    0.93448  33.9%     -    5s
+     0     0    0.93990    0 1301    1.41421    0.93990  33.5%     -    5s
+     0     0    0.94317    0 1334    1.41421    0.94317  33.3%     -    5s
+     0     0    0.94338    0 1361    1.41421    0.94338  33.3%     -    5s
+     0     0    0.94514    0 1362    1.41421    0.94514  33.2%     -    5s
+     0     0    0.94524    0 1342    1.41421    0.94524  33.2%     -    5s
+     0     0    0.94714    0 1301    1.41421    0.94714  33.0%     -    6s
+     0     0    0.94743    0 1420    1.41421    0.94743  33.0%     -    6s
+     0     0    0.96266    0 1240    1.41421    0.96266  31.9%     -    6s
+     0     0    0.96517    0 1271    1.41421    0.96517  31.8%     -    6s
+     0     0    0.96541    0 1345    1.41421    0.96541  31.7%     -    6s
+     0     0    0.96541    0 1122    1.41421    0.96541  31.7%     -    6s
+     0     0    0.96541    0 1055    1.41421    0.96541  31.7%     -    9s
+     0     0    0.96541    0 1332    1.41421    0.96541  31.7%     -    9s
+     0     0    0.96541    0 1303    1.41421    0.96541  31.7%     -   10s
+     0     0    0.96541    0 1390    1.41421    0.96541  31.7%     -   10s
+     0     0    0.96541    0 1484    1.41421    0.96541  31.7%     -   10s
+     0     0    0.96541    0 1515    1.41421    0.96541  31.7%     -   10s
+     0     0    0.96541    0 1516    1.41421    0.96541  31.7%     -   10s
+     0     0    0.96541    0 1573    1.41421    0.96541  31.7%     -   10s
+H    0     0                       1.2247449    0.96541  21.2%     -   11s
+     0     0    1.06065    0 1044    1.22474    1.06065  13.4%     -   11s
+     0     0    1.06208    0  916    1.22474    1.06208  13.3%     -   11s
+     0     0    1.06624    0  842    1.22474    1.06624  12.9%     -   11s
+     0     0    1.06624    0  845    1.22474    1.06624  12.9%     -   12s
+     0     0    1.08108    0  898    1.22474    1.08108  11.7%     -   13s
+     0     0    1.08108    0  895    1.22474    1.08108  11.7%     -   13s
+     0     0    1.08719    0  702    1.22474    1.08719  11.2%     -   13s
+     0     0    1.08767    0  707    1.22474    1.08767  11.2%     -   13s
+     0     0    1.09128    0  772    1.22474    1.09128  10.9%     -   13s
+     0     0    1.09229    0  865    1.22474    1.09229  10.8%     -   13s
+     0     0    1.11803    0  776    1.22474    1.11803  8.71%     -   13s
+     0     0    1.11803    0  886    1.22474    1.11803  8.71%     -   13s
+     0     0    1.11803    0  902    1.22474    1.11803  8.71%     -   13s
+     0     0    1.11803    0  967    1.22474    1.11803  8.71%     -   13s
+H    0     0                       1.2247449    1.11803  8.71%     -   14s
+     0     0    1.11803    0  934    1.22474    1.11803  8.71%     -   14s
+     0     0    1.11803    0  820    1.22474    1.11803  8.71%     -   14s
+     0     2    1.11803    0  785    1.22474    1.11803  8.71%     -   14s
+    62    15    1.11803   10  517    1.22474    1.11803  8.71%   286   15s
+
+Cutting planes:
+  MIR: 94
+  Zero half: 1
+  RLT: 2
+  Relax-and-lift: 99
+
+Explored 169 nodes (130537 simplex iterations) in 15.35 seconds
+Thread count was 12 (of 12 available processors)
+
+Solution count 6: 1.22474 1.22474 1.41421 ... 2.87228
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.224744871169e+00, best bound 1.224744871169e+00, gap 0.0000%
+----------------------------------------------------------------------------------------------------
+[     31.90 s] Completed after 31.90 s, end time recorded.
+====================================================================================================
+=====================================[Maximal Covering Design]======================================
+Obtained on                             : 2022-10-24 11:14:21.723754
+Criterion Value                         : 1.2247448711691142
+Space of interest                       : input
+Package                                 : cvxpy
+Optimizer                               : GUROBI
+Number of candidate points              : 102
+Number of input dimensions              : 3
+Number of runs                          : 4
+----------------------------------[Candidate 36 - (Run 1/4 Runs)]-----------------------------------
+Input Coordinates:
+Input 1     52.5
+Input 2     10.0
+Input 3    375.0
+....................................................................................................
+Output Coordinates:
+Series([], )
+----------------------------------[Candidate 39 - (Run 2/4 Runs)]-----------------------------------
+Input Coordinates:
+Input 1     52.5
+Input 2     27.5
+Input 3    225.0
+....................................................................................................
+Output Coordinates:
+Series([], )
+----------------------------------[Candidate 47 - (Run 3/4 Runs)]-----------------------------------
+Input Coordinates:
+Input 1     52.5
+Input 2     45.0
+Input 3    450.0
+....................................................................................................
+Output Coordinates:
+Series([], )
+----------------------------------[Candidate 76 - (Run 4/4 Runs)]-----------------------------------
+Input Coordinates:
+Input 1     68.75
+Input 2     80.00
+Input 3    300.00
+....................................................................................................
+Output Coordinates:
+Series([], )
+====================================================================================================
+Designer 2 is running...
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+====================================================================================================
+[     31.91 s] Computing the Maximal Spread design using GUROBI interfaced via cvxpy
+----------------------------------------------------------------------------------------------------
+Parameter OutputFlag unchanged
+   Value: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter QCPDual to 1
+   Prev: 0  Min: 0  Max: 1  Default: 0
+Gurobi Optimizer version 9.1.1 build v9.1.1rc0 (win64)
+Thread count: 6 physical cores, 12 logical processors, using up to 12 threads
+Optimize a model with 5152 rows, 103 columns and 15555 nonzeros
+Model fingerprint: 0x030feb6f
+Variable types: 1 continuous, 102 integer (102 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 3e+00]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [4e+00, 8e+00]
+Found heuristic solution: objective -0.0071419
+Found heuristic solution: objective -0.4075243
+Presolve time: 0.03s
+Presolved: 5152 rows, 103 columns, 15555 nonzeros
+Variable types: 1 continuous, 102 integer (102 binary)
+
+Root relaxation: objective -5.076255e+00, 213 iterations, 0.01 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   -5.07625    0   99   -0.40752   -5.07625  1146%     -    0s
+H    0     0                      -0.4794284   -5.07625   959%     -    0s
+H    0     0                      -0.9656933   -5.07625   426%     -    0s
+H    0     0                      -1.0381969   -5.00846   382%     -    0s
+     0     0   -4.56600    0   32   -1.03820   -4.56600   340%     -    0s
+     0     0   -4.30904    0   24   -1.03820   -4.30904   315%     -    0s
+     0     0   -3.82659    0   18   -1.03820   -3.82659   269%     -    0s
+     0     0   -3.68242    0   15   -1.03820   -3.68242   255%     -    0s
+     0     0   -3.66582    0   18   -1.03820   -3.66582   253%     -    0s
+     0     0   -3.66571    0   19   -1.03820   -3.66571   253%     -    0s
+     0     0   -3.07031    0   15   -1.03820   -3.07031   196%     -    0s
+H    0     0                      -1.0553070   -3.07031   191%     -    0s
+H    0     0                      -1.2406335   -3.07031   147%     -    0s
+     0     0   -3.06459    0   13   -1.24063   -3.06459   147%     -    0s
+     0     0   -3.06456    0   13   -1.24063   -3.06456   147%     -    0s
+     0     0   -2.77623    0   11   -1.24063   -2.77623   124%     -    0s
+H    0     0                      -1.2562136   -2.77623   121%     -    0s
+     0     0   -2.69356    0   13   -1.25621   -2.69356   114%     -    0s
+     0     0   -2.69353    0   11   -1.25621   -2.69353   114%     -    0s
+     0     0   -2.65918    0    8   -1.25621   -2.65918   112%     -    0s
+H    0     0                      -1.3142438   -2.65918   102%     -    0s
+     0     0   -2.63234    0    7   -1.31424   -2.63234   100%     -    0s
+     0     0   -2.62008    0    7   -1.31424   -2.62008  99.4%     -    0s
+     0     0   -2.62008    0   10   -1.31424   -2.62008  99.4%     -    0s
+     0     0   -2.12315    0    6   -1.31424   -2.12315  61.5%     -    0s
+
+Cutting planes:
+  Clique: 11
+  MIR: 8
+  Relax-and-lift: 3
+
+Explored 1 nodes (724 simplex iterations) in 0.74 seconds
+Thread count was 12 (of 12 available processors)
+
+Solution count 9: -1.31424 -1.25621 -1.24063 ... -0.00714194
+No other solutions better than -1.31424
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective -1.314243843464e+00, best bound -1.314243843464e+00, gap 0.0000%
+----------------------------------------------------------------------------------------------------
+[     42.93 s] Completed after 42.93 s, end time recorded.
+====================================================================================================
+======================================[Maximal Spread Design]=======================================
+Obtained on                             : 2022-10-24 11:14:32.753591
+Criterion Value                         : 1.314243843463861
+Space of interest                       : output
+Package                                 : cvxpy
+Optimizer                               : GUROBI
+Number of candidate points              : 102
+Number of output dimensions             : 2
+Number of runs                          : 4
+-----------------------------------[Candidate 2 - (Run 1/4 Runs)]-----------------------------------
+Input Coordinates:
+Series([], )
+....................................................................................................
+Output Coordinates:
+Output 1    17.647138
+Output 2    25.996711
+----------------------------------[Candidate 10 - (Run 2/4 Runs)]-----------------------------------
+Input Coordinates:
+Series([], )
+....................................................................................................
+Output Coordinates:
+Output 1    12.140424
+Output 2    66.767391
+----------------------------------[Candidate 83 - (Run 3/4 Runs)]-----------------------------------
+Input Coordinates:
+Series([], )
+....................................................................................................
+Output Coordinates:
+Output 1    83.386829
+Output 2    16.158142
+----------------------------------[Candidate 99 - (Run 4/4 Runs)]-----------------------------------
+Input Coordinates:
+Series([], )
+....................................................................................................
+Output Coordinates:
+Output 1    60.181894
+Output 2    50.767416
+====================================================================================================
+Single-objective Optimizations at the end-points are completed successfully, with the following criterion values:
+----------------------------------------------------------------------------------------------------
+Maximal Covering Design of input Space:
+input Maximal Covering: 1.225
+output Maximal Spread: 0.098
+Maximal Spread Design of output Space:
+input Maximal Covering: 2.000
+output Maximal Spread: 1.314
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+                                   [44.45 s - Pareto Point 1/10]                                    
+Running optimization using designer 1's criterion: Maximal Covering while constraining 
+designer 2's criterion: Maximal Spread to be at least as good as the given epsilon: 2.090e-01
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Parameter OutputFlag unchanged
+   Value: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter QCPDual to 1
+   Prev: 0  Min: 0  Max: 1  Default: 0
+Gurobi Optimizer version 9.1.1 build v9.1.1rc0 (win64)
+Thread count: 6 physical cores, 12 logical processors, using up to 12 threads
+Optimize a model with 15864 rows, 10610 columns and 57478 nonzeros
+Model fingerprint: 0x4d9d38c0
+Variable types: 2 continuous, 10608 integer (10608 binary)
+Coefficient statistics:
+  Matrix range     [5e-01, 3e+00]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [2e-01, 8e+00]
+Presolve removed 5204 rows and 103 columns
+Presolve time: 0.25s
+Presolved: 10660 rows, 10507 columns, 41943 nonzeros
+Variable types: 1 continuous, 10506 integer (10506 binary)
+Found heuristic solution: objective 1.8708287
+
+Root relaxation: objective 8.933297e-01, 6585 iterations, 0.91 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0    0.89333    0 1230    1.87083    0.89333  52.2%     -    1s
+     0     0    0.90045    0 1447    1.87083    0.90045  51.9%     -    2s
+     0     0    0.90045    0 1254    1.87083    0.90045  51.9%     -    4s
+     0     0    0.90045    0 1545    1.87083    0.90045  51.9%     -    5s
+H    0     0                       1.6583124    0.90045  45.7%     -    5s
+     0     0    0.90497    0 1577    1.65831    0.90497  45.4%     -    5s
+H    0     0                       1.4142136    0.90497  36.0%     -    5s
+     0     0    0.94063    0  988    1.41421    0.94063  33.5%     -    6s
+     0     0    0.94063    0  888    1.41421    0.94063  33.5%     -    7s
+     0     0    0.94179    0 1089    1.41421    0.94179  33.4%     -    7s
+     0     0    0.94301    0 1027    1.41421    0.94301  33.3%     -    7s
+     0     0    0.95092    0 1361    1.41421    0.95092  32.8%     -    8s
+     0     0    0.95120    0 1235    1.41421    0.95120  32.7%     -    8s
+     0     0    0.95549    0 1331    1.41421    0.95549  32.4%     -    8s
+     0     0    0.95559    0 1322    1.41421    0.95559  32.4%     -    8s
+     0     0    0.96205    0 1342    1.41421    0.96205  32.0%     -    9s
+     0     0    0.96205    0 1308    1.41421    0.96205  32.0%     -    9s
+H    0     0                       1.2247449    0.96390  21.3%     -    9s
+     0     0    1.04011    0  794    1.22474    1.04011  15.1%     -   10s
+     0     0    1.06523    0  963    1.22474    1.06523  13.0%     -   10s
+     0     0    1.06628    0  751    1.22474    1.06628  12.9%     -   10s
+     0     0    1.06628    0  852    1.22474    1.06628  12.9%     -   11s
+     0     0    1.08543    0  953    1.22474    1.08543  11.4%     -   11s
+     0     0    1.08787    0  905    1.22474    1.08787  11.2%     -   11s
+     0     0    1.10970    0  815    1.22474    1.10970  9.39%     -   12s
+     0     0    1.10975    0  745    1.22474    1.10975  9.39%     -   12s
+     0     0    1.10975    0  640    1.22474    1.10975  9.39%     -   12s
+     0     0    1.10975    0  669    1.22474    1.10975  9.39%     -   12s
+     0     0    1.10975    0  643    1.22474    1.10975  9.39%     -   12s
+     0     0    1.10975    0  679    1.22474    1.10975  9.39%     -   12s
+     0     0    1.11655    0  675    1.22474    1.11655  8.83%     -   12s
+     0     0    1.11803    0  673    1.22474    1.11803  8.71%     -   12s
+     0     0    1.11803    0  668    1.22474    1.11803  8.71%     -   12s
+     0     0    1.11803    0  617    1.22474    1.11803  8.71%     -   12s
+     0     1    1.11803    0  559    1.22474    1.11803  8.71%     -   13s
+*  154     8              16       1.2247449    1.12423  8.21%   157   13s
+
+Cutting planes:
+  Gomory: 2
+  MIR: 61
+  RLT: 1
+  Relax-and-lift: 65
+
+Explored 278 nodes (118820 simplex iterations) in 14.04 seconds
+Thread count was 12 (of 12 available processors)
+
+Solution count 5: 1.22474 1.22474 1.41421 ... 1.87083
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.224744871169e+00, best bound 1.224744871169e+00, gap 0.0000%
+=====================================[Maximal Covering Design]======================================
+Obtained on                             : 2022-10-24 11:14:21.723754
+Criterion Value                         : 1.2247448711691142
+Space of interest                       : input
+Package                                 : cvxpy
+Optimizer                               : GUROBI
+Number of candidate points              : 102
+Number of input dimensions              : 3
+Number of runs                          : 4
+----------------------------------[Candidate 36 - (Run 1/4 Runs)]-----------------------------------
+Input Coordinates:
+Input 1     52.5
+Input 2     10.0
+Input 3    375.0
+....................................................................................................
+Output Coordinates:
+Series([], )
+----------------------------------[Candidate 39 - (Run 2/4 Runs)]-----------------------------------
+Input Coordinates:
+Input 1     52.5
+Input 2     27.5
+Input 3    225.0
+....................................................................................................
+Output Coordinates:
+Series([], )
+----------------------------------[Candidate 47 - (Run 3/4 Runs)]-----------------------------------
+Input Coordinates:
+Input 1     52.5
+Input 2     45.0
+Input 3    450.0
+....................................................................................................
+Output Coordinates:
+Series([], )
+----------------------------------[Candidate 76 - (Run 4/4 Runs)]-----------------------------------
+Input Coordinates:
+Input 1     68.75
+Input 2     80.00
+Input 3    300.00
+....................................................................................................
+Output Coordinates:
+Series([], )
+====================================================================================================
+======================================[Maximal Spread Design]=======================================
+Obtained on                             : 2022-10-24 11:14:32.753591
+Criterion Value                         : 1.314243843463861
+Space of interest                       : output
+Package                                 : cvxpy
+Optimizer                               : GUROBI
+Number of candidate points              : 102
+Number of output dimensions             : 2
+Number of runs                          : 4
+-----------------------------------[Candidate 2 - (Run 1/4 Runs)]-----------------------------------
+Input Coordinates:
+Series([], )
+....................................................................................................
+Output Coordinates:
+Output 1    17.647138
+Output 2    25.996711
+----------------------------------[Candidate 10 - (Run 2/4 Runs)]-----------------------------------
+Input Coordinates:
+Series([], )
+....................................................................................................
+Output Coordinates:
+Output 1    12.140424
+Output 2    66.767391
+----------------------------------[Candidate 83 - (Run 3/4 Runs)]-----------------------------------
+Input Coordinates:
+Series([], )
+....................................................................................................
+Output Coordinates:
+Output 1    83.386829
+Output 2    16.158142
+----------------------------------[Candidate 99 - (Run 4/4 Runs)]-----------------------------------
+Input Coordinates:
+Series([], )
+....................................................................................................
+Output Coordinates:
+Output 1    60.181894
+Output 2    50.767416
+====================================================================================================
+----------------------------------------------------------------------------------------------------
+Computed objectives of Pareto point 1: 1.225e+00, 2.385e-01
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+                                   [87.35 s - Pareto Point 2/10]                                    
+Running optimization using designer 1's criterion: Maximal Covering while constraining 
+designer 2's criterion: Maximal Spread to be at least as good as the given epsilon: 3.195e-01
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Parameter OutputFlag unchanged
+   Value: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter QCPDual to 1
+   Prev: 0  Min: 0  Max: 1  Default: 0
+Gurobi Optimizer version 9.1.1 build v9.1.1rc0 (win64)
+Thread count: 6 physical cores, 12 logical processors, using up to 12 threads
+Optimize a model with 15864 rows, 10610 columns and 57478 nonzeros
+Model fingerprint: 0x3a901b74
+Variable types: 2 continuous, 10608 integer (10608 binary)
+Coefficient statistics:
+  Matrix range     [5e-01, 3e+00]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [3e-01, 8e+00]
+Presolve removed 5201 rows and 103 columns
+Presolve time: 0.16s
+Presolved: 10663 rows, 10507 columns, 42007 nonzeros
+Variable types: 1 continuous, 10506 integer (10506 binary)
+Found heuristic solution: objective 2.1794495
+
+Root relaxation: objective 8.933297e-01, 6167 iterations, 0.44 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0    0.89333    0 1230    2.17945    0.89333  59.0%     -    1s
+H    0     0                       2.1213203    0.89333  57.9%     -    1s
+     0     0    0.90045    0 1544    2.12132    0.90045  57.6%     -    2s
+H    0     0                       2.0615528    0.90045  56.3%     -    2s
+H    0     0                       1.6583124    0.90045  45.7%     -    2s
+     0     0    0.90497    0 1549    1.65831    0.90497  45.4%     -    3s
+H    0     0                       1.5811388    0.90497  42.8%     -    4s
+     0     0    0.93194    0 1150    1.58114    0.93194  41.1%     -    4s
+     0     0    0.93194    0  927    1.58114    0.93194  41.1%     -    5s
+H    0     0                       1.5000000    0.93194  37.9%     -    6s
+H    0     0                       1.4142136    0.93221  34.1%     -    6s
+     0     0    0.93967    0  993    1.41421    0.93967  33.6%     -    6s
+     0     0    0.95145    0 1024    1.41421    0.95145  32.7%     -    7s
+     0     0    0.95145    0  860    1.41421    0.95145  32.7%     -    8s
+     0     0    0.95145    0  999    1.41421    0.95145  32.7%     -    8s
+     0     0    0.95164    0 1088    1.41421    0.95164  32.7%     -    8s
+     0     0    0.95186    0 1082    1.41421    0.95186  32.7%     -    8s
+     0     0    0.95191    0 1077    1.41421    0.95191  32.7%     -    8s
+     0     0    0.96033    0 1124    1.41421    0.96033  32.1%     -    9s
+     0     0    0.96172    0 1164    1.41421    0.96172  32.0%     -    9s
+H    0     0                       1.2247449    0.96172  21.5%     -    9s
+     0     0    1.04736    0  731    1.22474    1.04736  14.5%     -    9s
+     0     0    1.06453    0  999    1.22474    1.06453  13.1%     -    9s
+     0     0    1.06658    0  968    1.22474    1.06658  12.9%     -   10s
+     0     0    1.06658    0  849    1.22474    1.06658  12.9%     -   10s
+     0     0    1.08459    0 1047    1.22474    1.08459  11.4%     -   11s
+     0     0    1.08459    0 1065    1.22474    1.08459  11.4%     -   11s
+     0     0    1.10523    0  804    1.22474    1.10523  9.76%     -   11s
+     0     0    1.10630    0  721    1.22474    1.10630  9.67%     -   11s
+     0     0    1.10630    0  786    1.22474    1.10630  9.67%     -   11s
+     0     0    1.10630    0  787    1.22474    1.10630  9.67%     -   11s
+     0     0    1.11303    0  827    1.22474    1.11303  9.12%     -   11s
+     0     0    1.11303    0  789    1.22474    1.11303  9.12%     -   11s
+     0     0    1.11303    0  722    1.22474    1.11303  9.12%     -   12s
+     0     0    1.11303    0  703    1.22474    1.11303  9.12%     -   12s
+     0     0    1.11445    0  678    1.22474    1.11445  9.01%     -   12s
+     0     0    1.11445    0  709    1.22474    1.11445  9.01%     -   12s
+     0     0    1.11803    0  715    1.22474    1.11803  8.71%     -   12s
+     0     0    1.11803    0  645    1.22474    1.11803  8.71%     -   12s
+     0     2    1.11803    0  618    1.22474    1.11803  8.71%     -   12s
+*   65    30              10       1.2247449    1.11803  8.71%   258   13s
+
+Cutting planes:
+  Gomory: 1
+  MIR: 67
+  RLT: 1
+  Relax-and-lift: 73
+
+Explored 216 nodes (134636 simplex iterations) in 13.41 seconds
+Thread count was 12 (of 12 available processors)
+
+Solution count 9: 1.22474 1.22474 1.41421 ... 2.17945
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.224744871169e+00, best bound 1.224744871169e+00, gap 0.0000%
+=====================================[Maximal Covering Design]======================================
+Obtained on                             : 2022-10-24 11:14:21.723754
+Criterion Value                         : 1.2247448711691142
+Space of interest                       : input
+Package                                 : cvxpy
+Optimizer                               : GUROBI
+Number of candidate points              : 102
+Number of input dimensions              : 3
+Number of runs                          : 4
+----------------------------------[Candidate 36 - (Run 1/4 Runs)]-----------------------------------
+Input Coordinates:
+Input 1     52.5
+Input 2     10.0
+Input 3    375.0
+....................................................................................................
+Output Coordinates:
+Series([], )
+----------------------------------[Candidate 39 - (Run 2/4 Runs)]-----------------------------------
+Input Coordinates:
+Input 1     52.5
+Input 2     27.5
+Input 3    225.0
+....................................................................................................
+Output Coordinates:
+Series([], )
+----------------------------------[Candidate 47 - (Run 3/4 Runs)]-----------------------------------
+Input Coordinates:
+Input 1     52.5
+Input 2     45.0
+Input 3    450.0
+....................................................................................................
+Output Coordinates:
+Series([], )
+----------------------------------[Candidate 76 - (Run 4/4 Runs)]-----------------------------------
+Input Coordinates:
+Input 1     68.75
+Input 2     80.00
+Input 3    300.00
+....................................................................................................
+Output Coordinates:
+Series([], )
+====================================================================================================
+======================================[Maximal Spread Design]=======================================
+Obtained on                             : 2022-10-24 11:14:32.753591
+Criterion Value                         : 1.314243843463861
+Space of interest                       : output
+Package                                 : cvxpy
+Optimizer                               : GUROBI
+Number of candidate points              : 102
+Number of output dimensions             : 2
+Number of runs                          : 4
+-----------------------------------[Candidate 2 - (Run 1/4 Runs)]-----------------------------------
+Input Coordinates:
+Series([], )
+....................................................................................................
+Output Coordinates:
+Output 1    17.647138
+Output 2    25.996711
+----------------------------------[Candidate 10 - (Run 2/4 Runs)]-----------------------------------
+Input Coordinates:
+Series([], )
+....................................................................................................
+Output Coordinates:
+Output 1    12.140424
+Output 2    66.767391
+----------------------------------[Candidate 83 - (Run 3/4 Runs)]-----------------------------------
+Input Coordinates:
+Series([], )
+....................................................................................................
+Output Coordinates:
+Output 1    83.386829
+Output 2    16.158142
+----------------------------------[Candidate 99 - (Run 4/4 Runs)]-----------------------------------
+Input Coordinates:
+Series([], )
+....................................................................................................
+Output Coordinates:
+Output 1    60.181894
+Output 2    50.767416
+====================================================================================================
+----------------------------------------------------------------------------------------------------
+Computed objectives of Pareto point 2: 1.225e+00, 3.546e-01
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+                                   [125.99 s - Pareto Point 3/10]                                   
+Running optimization using designer 1's criterion: Maximal Covering while constraining 
+designer 2's criterion: Maximal Spread to be at least as good as the given epsilon: 4.300e-01
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Parameter OutputFlag unchanged
+   Value: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter QCPDual to 1
+   Prev: 0  Min: 0  Max: 1  Default: 0
+Gurobi Optimizer version 9.1.1 build v9.1.1rc0 (win64)
+Thread count: 6 physical cores, 12 logical processors, using up to 12 threads
+Optimize a model with 15864 rows, 10610 columns and 57478 nonzeros
+Model fingerprint: 0x0a21d426
+Variable types: 2 continuous, 10608 integer (10608 binary)
+Coefficient statistics:
+  Matrix range     [5e-01, 3e+00]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [4e-01, 8e+00]
+Presolve removed 5147 rows and 103 columns
+Presolve time: 0.22s
+Presolved: 10717 rows, 10507 columns, 42723 nonzeros
+Variable types: 1 continuous, 10506 integer (10506 binary)
+Found heuristic solution: objective 1.5000000
+
+Root relaxation: objective 8.948758e-01, 5919 iterations, 0.45 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0    0.89488    0 1093    1.50000    0.89488  40.3%     -    1s
+     0     0    0.90416    0 1303    1.50000    0.90416  39.7%     -    2s
+     0     0    0.90416    0 1106    1.50000    0.90416  39.7%     -    3s
+H    0     0                       1.4142136    0.90416  36.1%     -    3s
+     0     0    0.90865    0 1162    1.41421    0.90865  35.7%     -    4s
+     0     0    0.90885    0 1172    1.41421    0.90885  35.7%     -    4s
+     0     0    0.93814    0 1077    1.41421    0.93814  33.7%     -    5s
+     0     0    0.93942    0 1318    1.41421    0.93942  33.6%     -    5s
+     0     0    0.95014    0 1404    1.41421    0.95014  32.8%     -    6s
+     0     0    0.95024    0 1479    1.41421    0.95024  32.8%     -    6s
+     0     0    0.96458    0 1208    1.41421    0.96458  31.8%     -    6s
+     0     0    0.96582    0 1298    1.41421    0.96582  31.7%     -    6s
+     0     0    0.96882    0 1333    1.41421    0.96882  31.5%     -    7s
+     0     0    0.96931    0 1360    1.41421    0.96931  31.5%     -    7s
+     0     0    0.97008    0 1295    1.41421    0.97008  31.4%     -    7s
+     0     0    0.97011    0 1304    1.41421    0.97011  31.4%     -    7s
+     0     0    0.97128    0 1506    1.41421    0.97128  31.3%     -    7s
+     0     0    0.97186    0 1434    1.41421    0.97186  31.3%     -    7s
+     0     0    0.97256    0 1416    1.41421    0.97256  31.2%     -    7s
+     0     0    0.97294    0 1350    1.41421    0.97294  31.2%     -    7s
+     0     0    0.97398    0 1418    1.41421    0.97398  31.1%     -    8s
+     0     0    0.97398    0 1312    1.41421    0.97398  31.1%     -    8s
+H    0     0                       1.2247449    0.97398  20.5%     -    8s
+     0     0    1.03869    0  424    1.22474    1.03869  15.2%     -    9s
+     0     0    1.04545    0  662    1.22474    1.04545  14.6%     -   10s
+     0     0    1.04690    0  763    1.22474    1.04690  14.5%     -   10s
+     0     0    1.07110    0  666    1.22474    1.07110  12.5%     -   10s
+     0     0    1.07141    0  697    1.22474    1.07141  12.5%     -   10s
+     0     0    1.07713    0  636    1.22474    1.07713  12.1%     -   11s
+     0     0    1.07713    0  837    1.22474    1.07713  12.1%     -   11s
+     0     0    1.09051    0  793    1.22474    1.09051  11.0%     -   12s
+     0     0    1.09224    0  782    1.22474    1.09224  10.8%     -   12s
+     0     0    1.09722    0  741    1.22474    1.09722  10.4%     -   12s
+     0     0    1.09980    0  729    1.22474    1.09980  10.2%     -   12s
+     0     0    1.10013    0  683    1.22474    1.10013  10.2%     -   12s
+     0     0    1.10483    0  681    1.22474    1.10483  9.79%     -   12s
+     0     0    1.10506    0  741    1.22474    1.10506  9.77%     -   12s
+     0     0    1.11803    0  775    1.22474    1.11803  8.71%     -   12s
+     0     0    1.11803    0  769    1.22474    1.11803  8.71%     -   12s
+     0     0    1.11803    0  778    1.22474    1.11803  8.71%     -   12s
+     0     0    1.11803    0  712    1.22474    1.11803  8.71%     -   13s
+     0     2    1.11803    0  712    1.22474    1.11803  8.71%     -   13s
+*   98    10               9       1.2247449    1.14278  6.69%   197   14s
+
+Cutting planes:
+  Gomory: 1
+  Implied bound: 1
+  Clique: 21
+  MIR: 134
+  RLT: 4
+  Relax-and-lift: 70
+
+Explored 143 nodes (109494 simplex iterations) in 14.07 seconds
+Thread count was 12 (of 12 available processors)
+
+Solution count 4: 1.22474 1.22474 1.41421 1.5 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.224744871169e+00, best bound 1.224744871169e+00, gap 0.0000%
+=====================================[Maximal Covering Design]======================================
+Obtained on                             : 2022-10-24 11:14:21.723754
+Criterion Value                         : 1.2247448711691142
+Space of interest                       : input
+Package                                 : cvxpy
+Optimizer                               : GUROBI
+Number of candidate points              : 102
+Number of input dimensions              : 3
+Number of runs                          : 4
+----------------------------------[Candidate 36 - (Run 1/4 Runs)]-----------------------------------
+Input Coordinates:
+Input 1     52.5
+Input 2     10.0
+Input 3    375.0
+....................................................................................................
+Output Coordinates:
+Series([], )
+----------------------------------[Candidate 39 - (Run 2/4 Runs)]-----------------------------------
+Input Coordinates:
+Input 1     52.5
+Input 2     27.5
+Input 3    225.0
+....................................................................................................
+Output Coordinates:
+Series([], )
+----------------------------------[Candidate 47 - (Run 3/4 Runs)]-----------------------------------
+Input Coordinates:
+Input 1     52.5
+Input 2     45.0
+Input 3    450.0
+....................................................................................................
+Output Coordinates:
+Series([], )
+----------------------------------[Candidate 76 - (Run 4/4 Runs)]-----------------------------------
+Input Coordinates:
+Input 1     68.75
+Input 2     80.00
+Input 3    300.00
+....................................................................................................
+Output Coordinates:
+Series([], )
+====================================================================================================
+======================================[Maximal Spread Design]=======================================
+Obtained on                             : 2022-10-24 11:14:32.753591
+Criterion Value                         : 1.314243843463861
+Space of interest                       : output
+Package                                 : cvxpy
+Optimizer                               : GUROBI
+Number of candidate points              : 102
+Number of output dimensions             : 2
+Number of runs                          : 4
+-----------------------------------[Candidate 2 - (Run 1/4 Runs)]-----------------------------------
+Input Coordinates:
+Series([], )
+....................................................................................................
+Output Coordinates:
+Output 1    17.647138
+Output 2    25.996711
+----------------------------------[Candidate 10 - (Run 2/4 Runs)]-----------------------------------
+Input Coordinates:
+Series([], )
+....................................................................................................
+Output Coordinates:
+Output 1    12.140424
+Output 2    66.767391
+----------------------------------[Candidate 83 - (Run 3/4 Runs)]-----------------------------------
+Input Coordinates:
+Series([], )
+....................................................................................................
+Output Coordinates:
+Output 1    83.386829
+Output 2    16.158142
+----------------------------------[Candidate 99 - (Run 4/4 Runs)]-----------------------------------
+Input Coordinates:
+Series([], )
+....................................................................................................
+Output Coordinates:
+Output 1    60.181894
+Output 2    50.767416
+====================================================================================================
+----------------------------------------------------------------------------------------------------
+Computed objectives of Pareto point 3: 1.225e+00, 4.532e-01
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+                                   [165.30 s - Pareto Point 4/10]                                   
+Running optimization using designer 1's criterion: Maximal Covering while constraining 
+designer 2's criterion: Maximal Spread to be at least as good as the given epsilon: 5.405e-01
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Parameter OutputFlag unchanged
+   Value: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter QCPDual to 1
+   Prev: 0  Min: 0  Max: 1  Default: 0
+Gurobi Optimizer version 9.1.1 build v9.1.1rc0 (win64)
+Thread count: 6 physical cores, 12 logical processors, using up to 12 threads
+Optimize a model with 15864 rows, 10610 columns and 57478 nonzeros
+Model fingerprint: 0x7703ddbf
+Variable types: 2 continuous, 10608 integer (10608 binary)
+Coefficient statistics:
+  Matrix range     [5e-01, 3e+00]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [5e-01, 8e+00]
+Presolve removed 5152 rows and 103 columns
+Presolve time: 0.23s
+Presolved: 10712 rows, 10507 columns, 43125 nonzeros
+Variable types: 1 continuous, 10506 integer (10506 binary)
+Found heuristic solution: objective 3.2015621
+Found heuristic solution: objective 2.9154759
+
+Root relaxation: objective 8.933297e-01, 7843 iterations, 0.73 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0    0.89333    0 1309    2.91548    0.89333  69.4%     -    1s
+H    0     0                       2.2360680    0.89333  60.0%     -    1s
+     0     0    0.90009    0 1426    2.23607    0.90009  59.7%     -    3s
+H    0     0                       1.6583124    0.90009  45.7%     -    4s
+     0     0    0.90508    0 1478    1.65831    0.90508  45.4%     -    4s
+     0     0    0.93266    0 1129    1.65831    0.93266  43.8%     -    5s
+     0     0    0.93266    0  936    1.65831    0.93266  43.8%     -    6s
+H    0     0                       1.5811388    0.93266  41.0%     -    6s
+     0     0    0.93962    0 1217    1.58114    0.93962  40.6%     -    7s
+     0     0    0.93962    0 1218    1.58114    0.93962  40.6%     -    8s
+     0     0    0.94882    0 1199    1.58114    0.94882  40.0%     -    9s
+     0     0    0.94922    0 1244    1.58114    0.94922  40.0%     -   10s
+H    0     0                       1.4142136    0.94922  32.9%     -   10s
+     0     0    0.96391    0 1129    1.41421    0.96391  31.8%     -   10s
+     0     0    0.96391    0  872    1.41421    0.96391  31.8%     -   11s
+     0     0    0.96391    0 1049    1.41421    0.96391  31.8%     -   12s
+     0     0    0.96391    0 1122    1.41421    0.96391  31.8%     -   13s
+     0     0    0.96796    0 1196    1.41421    0.96796  31.6%     -   13s
+     0     0    0.96825    0 1334    1.41421    0.96825  31.5%     -   13s
+     0     0    0.97311    0 1373    1.41421    0.97311  31.2%     -   14s
+     0     0    0.97324    0 1347    1.41421    0.97324  31.2%     -   14s
+     0     0    0.97496    0 1298    1.41421    0.97496  31.1%     -   14s
+     0     0    0.97508    0 1233    1.41421    0.97508  31.1%     -   14s
+H    0     0                       1.2247449    0.97508  20.4%     -   14s
+     0     0    1.04511    0  941    1.22474    1.04511  14.7%     -   15s
+     0     0    1.06861    0  962    1.22474    1.06861  12.7%     -   15s
+     0     0    1.07420    0  955    1.22474    1.07420  12.3%     -   15s
+     0     0    1.07420    0  988    1.22474    1.07420  12.3%     -   16s
+     0     0    1.09570    0  819    1.22474    1.09570  10.5%     -   17s
+     0     0    1.09606    0  883    1.22474    1.09606  10.5%     -   17s
+     0     0    1.10052    0  808    1.22474    1.10052  10.1%     -   17s
+     0     0    1.11104    0  811    1.22474    1.11104  9.28%     -   17s
+     0     0    1.22474    0  779    1.22474    1.22474  0.00%     -   17s
+
+Cutting planes:
+  Implied bound: 1
+  Clique: 120
+  MIR: 82
+  Zero half: 22
+  RLT: 3
+  Relax-and-lift: 53
+
+Explored 1 nodes (89918 simplex iterations) in 17.54 seconds
+Thread count was 12 (of 12 available processors)
+
+Solution count 7: 1.22474 1.41421 1.58114 ... 3.20156
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.224744871392e+00, best bound 1.224744871392e+00, gap 0.0000%
+=====================================[Maximal Covering Design]======================================
+Obtained on                             : 2022-10-24 11:14:21.723754
+Criterion Value                         : 1.2247448711691142
+Space of interest                       : input
+Package                                 : cvxpy
+Optimizer                               : GUROBI
+Number of candidate points              : 102
+Number of input dimensions              : 3
+Number of runs                          : 4
+----------------------------------[Candidate 36 - (Run 1/4 Runs)]-----------------------------------
+Input Coordinates:
+Input 1     52.5
+Input 2     10.0
+Input 3    375.0
+....................................................................................................
+Output Coordinates:
+Series([], )
+----------------------------------[Candidate 39 - (Run 2/4 Runs)]-----------------------------------
+Input Coordinates:
+Input 1     52.5
+Input 2     27.5
+Input 3    225.0
+....................................................................................................
+Output Coordinates:
+Series([], )
+----------------------------------[Candidate 47 - (Run 3/4 Runs)]-----------------------------------
+Input Coordinates:
+Input 1     52.5
+Input 2     45.0
+Input 3    450.0
+....................................................................................................
+Output Coordinates:
+Series([], )
+----------------------------------[Candidate 76 - (Run 4/4 Runs)]-----------------------------------
+Input Coordinates:
+Input 1     68.75
+Input 2     80.00
+Input 3    300.00
+....................................................................................................
+Output Coordinates:
+Series([], )
+====================================================================================================
+======================================[Maximal Spread Design]=======================================
+Obtained on                             : 2022-10-24 11:14:32.753591
+Criterion Value                         : 1.314243843463861
+Space of interest                       : output
+Package                                 : cvxpy
+Optimizer                               : GUROBI
+Number of candidate points              : 102
+Number of output dimensions             : 2
+Number of runs                          : 4
+-----------------------------------[Candidate 2 - (Run 1/4 Runs)]-----------------------------------
+Input Coordinates:
+Series([], )
+....................................................................................................
+Output Coordinates:
+Output 1    17.647138
+Output 2    25.996711
+----------------------------------[Candidate 10 - (Run 2/4 Runs)]-----------------------------------
+Input Coordinates:
+Series([], )
+....................................................................................................
+Output Coordinates:
+Output 1    12.140424
+Output 2    66.767391
+----------------------------------[Candidate 83 - (Run 3/4 Runs)]-----------------------------------
+Input Coordinates:
+Series([], )
+....................................................................................................
+Output Coordinates:
+Output 1    83.386829
+Output 2    16.158142
+----------------------------------[Candidate 99 - (Run 4/4 Runs)]-----------------------------------
+Input Coordinates:
+Series([], )
+....................................................................................................
+Output Coordinates:
+Output 1    60.181894
+Output 2    50.767416
+====================================================================================================
+----------------------------------------------------------------------------------------------------
+Computed objectives of Pareto point 4: 1.225e+00, 7.646e-01
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+                                   [207.70 s - Pareto Point 5/10]                                   
+Running optimization using designer 1's criterion: Maximal Covering while constraining 
+designer 2's criterion: Maximal Spread to be at least as good as the given epsilon: 6.511e-01
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Parameter OutputFlag unchanged
+   Value: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter QCPDual to 1
+   Prev: 0  Min: 0  Max: 1  Default: 0
+Gurobi Optimizer version 9.1.1 build v9.1.1rc0 (win64)
+Thread count: 6 physical cores, 12 logical processors, using up to 12 threads
+Optimize a model with 15864 rows, 10610 columns and 57478 nonzeros
+Model fingerprint: 0x070a8294
+Variable types: 2 continuous, 10608 integer (10608 binary)
+Coefficient statistics:
+  Matrix range     [5e-01, 3e+00]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [7e-01, 8e+00]
+Presolve removed 5178 rows and 103 columns
+Presolve time: 0.23s
+Presolved: 10686 rows, 10507 columns, 42972 nonzeros
+Variable types: 1 continuous, 10506 integer (10506 binary)
+Found heuristic solution: objective 3.0000000
+
+Root relaxation: objective 8.937521e-01, 6343 iterations, 0.47 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0    0.89375    0 1408    3.00000    0.89375  70.2%     -    1s
+H    0     0                       1.6583124    0.89375  46.1%     -    1s
+     0     0    0.90063    0 1552    1.65831    0.90063  45.7%     -    2s
+     0     0    0.90063    0 1390    1.65831    0.90063  45.7%     -    3s
+     0     0    0.90079    0 1594    1.65831    0.90079  45.7%     -    5s
+H    0     0                       1.5811388    0.90079  43.0%     -    5s
+H    0     0                       1.5000000    0.90079  39.9%     -    7s
+     0     0    0.93853    0 1458    1.50000    0.93853  37.4%     -    7s
+H    0     0                       1.4142136    0.93853  33.6%     -    7s
+     0     0    0.94233    0 1243    1.41421    0.94233  33.4%     -    8s
+     0     0    0.95734    0  951    1.41421    0.95734  32.3%     -    9s
+     0     0    0.95734    0  978    1.41421    0.95734  32.3%     -   10s
+     0     0    0.95820    0 1119    1.41421    0.95820  32.2%     -   11s
+     0     0    0.95889    0 1155    1.41421    0.95889  32.2%     -   12s
+     0     0    0.97081    0 1369    1.41421    0.97081  31.4%     -   12s
+     0     0    0.97089    0 1377    1.41421    0.97089  31.3%     -   12s
+     0     0    0.97807    0 1395    1.41421    0.97807  30.8%     -   13s
+     0     0    0.97818    0 1392    1.41421    0.97818  30.8%     -   13s
+     0     0    0.98113    0 1379    1.41421    0.98113  30.6%     -   13s
+     0     0    0.98200    0 1287    1.41421    0.98200  30.6%     -   13s
+     0     0    0.98328    0 1436    1.41421    0.98328  30.5%     -   13s
+     0     0    0.98357    0 1442    1.41421    0.98357  30.5%     -   13s
+     0     0    0.98495    0 1266    1.41421    0.98495  30.4%     -   14s
+     0     0    0.98538    0 1248    1.41421    0.98538  30.3%     -   14s
+H    0     0                       1.2247449    0.98538  19.5%     -   14s
+     0     0    1.04996    0  978    1.22474    1.04996  14.3%     -   14s
+     0     0    1.06775    0 1231    1.22474    1.06775  12.8%     -   14s
+     0     0    1.06948    0 1035    1.22474    1.06948  12.7%     -   15s
+     0     0    1.06948    0  949    1.22474    1.06948  12.7%     -   16s
+     0     0    1.11803    0  874    1.22474    1.11803  8.71%     -   16s
+
+Cutting planes:
+  Implied bound: 1
+  Clique: 88
+  MIR: 13
+  Zero half: 49
+  RLT: 4
+  Relax-and-lift: 52
+
+Explored 1 nodes (82488 simplex iterations) in 16.92 seconds
+Thread count was 12 (of 12 available processors)
+
+Solution count 6: 1.22474 1.41421 1.5 ... 3
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.224744871392e+00, best bound 1.224744871392e+00, gap 0.0000%
+=====================================[Maximal Covering Design]======================================
+Obtained on                             : 2022-10-24 11:14:21.723754
+Criterion Value                         : 1.2247448711691142
+Space of interest                       : input
+Package                                 : cvxpy
+Optimizer                               : GUROBI
+Number of candidate points              : 102
+Number of input dimensions              : 3
+Number of runs                          : 4
+----------------------------------[Candidate 36 - (Run 1/4 Runs)]-----------------------------------
+Input Coordinates:
+Input 1     52.5
+Input 2     10.0
+Input 3    375.0
+....................................................................................................
+Output Coordinates:
+Series([], )
+----------------------------------[Candidate 39 - (Run 2/4 Runs)]-----------------------------------
+Input Coordinates:
+Input 1     52.5
+Input 2     27.5
+Input 3    225.0
+....................................................................................................
+Output Coordinates:
+Series([], )
+----------------------------------[Candidate 47 - (Run 3/4 Runs)]-----------------------------------
+Input Coordinates:
+Input 1     52.5
+Input 2     45.0
+Input 3    450.0
+....................................................................................................
+Output Coordinates:
+Series([], )
+----------------------------------[Candidate 76 - (Run 4/4 Runs)]-----------------------------------
+Input Coordinates:
+Input 1     68.75
+Input 2     80.00
+Input 3    300.00
+....................................................................................................
+Output Coordinates:
+Series([], )
+====================================================================================================
+======================================[Maximal Spread Design]=======================================
+Obtained on                             : 2022-10-24 11:14:32.753591
+Criterion Value                         : 1.314243843463861
+Space of interest                       : output
+Package                                 : cvxpy
+Optimizer                               : GUROBI
+Number of candidate points              : 102
+Number of output dimensions             : 2
+Number of runs                          : 4
+-----------------------------------[Candidate 2 - (Run 1/4 Runs)]-----------------------------------
+Input Coordinates:
+Series([], )
+....................................................................................................
+Output Coordinates:
+Output 1    17.647138
+Output 2    25.996711
+----------------------------------[Candidate 10 - (Run 2/4 Runs)]-----------------------------------
+Input Coordinates:
+Series([], )
+....................................................................................................
+Output Coordinates:
+Output 1    12.140424
+Output 2    66.767391
+----------------------------------[Candidate 83 - (Run 3/4 Runs)]-----------------------------------
+Input Coordinates:
+Series([], )
+....................................................................................................
+Output Coordinates:
+Output 1    83.386829
+Output 2    16.158142
+----------------------------------[Candidate 99 - (Run 4/4 Runs)]-----------------------------------
+Input Coordinates:
+Series([], )
+....................................................................................................
+Output Coordinates:
+Output 1    60.181894
+Output 2    50.767416
+====================================================================================================
+----------------------------------------------------------------------------------------------------
+Computed objectives of Pareto point 5: 1.225e+00, 7.351e-01
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+                                   [249.80 s - Pareto Point 6/10]                                   
+Running optimization using designer 1's criterion: Maximal Covering while constraining 
+designer 2's criterion: Maximal Spread to be at least as good as the given epsilon: 7.616e-01
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Parameter OutputFlag unchanged
+   Value: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter QCPDual to 1
+   Prev: 0  Min: 0  Max: 1  Default: 0
+Gurobi Optimizer version 9.1.1 build v9.1.1rc0 (win64)
+Thread count: 6 physical cores, 12 logical processors, using up to 12 threads
+Optimize a model with 15864 rows, 10610 columns and 57478 nonzeros
+Model fingerprint: 0xb32d0092
+Variable types: 2 continuous, 10608 integer (10608 binary)
+Coefficient statistics:
+  Matrix range     [5e-01, 3e+00]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [8e-01, 8e+00]
+Presolve removed 5116 rows and 103 columns
+Presolve time: 0.24s
+Presolved: 10748 rows, 10507 columns, 43823 nonzeros
+Variable types: 1 continuous, 10506 integer (10506 binary)
+Found heuristic solution: objective 3.2015621
+Found heuristic solution: objective 2.6925824
+
+Root relaxation: objective 8.941888e-01, 5910 iterations, 0.41 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0    0.89419    0 1295    2.69258    0.89419  66.8%     -    1s
+H    0     0                       1.8027756    0.89419  50.4%     -    1s
+H    0     0                       1.5000000    0.89419  40.4%     -    2s
+     0     0    0.90922    0 1323    1.50000    0.90922  39.4%     -    2s
+     0     0    0.90922    0 1157    1.50000    0.90922  39.4%     -    3s
+     0     0    0.90958    0 1503    1.50000    0.90958  39.4%     -    5s
+     0     0    0.90970    0 1420    1.50000    0.90970  39.4%     -    5s
+     0     0    0.95258    0 1353    1.50000    0.95258  36.5%     -    7s
+     0     0    0.95306    0 1241    1.50000    0.95306  36.5%     -    7s
+     0     0    0.97537    0 1286    1.50000    0.97537  35.0%     -    8s
+     0     0    0.97614    0 1296    1.50000    0.97614  34.9%     -    8s
+     0     0    0.98256    0 1319    1.50000    0.98256  34.5%     -    9s
+H    0     0                       1.4142136    0.98256  30.5%     -    9s
+     0     0    0.98358    0 1293    1.41421    0.98358  30.5%     -    9s
+     0     0    0.98435    0 1142    1.41421    0.98435  30.4%     -    9s
+     0     0    0.98435    0  945    1.41421    0.98435  30.4%     -   11s
+     0     0    0.98435    0 1135    1.41421    0.98435  30.4%     -   12s
+     0     0    0.98435    0 1063    1.41421    0.98435  30.4%     -   12s
+     0     0    0.98569    0 1327    1.41421    0.98569  30.3%     -   12s
+     0     0    0.98571    0 1289    1.41421    0.98571  30.3%     -   12s
+     0     0    0.98955    0 1282    1.41421    0.98955  30.0%     -   13s
+     0     0    0.99054    0 1339    1.41421    0.99054  30.0%     -   13s
+     0     0    1.00178    0 1189    1.41421    1.00178  29.2%     -   13s
+     0     0    1.10096    0 1283    1.41421    1.10096  22.2%     -   14s
+     0     0    1.11803    0 1272    1.41421    1.11803  20.9%     -   14s
+     0     0    1.11803    0 1232    1.41421    1.11803  20.9%     -   14s
+     0     0    1.11803    0 1202    1.41421    1.11803  20.9%     -   14s
+     0     0    1.11803    0 1070    1.41421    1.11803  20.9%     -   14s
+     0     2    1.11803    0 1070    1.41421    1.11803  20.9%     -   15s
+H   63    15                       1.2247449    1.11803  8.71%   542   17s
+
+Cutting planes:
+  Clique: 466
+  MIR: 55
+  Zero half: 1
+  Relax-and-lift: 6
+
+Explored 83 nodes (105505 simplex iterations) in 17.18 seconds
+Thread count was 12 (of 12 available processors)
+
+Solution count 6: 1.22474 1.41421 1.5 ... 3.20156
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.224744871392e+00, best bound 1.224744871392e+00, gap 0.0000%
+=====================================[Maximal Covering Design]======================================
+Obtained on                             : 2022-10-24 11:14:21.723754
+Criterion Value                         : 1.2247448711691142
+Space of interest                       : input
+Package                                 : cvxpy
+Optimizer                               : GUROBI
+Number of candidate points              : 102
+Number of input dimensions              : 3
+Number of runs                          : 4
+----------------------------------[Candidate 36 - (Run 1/4 Runs)]-----------------------------------
+Input Coordinates:
+Input 1     52.5
+Input 2     10.0
+Input 3    375.0
+....................................................................................................
+Output Coordinates:
+Series([], )
+----------------------------------[Candidate 39 - (Run 2/4 Runs)]-----------------------------------
+Input Coordinates:
+Input 1     52.5
+Input 2     27.5
+Input 3    225.0
+....................................................................................................
+Output Coordinates:
+Series([], )
+----------------------------------[Candidate 47 - (Run 3/4 Runs)]-----------------------------------
+Input Coordinates:
+Input 1     52.5
+Input 2     45.0
+Input 3    450.0
+....................................................................................................
+Output Coordinates:
+Series([], )
+----------------------------------[Candidate 76 - (Run 4/4 Runs)]-----------------------------------
+Input Coordinates:
+Input 1     68.75
+Input 2     80.00
+Input 3    300.00
+....................................................................................................
+Output Coordinates:
+Series([], )
+====================================================================================================
+======================================[Maximal Spread Design]=======================================
+Obtained on                             : 2022-10-24 11:14:32.753591
+Criterion Value                         : 1.314243843463861
+Space of interest                       : output
+Package                                 : cvxpy
+Optimizer                               : GUROBI
+Number of candidate points              : 102
+Number of output dimensions             : 2
+Number of runs                          : 4
+-----------------------------------[Candidate 2 - (Run 1/4 Runs)]-----------------------------------
+Input Coordinates:
+Series([], )
+....................................................................................................
+Output Coordinates:
+Output 1    17.647138
+Output 2    25.996711
+----------------------------------[Candidate 10 - (Run 2/4 Runs)]-----------------------------------
+Input Coordinates:
+Series([], )
+....................................................................................................
+Output Coordinates:
+Output 1    12.140424
+Output 2    66.767391
+----------------------------------[Candidate 83 - (Run 3/4 Runs)]-----------------------------------
+Input Coordinates:
+Series([], )
+....................................................................................................
+Output Coordinates:
+Output 1    83.386829
+Output 2    16.158142
+----------------------------------[Candidate 99 - (Run 4/4 Runs)]-----------------------------------
+Input Coordinates:
+Series([], )
+....................................................................................................
+Output Coordinates:
+Output 1    60.181894
+Output 2    50.767416
+====================================================================================================
+----------------------------------------------------------------------------------------------------
+Computed objectives of Pareto point 6: 1.225e+00, 7.670e-01
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+                                   [291.95 s - Pareto Point 7/10]                                   
+Running optimization using designer 1's criterion: Maximal Covering while constraining 
+designer 2's criterion: Maximal Spread to be at least as good as the given epsilon: 8.721e-01
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Parameter OutputFlag unchanged
+   Value: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter QCPDual to 1
+   Prev: 0  Min: 0  Max: 1  Default: 0
+Gurobi Optimizer version 9.1.1 build v9.1.1rc0 (win64)
+Thread count: 6 physical cores, 12 logical processors, using up to 12 threads
+Optimize a model with 15864 rows, 10610 columns and 57478 nonzeros
+Model fingerprint: 0x7fd54907
+Variable types: 2 continuous, 10608 integer (10608 binary)
+Coefficient statistics:
+  Matrix range     [5e-01, 3e+00]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [9e-01, 8e+00]
+Presolve removed 5095 rows and 103 columns
+Presolve time: 0.25s
+Presolved: 10769 rows, 10507 columns, 44053 nonzeros
+Variable types: 1 continuous, 10506 integer (10506 binary)
+Found heuristic solution: objective 3.2015621
+Found heuristic solution: objective 2.9154759
+
+Root relaxation: objective 8.933383e-01, 6629 iterations, 0.50 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0    0.89334    0 1312    2.91548    0.89334  69.4%     -    1s
+H    0     0                       1.7320508    0.89334  48.4%     -    1s
+H    0     0                       1.5811388    0.89334  43.5%     -    2s
+     0     0    0.91469    0 1286    1.58114    0.91469  42.1%     -    2s
+     0     0    0.91469    0 1333    1.58114    0.91469  42.1%     -    4s
+H    0     0                       1.5000000    0.91469  39.0%     -    4s
+     0     0    0.93135    0 1594    1.50000    0.93135  37.9%     -   10s
+     0     0    1.02474    0 1154    1.50000    1.02474  31.7%     -   11s
+H    0     0                       1.4142136    1.03542  26.8%     -   11s
+     0     0    1.05981    0  882    1.41421    1.05981  25.1%     -   12s
+     0     0    1.12327    0  699    1.41421    1.12327  20.6%     -   13s
+     0     0    1.12327    0  830    1.41421    1.12327  20.6%     -   14s
+     0     0    1.12327    0  814    1.41421    1.12327  20.6%     -   15s
+     0     0    1.12327    0  814    1.41421    1.12327  20.6%     -   15s
+     0     0    1.12327    0  839    1.41421    1.12327  20.6%     -   15s
+     0     0    1.12327    0  841    1.41421    1.12327  20.6%     -   15s
+     0     0    1.20547    0  800    1.41421    1.20547  14.8%     -   15s
+H    0     0                       1.2247449    1.20547  1.57%     -   16s
+     0     0    1.22474    0  879    1.22474    1.22474  0.00%     -   16s
+
+Cutting planes:
+  Clique: 1
+  MIR: 35
+  Zero half: 1
+  RLT: 3
+  Relax-and-lift: 10
+
+Explored 1 nodes (66276 simplex iterations) in 16.01 seconds
+Thread count was 12 (of 12 available processors)
+
+Solution count 7: 1.22474 1.41421 1.5 ... 3.20156
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.224744871392e+00, best bound 1.224744871392e+00, gap 0.0000%
+=====================================[Maximal Covering Design]======================================
+Obtained on                             : 2022-10-24 11:14:21.723754
+Criterion Value                         : 1.2247448711691142
+Space of interest                       : input
+Package                                 : cvxpy
+Optimizer                               : GUROBI
+Number of candidate points              : 102
+Number of input dimensions              : 3
+Number of runs                          : 4
+----------------------------------[Candidate 36 - (Run 1/4 Runs)]-----------------------------------
+Input Coordinates:
+Input 1     52.5
+Input 2     10.0
+Input 3    375.0
+....................................................................................................
+Output Coordinates:
+Series([], )
+----------------------------------[Candidate 39 - (Run 2/4 Runs)]-----------------------------------
+Input Coordinates:
+Input 1     52.5
+Input 2     27.5
+Input 3    225.0
+....................................................................................................
+Output Coordinates:
+Series([], )
+----------------------------------[Candidate 47 - (Run 3/4 Runs)]-----------------------------------
+Input Coordinates:
+Input 1     52.5
+Input 2     45.0
+Input 3    450.0
+....................................................................................................
+Output Coordinates:
+Series([], )
+----------------------------------[Candidate 76 - (Run 4/4 Runs)]-----------------------------------
+Input Coordinates:
+Input 1     68.75
+Input 2     80.00
+Input 3    300.00
+....................................................................................................
+Output Coordinates:
+Series([], )
+====================================================================================================
+======================================[Maximal Spread Design]=======================================
+Obtained on                             : 2022-10-24 11:14:32.753591
+Criterion Value                         : 1.314243843463861
+Space of interest                       : output
+Package                                 : cvxpy
+Optimizer                               : GUROBI
+Number of candidate points              : 102
+Number of output dimensions             : 2
+Number of runs                          : 4
+-----------------------------------[Candidate 2 - (Run 1/4 Runs)]-----------------------------------
+Input Coordinates:
+Series([], )
+....................................................................................................
+Output Coordinates:
+Output 1    17.647138
+Output 2    25.996711
+----------------------------------[Candidate 10 - (Run 2/4 Runs)]-----------------------------------
+Input Coordinates:
+Series([], )
+....................................................................................................
+Output Coordinates:
+Output 1    12.140424
+Output 2    66.767391
+----------------------------------[Candidate 83 - (Run 3/4 Runs)]-----------------------------------
+Input Coordinates:
+Series([], )
+....................................................................................................
+Output Coordinates:
+Output 1    83.386829
+Output 2    16.158142
+----------------------------------[Candidate 99 - (Run 4/4 Runs)]-----------------------------------
+Input Coordinates:
+Series([], )
+....................................................................................................
+Output Coordinates:
+Output 1    60.181894
+Output 2    50.767416
+====================================================================================================
+----------------------------------------------------------------------------------------------------
+Computed objectives of Pareto point 7: 1.225e+00, 8.964e-01
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+                                   [333.31 s - Pareto Point 8/10]                                   
+Running optimization using designer 1's criterion: Maximal Covering while constraining 
+designer 2's criterion: Maximal Spread to be at least as good as the given epsilon: 9.827e-01
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Parameter OutputFlag unchanged
+   Value: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter QCPDual to 1
+   Prev: 0  Min: 0  Max: 1  Default: 0
+Gurobi Optimizer version 9.1.1 build v9.1.1rc0 (win64)
+Thread count: 6 physical cores, 12 logical processors, using up to 12 threads
+Optimize a model with 15864 rows, 10610 columns and 57478 nonzeros
+Model fingerprint: 0xdfbb3857
+Variable types: 2 continuous, 10608 integer (10608 binary)
+Coefficient statistics:
+  Matrix range     [5e-01, 3e+00]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 8e+00]
+Presolve removed 5068 rows and 103 columns
+Presolve time: 0.26s
+Presolved: 10796 rows, 10507 columns, 44735 nonzeros
+Variable types: 1 continuous, 10506 integer (10506 binary)
+Found heuristic solution: objective 3.2015621
+Found heuristic solution: objective 2.4494897
+
+Root relaxation: objective 8.937669e-01, 7145 iterations, 0.65 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0    0.89377    0 1396    2.44949    0.89377  63.5%     -    1s
+H    0     0                       2.0615528    0.89377  56.6%     -    1s
+     0     0    0.94452    0 1113    2.06155    0.94452  54.2%     -    3s
+H    0     0                       1.8027756    0.94452  47.6%     -    4s
+     0     0    1.00724    0  871    1.80278    1.00724  44.1%     -    4s
+     0     0    1.00724    0  942    1.80278    1.00724  44.1%     -    5s
+H    0     0                       1.5000000    1.00724  32.9%     -    6s
+     0     0    1.02865    0  780    1.50000    1.02865  31.4%     -    6s
+     0     0    1.02865    0  929    1.50000    1.02865  31.4%     -    9s
+     0     0    1.04090    0  857    1.50000    1.04090  30.6%     -   10s
+     0     0    1.04256    0  904    1.50000    1.04256  30.5%     -   10s
+     0     0    1.04669    0  785    1.50000    1.04669  30.2%     -   11s
+     0     0    1.05154    0  919    1.50000    1.05154  29.9%     -   11s
+     0     0    1.11803    0 1021    1.50000    1.11803  25.5%     -   12s
+     0     0    1.16036    0  919    1.50000    1.16036  22.6%     -   12s
+     0     0    1.21025    0  934    1.50000    1.21025  19.3%     -   12s
+H    0     0                       1.4142136    1.21025  14.4%     -   12s
+     0     0    1.22474    0  812    1.41421    1.22474  13.4%     -   13s
+     0     0    1.26733    0  705    1.41421    1.26733  10.4%     -   13s
+     0     0    1.26733    0  568    1.41421    1.26733  10.4%     -   14s
+     0     0    1.26733    0  711    1.41421    1.26733  10.4%     -   15s
+     0     0    1.41421    0  710    1.41421    1.41421  0.00%     -   15s
+
+Cutting planes:
+  Implied bound: 1
+  Clique: 61
+  MIR: 8
+  RLT: 1
+  Relax-and-lift: 5
+
+Explored 1 nodes (90722 simplex iterations) in 15.18 seconds
+Thread count was 12 (of 12 available processors)
+
+Solution count 6: 1.41421 1.5 1.80278 ... 3.20156
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.414213562373e+00, best bound 1.414213562373e+00, gap 0.0000%
+=====================================[Maximal Covering Design]======================================
+Obtained on                             : 2022-10-24 11:14:21.723754
+Criterion Value                         : 1.2247448711691142
+Space of interest                       : input
+Package                                 : cvxpy
+Optimizer                               : GUROBI
+Number of candidate points              : 102
+Number of input dimensions              : 3
+Number of runs                          : 4
+----------------------------------[Candidate 36 - (Run 1/4 Runs)]-----------------------------------
+Input Coordinates:
+Input 1     52.5
+Input 2     10.0
+Input 3    375.0
+....................................................................................................
+Output Coordinates:
+Series([], )
+----------------------------------[Candidate 39 - (Run 2/4 Runs)]-----------------------------------
+Input Coordinates:
+Input 1     52.5
+Input 2     27.5
+Input 3    225.0
+....................................................................................................
+Output Coordinates:
+Series([], )
+----------------------------------[Candidate 47 - (Run 3/4 Runs)]-----------------------------------
+Input Coordinates:
+Input 1     52.5
+Input 2     45.0
+Input 3    450.0
+....................................................................................................
+Output Coordinates:
+Series([], )
+----------------------------------[Candidate 76 - (Run 4/4 Runs)]-----------------------------------
+Input Coordinates:
+Input 1     68.75
+Input 2     80.00
+Input 3    300.00
+....................................................................................................
+Output Coordinates:
+Series([], )
+====================================================================================================
+======================================[Maximal Spread Design]=======================================
+Obtained on                             : 2022-10-24 11:14:32.753591
+Criterion Value                         : 1.314243843463861
+Space of interest                       : output
+Package                                 : cvxpy
+Optimizer                               : GUROBI
+Number of candidate points              : 102
+Number of output dimensions             : 2
+Number of runs                          : 4
+-----------------------------------[Candidate 2 - (Run 1/4 Runs)]-----------------------------------
+Input Coordinates:
+Series([], )
+....................................................................................................
+Output Coordinates:
+Output 1    17.647138
+Output 2    25.996711
+----------------------------------[Candidate 10 - (Run 2/4 Runs)]-----------------------------------
+Input Coordinates:
+Series([], )
+....................................................................................................
+Output Coordinates:
+Output 1    12.140424
+Output 2    66.767391
+----------------------------------[Candidate 83 - (Run 3/4 Runs)]-----------------------------------
+Input Coordinates:
+Series([], )
+....................................................................................................
+Output Coordinates:
+Output 1    83.386829
+Output 2    16.158142
+----------------------------------[Candidate 99 - (Run 4/4 Runs)]-----------------------------------
+Input Coordinates:
+Series([], )
+....................................................................................................
+Output Coordinates:
+Output 1    60.181894
+Output 2    50.767416
+====================================================================================================
+----------------------------------------------------------------------------------------------------
+Computed objectives of Pareto point 8: 1.414e+00, 9.963e-01
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+                                   [372.37 s - Pareto Point 9/10]                                   
+Running optimization using designer 1's criterion: Maximal Covering while constraining 
+designer 2's criterion: Maximal Spread to be at least as good as the given epsilon: 1.093e+00
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Parameter OutputFlag unchanged
+   Value: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter QCPDual to 1
+   Prev: 0  Min: 0  Max: 1  Default: 0
+Gurobi Optimizer version 9.1.1 build v9.1.1rc0 (win64)
+Thread count: 6 physical cores, 12 logical processors, using up to 12 threads
+Optimize a model with 15864 rows, 10610 columns and 57478 nonzeros
+Model fingerprint: 0xc61b007b
+Variable types: 2 continuous, 10608 integer (10608 binary)
+Coefficient statistics:
+  Matrix range     [5e-01, 3e+00]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 8e+00]
+Presolve removed 6834 rows and 1906 columns
+Presolve time: 3.13s
+Presolved: 9030 rows, 8704 columns, 36752 nonzeros
+Variable types: 1 continuous, 8703 integer (8703 binary)
+Found heuristic solution: objective 1.8708287
+
+Root relaxation: objective 9.521179e-01, 5303 iterations, 0.34 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0    0.96845    0  861    1.87083    0.96845  48.2%     -    9s
+H    0     0                       1.8027756    0.96845  46.3%     -    9s
+     0     0    1.05587    0  682    1.80278    1.05587  41.4%     -    9s
+     0     0    1.05587    0  687    1.80278    1.05587  41.4%     -   11s
+H    0     0                       1.5000000    1.05587  29.6%     -   11s
+     0     0    1.08886    0  744    1.50000    1.08886  27.4%     -   12s
+     0     0    1.11991    0  554    1.50000    1.11991  25.3%     -   13s
+     0     0    1.15717    0  691    1.50000    1.15717  22.9%     -   13s
+     0     0    1.19523    0  712    1.50000    1.19523  20.3%     -   13s
+
+Cutting planes:
+  Gomory: 7
+  Implied bound: 10
+  Clique: 46
+  MIR: 46
+  Zero half: 35
+  RLT: 3
+  Relax-and-lift: 14
+
+Explored 1 nodes (56629 simplex iterations) in 14.00 seconds
+Thread count was 12 (of 12 available processors)
+
+Solution count 3: 1.5 1.80278 1.87083 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.500000000000e+00, best bound 1.500000000000e+00, gap 0.0000%
+=====================================[Maximal Covering Design]======================================
+Obtained on                             : 2022-10-24 11:14:21.723754
+Criterion Value                         : 1.2247448711691142
+Space of interest                       : input
+Package                                 : cvxpy
+Optimizer                               : GUROBI
+Number of candidate points              : 102
+Number of input dimensions              : 3
+Number of runs                          : 4
+----------------------------------[Candidate 36 - (Run 1/4 Runs)]-----------------------------------
+Input Coordinates:
+Input 1     52.5
+Input 2     10.0
+Input 3    375.0
+....................................................................................................
+Output Coordinates:
+Series([], )
+----------------------------------[Candidate 39 - (Run 2/4 Runs)]-----------------------------------
+Input Coordinates:
+Input 1     52.5
+Input 2     27.5
+Input 3    225.0
+....................................................................................................
+Output Coordinates:
+Series([], )
+----------------------------------[Candidate 47 - (Run 3/4 Runs)]-----------------------------------
+Input Coordinates:
+Input 1     52.5
+Input 2     45.0
+Input 3    450.0
+....................................................................................................
+Output Coordinates:
+Series([], )
+----------------------------------[Candidate 76 - (Run 4/4 Runs)]-----------------------------------
+Input Coordinates:
+Input 1     68.75
+Input 2     80.00
+Input 3    300.00
+....................................................................................................
+Output Coordinates:
+Series([], )
+====================================================================================================
+======================================[Maximal Spread Design]=======================================
+Obtained on                             : 2022-10-24 11:14:32.753591
+Criterion Value                         : 1.314243843463861
+Space of interest                       : output
+Package                                 : cvxpy
+Optimizer                               : GUROBI
+Number of candidate points              : 102
+Number of output dimensions             : 2
+Number of runs                          : 4
+-----------------------------------[Candidate 2 - (Run 1/4 Runs)]-----------------------------------
+Input Coordinates:
+Series([], )
+....................................................................................................
+Output Coordinates:
+Output 1    17.647138
+Output 2    25.996711
+----------------------------------[Candidate 10 - (Run 2/4 Runs)]-----------------------------------
+Input Coordinates:
+Series([], )
+....................................................................................................
+Output Coordinates:
+Output 1    12.140424
+Output 2    66.767391
+----------------------------------[Candidate 83 - (Run 3/4 Runs)]-----------------------------------
+Input Coordinates:
+Series([], )
+....................................................................................................
+Output Coordinates:
+Output 1    83.386829
+Output 2    16.158142
+----------------------------------[Candidate 99 - (Run 4/4 Runs)]-----------------------------------
+Input Coordinates:
+Series([], )
+....................................................................................................
+Output Coordinates:
+Output 1    60.181894
+Output 2    50.767416
+====================================================================================================
+----------------------------------------------------------------------------------------------------
+Computed objectives of Pareto point 9: 1.500e+00, 1.129e+00
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+                                  [412.52 s - Pareto Point 10/10]                                   
+Running optimization using designer 1's criterion: Maximal Covering while constraining 
+designer 2's criterion: Maximal Spread to be at least as good as the given epsilon: 1.204e+00
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Parameter OutputFlag unchanged
+   Value: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter QCPDual to 1
+   Prev: 0  Min: 0  Max: 1  Default: 0
+Gurobi Optimizer version 9.1.1 build v9.1.1rc0 (win64)
+Thread count: 6 physical cores, 12 logical processors, using up to 12 threads
+Optimize a model with 15864 rows, 10610 columns and 57478 nonzeros
+Model fingerprint: 0x2863c1ea
+Variable types: 2 continuous, 10608 integer (10608 binary)
+Coefficient statistics:
+  Matrix range     [5e-01, 3e+00]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 8e+00]
+Presolve removed 6965 rows and 2163 columns
+Presolve time: 3.29s
+Presolved: 8899 rows, 8447 columns, 35476 nonzeros
+Variable types: 1 continuous, 8446 integer (8446 binary)
+Found heuristic solution: objective 3.2015621
+
+Root relaxation: objective 9.489944e-01, 5412 iterations, 0.37 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0    0.94899    0  873    3.20156    0.94899  70.4%     -    4s
+H    0     0                       2.0615528    0.94899  54.0%     -    4s
+H    0     0                       1.5811388    0.94899  40.0%     -    4s
+H    0     0                       1.5000000    0.94899  36.7%     -    4s
+     0     0    1.19423    0  621    1.50000    1.19423  20.4%     -    5s
+
+Explored 1 nodes (24340 simplex iterations) in 6.09 seconds
+Thread count was 12 (of 12 available processors)
+
+Solution count 5: 1.5 1.5 1.58114 ... 3.20156
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.499999999750e+00, best bound 1.499999999750e+00, gap 0.0000%
+=====================================[Maximal Covering Design]======================================
+Obtained on                             : 2022-10-24 11:14:21.723754
+Criterion Value                         : 1.2247448711691142
+Space of interest                       : input
+Package                                 : cvxpy
+Optimizer                               : GUROBI
+Number of candidate points              : 102
+Number of input dimensions              : 3
+Number of runs                          : 4
+----------------------------------[Candidate 36 - (Run 1/4 Runs)]-----------------------------------
+Input Coordinates:
+Input 1     52.5
+Input 2     10.0
+Input 3    375.0
+....................................................................................................
+Output Coordinates:
+Series([], )
+----------------------------------[Candidate 39 - (Run 2/4 Runs)]-----------------------------------
+Input Coordinates:
+Input 1     52.5
+Input 2     27.5
+Input 3    225.0
+....................................................................................................
+Output Coordinates:
+Series([], )
+----------------------------------[Candidate 47 - (Run 3/4 Runs)]-----------------------------------
+Input Coordinates:
+Input 1     52.5
+Input 2     45.0
+Input 3    450.0
+....................................................................................................
+Output Coordinates:
+Series([], )
+----------------------------------[Candidate 76 - (Run 4/4 Runs)]-----------------------------------
+Input Coordinates:
+Input 1     68.75
+Input 2     80.00
+Input 3    300.00
+....................................................................................................
+Output Coordinates:
+Series([], )
+====================================================================================================
+======================================[Maximal Spread Design]=======================================
+Obtained on                             : 2022-10-24 11:14:32.753591
+Criterion Value                         : 1.314243843463861
+Space of interest                       : output
+Package                                 : cvxpy
+Optimizer                               : GUROBI
+Number of candidate points              : 102
+Number of output dimensions             : 2
+Number of runs                          : 4
+-----------------------------------[Candidate 2 - (Run 1/4 Runs)]-----------------------------------
+Input Coordinates:
+Series([], )
+....................................................................................................
+Output Coordinates:
+Output 1    17.647138
+Output 2    25.996711
+----------------------------------[Candidate 10 - (Run 2/4 Runs)]-----------------------------------
+Input Coordinates:
+Series([], )
+....................................................................................................
+Output Coordinates:
+Output 1    12.140424
+Output 2    66.767391
+----------------------------------[Candidate 83 - (Run 3/4 Runs)]-----------------------------------
+Input Coordinates:
+Series([], )
+....................................................................................................
+Output Coordinates:
+Output 1    83.386829
+Output 2    16.158142
+----------------------------------[Candidate 99 - (Run 4/4 Runs)]-----------------------------------
+Input Coordinates:
+Series([], )
+....................................................................................................
+Output Coordinates:
+Output 1    60.181894
+Output 2    50.767416
+====================================================================================================
+----------------------------------------------------------------------------------------------------
+Computed objectives of Pareto point 10: 1.500e+00, 1.235e+00
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Completed bi-objective optimization for 10 Pareto points after 446.77 seconds
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

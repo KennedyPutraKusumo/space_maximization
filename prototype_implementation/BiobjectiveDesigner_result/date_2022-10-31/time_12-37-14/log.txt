@@ -1,0 +1,1457 @@
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+[      0.00 s]: Bi-objective designer initialized successfully. Overall start time recorded. Status: READY
+====================================================================================================
+[      0.00 s]: Initialization completed successfully. Start time recorded. Status: READY
+====================================================================================================
+====================================================================================================
+[      0.00 s]: Initialization completed successfully. Start time recorded. Status: READY
+====================================================================================================
+Individual single-objective designer are successfully initialized
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Solving the end-points of the Pareto Frontier by solving two single-objective optimization problems
+Designer 1 is running...
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+====================================================================================================
+[      0.00 s] Computing the Maximal Spread design using GUROBI interfaced via cvxpy
+----------------------------------------------------------------------------------------------------
+Academic license - for non-commercial use only - expires 2023-09-29
+Using license file C:\Users\kenne\gurobi.lic
+====================================================================================================
+======================================[Maximal Spread Design]=======================================
+Obtained on                             : 2022-10-31 12:37:31.602587
+Criterion Value                         : 1.9999999999999993
+Space of interest                       : input
+Package                                 : cvxpy
+Optimizer                               : GUROBI
+Number of candidate points              : 121
+Number of input dimensions              : 2
+Number of runs                          : 4
+-----------------------------------[Candidate 1 - (Run 1/4 Runs)]-----------------------------------
+Input Coordinates:
+Input 1     10.0
+Input 2    400.0
+....................................................................................................
+Output Coordinates:
+Series([], )
+----------------------------------[Candidate 11 - (Run 2/4 Runs)]-----------------------------------
+Input Coordinates:
+Input 1      10.0
+Input 2    1400.0
+....................................................................................................
+Output Coordinates:
+Series([], )
+----------------------------------[Candidate 111 - (Run 3/4 Runs)]----------------------------------
+Input Coordinates:
+Input 1     30.0
+Input 2    400.0
+....................................................................................................
+Output Coordinates:
+Series([], )
+----------------------------------[Candidate 121 - (Run 4/4 Runs)]----------------------------------
+Input Coordinates:
+Input 1      30.0
+Input 2    1400.0
+....................................................................................................
+Output Coordinates:
+Series([], )
+====================================================================================================
+Designer 2 is running...
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+====================================================================================================
+[     16.63 s] Computing the Maximal Spread design using CPLEX interfaced via cvxpy
+----------------------------------------------------------------------------------------------------
+====================================================================================================
+======================================[Maximal Spread Design]=======================================
+Obtained on                             : 2022-10-31 12:37:49.791346
+Criterion Value                         : 1.0256012078824686
+Space of interest                       : output
+Package                                 : cvxpy
+Optimizer                               : CPLEX
+Number of candidate points              : 121
+Number of output dimensions             : 2
+Number of runs                          : 4
+-----------------------------------[Candidate 9 - (Run 1/4 Runs)]-----------------------------------
+Input Coordinates:
+Series([], )
+....................................................................................................
+Output Coordinates:
+Output 1    0.240921
+Output 2    0.001082
+----------------------------------[Candidate 34 - (Run 2/4 Runs)]-----------------------------------
+Input Coordinates:
+Series([], )
+....................................................................................................
+Output Coordinates:
+Output 1    0.205323
+Output 2    0.003772
+----------------------------------[Candidate 111 - (Run 3/4 Runs)]----------------------------------
+Input Coordinates:
+Series([], )
+....................................................................................................
+Output Coordinates:
+Output 1    0.166771
+Output 2    0.003899
+----------------------------------[Candidate 117 - (Run 4/4 Runs)]----------------------------------
+Input Coordinates:
+Series([], )
+....................................................................................................
+Output Coordinates:
+Output 1    0.210936
+Output 2    0.002123
+====================================================================================================
+Single-objective Optimizations at the end-points are completed successfully, with the following criterion values:
+----------------------------------------------------------------------------------------------------
+Maximal Spread Design of input Space:
+input Maximal Spread: 2.000
+output Maximal Spread: 0.714
+Maximal Spread Design of output Space:
+input Maximal Spread: 1.200
+output Maximal Spread: 1.026
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+                                   [36.99 s - Pareto Point 1/10]                                    
+Running optimization using designer 1's criterion: Maximal Spread while constraining 
+designer 2's criterion: Maximal Spread to be at least as good as the given epsilon: 7.426e-01
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Parameter OutputFlag unchanged
+   Value: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter QCPDual to 1
+   Prev: 0  Min: 0  Max: 1  Default: 0
+Gurobi Optimizer version 9.1.1 build v9.1.1rc0 (win64)
+Thread count: 6 physical cores, 12 logical processors, using up to 12 threads
+Optimize a model with 14644 rows, 244 columns and 44045 nonzeros
+Model fingerprint: 0x0a3063fa
+Variable types: 2 continuous, 242 integer (242 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 3e+00]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [7e-01, 8e+00]
+Presolve removed 4022 rows and 122 columns
+Presolve time: 0.25s
+Presolved: 10622 rows, 122 columns, 31119 nonzeros
+Variable types: 1 continuous, 121 integer (121 binary)
+
+Root relaxation: objective -5.669851e+00, 210 iterations, 0.04 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   -5.66985    0  121          -   -5.66985      -     -    0s
+H    0     0                      -1.6000000   -5.66985   254%     -    2s
+H    0     0                      -1.8000000   -5.66985   215%     -    2s
+     0     0   -4.13848    0   18   -1.80000   -4.13848   130%     -    2s
+     0     0   -3.87905    0   16   -1.80000   -3.87905   116%     -    2s
+     0     0   -3.59024    0   15   -1.80000   -3.59024  99.5%     -    2s
+     0     0   -3.59024    0   13   -1.80000   -3.59024  99.5%     -    2s
+     0     0   -3.02843    0    8   -1.80000   -3.02843  68.2%     -    2s
+     0     0   -3.02843    0    6   -1.80000   -3.02843  68.2%     -    2s
+     0     0   -2.41700    0    4   -1.80000   -2.41700  34.3%     -    2s
+     0     0   -2.41700    0    6   -1.80000   -2.41700  34.3%     -    2s
+     0     0   -2.41700    0    6   -1.80000   -2.41700  34.3%     -    2s
+
+Cutting planes:
+  Clique: 12
+  MIR: 5
+  RLT: 1
+  Relax-and-lift: 1
+
+Explored 1 nodes (600 simplex iterations) in 2.87 seconds
+Thread count was 12 (of 12 available processors)
+
+Solution count 2: -1.8 -1.6 
+No other solutions better than -1.8
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective -1.800000000000e+00, best bound -1.800000000000e+00, gap 0.0000%
+======================================[Maximal Spread Design]=======================================
+Obtained on                             : 2022-10-31 12:37:31.602587
+Criterion Value                         : 1.9999999999999993
+Space of interest                       : input
+Package                                 : cvxpy
+Optimizer                               : GUROBI
+Number of candidate points              : 121
+Number of input dimensions              : 2
+Number of runs                          : 4
+-----------------------------------[Candidate 1 - (Run 1/4 Runs)]-----------------------------------
+Input Coordinates:
+Input 1     10.0
+Input 2    400.0
+....................................................................................................
+Output Coordinates:
+Series([], )
+----------------------------------[Candidate 11 - (Run 2/4 Runs)]-----------------------------------
+Input Coordinates:
+Input 1      10.0
+Input 2    1400.0
+....................................................................................................
+Output Coordinates:
+Series([], )
+----------------------------------[Candidate 111 - (Run 3/4 Runs)]----------------------------------
+Input Coordinates:
+Input 1     30.0
+Input 2    400.0
+....................................................................................................
+Output Coordinates:
+Series([], )
+----------------------------------[Candidate 121 - (Run 4/4 Runs)]----------------------------------
+Input Coordinates:
+Input 1      30.0
+Input 2    1400.0
+....................................................................................................
+Output Coordinates:
+Series([], )
+====================================================================================================
+======================================[Maximal Spread Design]=======================================
+Obtained on                             : 2022-10-31 12:37:49.791346
+Criterion Value                         : 1.0256012078824686
+Space of interest                       : output
+Package                                 : cvxpy
+Optimizer                               : CPLEX
+Number of candidate points              : 121
+Number of output dimensions             : 2
+Number of runs                          : 4
+-----------------------------------[Candidate 9 - (Run 1/4 Runs)]-----------------------------------
+Input Coordinates:
+Series([], )
+....................................................................................................
+Output Coordinates:
+Output 1    0.240921
+Output 2    0.001082
+----------------------------------[Candidate 34 - (Run 2/4 Runs)]-----------------------------------
+Input Coordinates:
+Series([], )
+....................................................................................................
+Output Coordinates:
+Output 1    0.205323
+Output 2    0.003772
+----------------------------------[Candidate 111 - (Run 3/4 Runs)]----------------------------------
+Input Coordinates:
+Series([], )
+....................................................................................................
+Output Coordinates:
+Output 1    0.166771
+Output 2    0.003899
+----------------------------------[Candidate 117 - (Run 4/4 Runs)]----------------------------------
+Input Coordinates:
+Series([], )
+....................................................................................................
+Output Coordinates:
+Output 1    0.210936
+Output 2    0.002123
+====================================================================================================
+----------------------------------------------------------------------------------------------------
+Computed objectives of Pareto point 1: 1.800e+00, 7.982e-01
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+                                   [67.36 s - Pareto Point 2/10]                                    
+Running optimization using designer 1's criterion: Maximal Spread while constraining 
+designer 2's criterion: Maximal Spread to be at least as good as the given epsilon: 7.709e-01
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Parameter OutputFlag unchanged
+   Value: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter QCPDual to 1
+   Prev: 0  Min: 0  Max: 1  Default: 0
+Gurobi Optimizer version 9.1.1 build v9.1.1rc0 (win64)
+Thread count: 6 physical cores, 12 logical processors, using up to 12 threads
+Optimize a model with 14644 rows, 244 columns and 44045 nonzeros
+Model fingerprint: 0x081e3c4d
+Variable types: 2 continuous, 242 integer (242 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 3e+00]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [8e-01, 8e+00]
+Presolve removed 3885 rows and 122 columns
+Presolve time: 0.24s
+Presolved: 10759 rows, 122 columns, 31394 nonzeros
+Variable types: 1 continuous, 121 integer (121 binary)
+
+Root relaxation: objective -5.669851e+00, 205 iterations, 0.03 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   -5.66985    0  121          -   -5.66985      -     -    0s
+H    0     0                      -0.7211103   -5.66985   686%     -    2s
+H    0     0                      -1.4000000   -5.66985   305%     -    2s
+H    0     0                      -1.4142136   -5.66985   301%     -    2s
+     0     0   -4.10352    0   28   -1.41421   -4.10352   190%     -    2s
+H    0     0                      -1.6000000   -4.10352   156%     -    2s
+H    0     0                      -1.6124515   -4.10352   154%     -    2s
+H    0     0                      -1.6124515   -4.10352   154%     -    2s
+     0     0   -3.58523    0   11   -1.61245   -3.58523   122%     -    2s
+     0     0   -3.58523    0   14   -1.61245   -3.58523   122%     -    2s
+     0     0   -3.02843    0    8   -1.61245   -3.02843  87.8%     -    2s
+     0     0   -3.02843    0    9   -1.61245   -3.02843  87.8%     -    2s
+H    0     0                      -1.8000000   -3.02843  68.2%     -    2s
+     0     0   -3.02843    0    8   -1.80000   -3.02843  68.2%     -    2s
+     0     0   -3.02843    0    6   -1.80000   -3.02843  68.2%     -    2s
+     0     0   -2.77732    0   11   -1.80000   -2.77732  54.3%     -    2s
+     0     0   -2.69674    0    7   -1.80000   -2.69674  49.8%     -    2s
+     0     0   -2.00998    0    4   -1.80000   -2.00998  11.7%     -    2s
+     0     0   -2.00998    0    8   -1.80000   -2.00998  11.7%     -    3s
+     0     0   -2.00998    0    4   -1.80000   -2.00998  11.7%     -    3s
+     0     0   -1.81108    0    2   -1.80000   -1.81108  0.62%     -    3s
+
+Cutting planes:
+  Clique: 5
+  MIR: 1
+  RLT: 1
+
+Explored 1 nodes (689 simplex iterations) in 3.10 seconds
+Thread count was 12 (of 12 available processors)
+
+Solution count 7: -1.8 -1.61245 -1.61245 ... -0.72111
+No other solutions better than -1.8
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective -1.800000000000e+00, best bound -1.800000000000e+00, gap 0.0000%
+======================================[Maximal Spread Design]=======================================
+Obtained on                             : 2022-10-31 12:37:31.602587
+Criterion Value                         : 1.9999999999999993
+Space of interest                       : input
+Package                                 : cvxpy
+Optimizer                               : GUROBI
+Number of candidate points              : 121
+Number of input dimensions              : 2
+Number of runs                          : 4
+-----------------------------------[Candidate 1 - (Run 1/4 Runs)]-----------------------------------
+Input Coordinates:
+Input 1     10.0
+Input 2    400.0
+....................................................................................................
+Output Coordinates:
+Series([], )
+----------------------------------[Candidate 11 - (Run 2/4 Runs)]-----------------------------------
+Input Coordinates:
+Input 1      10.0
+Input 2    1400.0
+....................................................................................................
+Output Coordinates:
+Series([], )
+----------------------------------[Candidate 111 - (Run 3/4 Runs)]----------------------------------
+Input Coordinates:
+Input 1     30.0
+Input 2    400.0
+....................................................................................................
+Output Coordinates:
+Series([], )
+----------------------------------[Candidate 121 - (Run 4/4 Runs)]----------------------------------
+Input Coordinates:
+Input 1      30.0
+Input 2    1400.0
+....................................................................................................
+Output Coordinates:
+Series([], )
+====================================================================================================
+======================================[Maximal Spread Design]=======================================
+Obtained on                             : 2022-10-31 12:37:49.791346
+Criterion Value                         : 1.0256012078824686
+Space of interest                       : output
+Package                                 : cvxpy
+Optimizer                               : CPLEX
+Number of candidate points              : 121
+Number of output dimensions             : 2
+Number of runs                          : 4
+-----------------------------------[Candidate 9 - (Run 1/4 Runs)]-----------------------------------
+Input Coordinates:
+Series([], )
+....................................................................................................
+Output Coordinates:
+Output 1    0.240921
+Output 2    0.001082
+----------------------------------[Candidate 34 - (Run 2/4 Runs)]-----------------------------------
+Input Coordinates:
+Series([], )
+....................................................................................................
+Output Coordinates:
+Output 1    0.205323
+Output 2    0.003772
+----------------------------------[Candidate 111 - (Run 3/4 Runs)]----------------------------------
+Input Coordinates:
+Series([], )
+....................................................................................................
+Output Coordinates:
+Output 1    0.166771
+Output 2    0.003899
+----------------------------------[Candidate 117 - (Run 4/4 Runs)]----------------------------------
+Input Coordinates:
+Series([], )
+....................................................................................................
+Output Coordinates:
+Output 1    0.210936
+Output 2    0.002123
+====================================================================================================
+----------------------------------------------------------------------------------------------------
+Computed objectives of Pareto point 2: 1.800e+00, 7.982e-01
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+                                   [94.75 s - Pareto Point 3/10]                                    
+Running optimization using designer 1's criterion: Maximal Spread while constraining 
+designer 2's criterion: Maximal Spread to be at least as good as the given epsilon: 7.992e-01
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Parameter OutputFlag unchanged
+   Value: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter QCPDual to 1
+   Prev: 0  Min: 0  Max: 1  Default: 0
+Gurobi Optimizer version 9.1.1 build v9.1.1rc0 (win64)
+Thread count: 6 physical cores, 12 logical processors, using up to 12 threads
+Optimize a model with 14644 rows, 244 columns and 44045 nonzeros
+Model fingerprint: 0xee1cfe24
+Variable types: 2 continuous, 242 integer (242 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 3e+00]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [8e-01, 8e+00]
+Presolve removed 3735 rows and 122 columns
+Presolve time: 0.23s
+Presolved: 10909 rows, 122 columns, 31729 nonzeros
+Variable types: 1 continuous, 121 integer (121 binary)
+
+Root relaxation: objective -5.669851e+00, 202 iterations, 0.04 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   -5.66985    0  121          -   -5.66985      -     -    0s
+H    0     0                      -0.8246211   -5.66985   588%     -    0s
+H    0     0                      -1.2649111   -5.66985   348%     -    2s
+H    0     0                      -1.3416408   -5.66985   323%     -    2s
+H    0     0                      -1.3416408   -5.66985   323%     -    2s
+H    0     0                      -1.4000000   -5.66985   305%     -    2s
+H    0     0                      -1.4142136   -5.53050   291%     -    2s
+H    0     0                      -1.5231546   -5.53050   263%     -    2s
+     0     0   -4.02023    0   18   -1.52315   -4.02023   164%     -    2s
+H    0     0                      -1.6000000   -4.02023   151%     -    2s
+H    0     0                      -1.6124515   -4.02023   149%     -    2s
+     0     0   -3.02843    0   14   -1.61245   -3.02843  87.8%     -    2s
+     0     0   -3.02843    0   12   -1.61245   -3.02843  87.8%     -    2s
+H    0     0                      -1.6124515   -3.02843  87.8%     -    2s
+     0     0   -3.02843    0    9   -1.61245   -3.02843  87.8%     -    2s
+     0     0   -3.02843    0    8   -1.61245   -3.02843  87.8%     -    2s
+     0     0   -3.02843    0   12   -1.61245   -3.02843  87.8%     -    2s
+     0     0   -3.02843    0    8   -1.61245   -3.02843  87.8%     -    3s
+     0     0   -2.87315    0   14   -1.61245   -2.87315  78.2%     -    3s
+     0     0   -2.82949    0   14   -1.61245   -2.82949  75.5%     -    3s
+     0     0   -2.82949    0   15   -1.61245   -2.82949  75.5%     -    3s
+     0     0   -2.38345    0    8   -1.61245   -2.38345  47.8%     -    3s
+     0     0   -2.32044    0    8   -1.61245   -2.32044  43.9%     -    3s
+     0     0   -2.32044    0    8   -1.61245   -2.32044  43.9%     -    3s
+     0     0   -2.32044    0    9   -1.61245   -2.32044  43.9%     -    3s
+     0     0   -2.16333    0    6   -1.61245   -2.16333  34.2%     -    3s
+
+Cutting planes:
+  Gomory: 1
+  Clique: 5
+  MIR: 2
+  Relax-and-lift: 1
+
+Explored 1 nodes (703 simplex iterations) in 3.42 seconds
+Thread count was 12 (of 12 available processors)
+
+Solution count 9: -1.61245 -1.6 -1.52315 ... -0.824621
+No other solutions better than -1.61245
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective -1.612451549921e+00, best bound -1.612451549921e+00, gap 0.0000%
+======================================[Maximal Spread Design]=======================================
+Obtained on                             : 2022-10-31 12:37:31.602587
+Criterion Value                         : 1.9999999999999993
+Space of interest                       : input
+Package                                 : cvxpy
+Optimizer                               : GUROBI
+Number of candidate points              : 121
+Number of input dimensions              : 2
+Number of runs                          : 4
+-----------------------------------[Candidate 1 - (Run 1/4 Runs)]-----------------------------------
+Input Coordinates:
+Input 1     10.0
+Input 2    400.0
+....................................................................................................
+Output Coordinates:
+Series([], )
+----------------------------------[Candidate 11 - (Run 2/4 Runs)]-----------------------------------
+Input Coordinates:
+Input 1      10.0
+Input 2    1400.0
+....................................................................................................
+Output Coordinates:
+Series([], )
+----------------------------------[Candidate 111 - (Run 3/4 Runs)]----------------------------------
+Input Coordinates:
+Input 1     30.0
+Input 2    400.0
+....................................................................................................
+Output Coordinates:
+Series([], )
+----------------------------------[Candidate 121 - (Run 4/4 Runs)]----------------------------------
+Input Coordinates:
+Input 1      30.0
+Input 2    1400.0
+....................................................................................................
+Output Coordinates:
+Series([], )
+====================================================================================================
+======================================[Maximal Spread Design]=======================================
+Obtained on                             : 2022-10-31 12:37:49.791346
+Criterion Value                         : 1.0256012078824686
+Space of interest                       : output
+Package                                 : cvxpy
+Optimizer                               : CPLEX
+Number of candidate points              : 121
+Number of output dimensions             : 2
+Number of runs                          : 4
+-----------------------------------[Candidate 9 - (Run 1/4 Runs)]-----------------------------------
+Input Coordinates:
+Series([], )
+....................................................................................................
+Output Coordinates:
+Output 1    0.240921
+Output 2    0.001082
+----------------------------------[Candidate 34 - (Run 2/4 Runs)]-----------------------------------
+Input Coordinates:
+Series([], )
+....................................................................................................
+Output Coordinates:
+Output 1    0.205323
+Output 2    0.003772
+----------------------------------[Candidate 111 - (Run 3/4 Runs)]----------------------------------
+Input Coordinates:
+Series([], )
+....................................................................................................
+Output Coordinates:
+Output 1    0.166771
+Output 2    0.003899
+----------------------------------[Candidate 117 - (Run 4/4 Runs)]----------------------------------
+Input Coordinates:
+Series([], )
+....................................................................................................
+Output Coordinates:
+Output 1    0.210936
+Output 2    0.002123
+====================================================================================================
+----------------------------------------------------------------------------------------------------
+Computed objectives of Pareto point 3: 1.612e+00, 8.344e-01
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+                                   [124.99 s - Pareto Point 4/10]                                   
+Running optimization using designer 1's criterion: Maximal Spread while constraining 
+designer 2's criterion: Maximal Spread to be at least as good as the given epsilon: 8.275e-01
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Parameter OutputFlag unchanged
+   Value: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter QCPDual to 1
+   Prev: 0  Min: 0  Max: 1  Default: 0
+Gurobi Optimizer version 9.1.1 build v9.1.1rc0 (win64)
+Thread count: 6 physical cores, 12 logical processors, using up to 12 threads
+Optimize a model with 14644 rows, 244 columns and 44045 nonzeros
+Model fingerprint: 0x1f14ba1d
+Variable types: 2 continuous, 242 integer (242 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 3e+00]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [8e-01, 8e+00]
+Presolve removed 3599 rows and 122 columns
+Presolve time: 0.23s
+Presolved: 11045 rows, 122 columns, 32017 nonzeros
+Variable types: 1 continuous, 121 integer (121 binary)
+
+Root relaxation: objective -5.669851e+00, 202 iterations, 0.03 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   -5.66985    0  121          -   -5.66985      -     -    0s
+H    0     0                      -0.8246211   -5.66985   588%     -    2s
+H    0     0                      -1.4142136   -5.66985   301%     -    2s
+H    0     0                      -1.4422205   -5.66985   293%     -    2s
+H    0     0                      -1.6000000   -5.66985   254%     -    2s
+H    0     0                      -1.6000000   -5.38545   237%     -    2s
+     0     0   -3.02843    0   14   -1.60000   -3.02843  89.3%     -    2s
+     0     0   -3.02843    0   10   -1.60000   -3.02843  89.3%     -    2s
+     0     0   -3.02843    0    8   -1.60000   -3.02843  89.3%     -    2s
+H    0     0                      -1.6124515   -3.02843  87.8%     -    2s
+     0     0   -3.02843    0    7   -1.61245   -3.02843  87.8%     -    2s
+     0     0   -2.87444    0   14   -1.61245   -2.87444  78.3%     -    3s
+     0     0   -2.82618    0   14   -1.61245   -2.82618  75.3%     -    3s
+H    0     0                      -1.6124515   -2.82618  75.3%     -    3s
+     0     0   -1.84391    0    4   -1.61245   -1.84391  14.4%     -    3s
+     0     0   -1.84391    0    2   -1.61245   -1.84391  14.4%     -    3s
+     0     0     cutoff    0        -1.61245   -1.61245  0.00%     -    3s
+
+Cutting planes:
+  Clique: 12
+  MIR: 6
+  StrongCG: 9
+  RLT: 1
+  Relax-and-lift: 2
+
+Explored 1 nodes (564 simplex iterations) in 3.26 seconds
+Thread count was 12 (of 12 available processors)
+
+Solution count 6: -1.61245 -1.6 -1.6 ... -0.824621
+No other solutions better than -1.61245
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective -1.612451549921e+00, best bound -1.612451549921e+00, gap 0.0000%
+======================================[Maximal Spread Design]=======================================
+Obtained on                             : 2022-10-31 12:37:31.602587
+Criterion Value                         : 1.9999999999999993
+Space of interest                       : input
+Package                                 : cvxpy
+Optimizer                               : GUROBI
+Number of candidate points              : 121
+Number of input dimensions              : 2
+Number of runs                          : 4
+-----------------------------------[Candidate 1 - (Run 1/4 Runs)]-----------------------------------
+Input Coordinates:
+Input 1     10.0
+Input 2    400.0
+....................................................................................................
+Output Coordinates:
+Series([], )
+----------------------------------[Candidate 11 - (Run 2/4 Runs)]-----------------------------------
+Input Coordinates:
+Input 1      10.0
+Input 2    1400.0
+....................................................................................................
+Output Coordinates:
+Series([], )
+----------------------------------[Candidate 111 - (Run 3/4 Runs)]----------------------------------
+Input Coordinates:
+Input 1     30.0
+Input 2    400.0
+....................................................................................................
+Output Coordinates:
+Series([], )
+----------------------------------[Candidate 121 - (Run 4/4 Runs)]----------------------------------
+Input Coordinates:
+Input 1      30.0
+Input 2    1400.0
+....................................................................................................
+Output Coordinates:
+Series([], )
+====================================================================================================
+======================================[Maximal Spread Design]=======================================
+Obtained on                             : 2022-10-31 12:37:49.791346
+Criterion Value                         : 1.0256012078824686
+Space of interest                       : output
+Package                                 : cvxpy
+Optimizer                               : CPLEX
+Number of candidate points              : 121
+Number of output dimensions             : 2
+Number of runs                          : 4
+-----------------------------------[Candidate 9 - (Run 1/4 Runs)]-----------------------------------
+Input Coordinates:
+Series([], )
+....................................................................................................
+Output Coordinates:
+Output 1    0.240921
+Output 2    0.001082
+----------------------------------[Candidate 34 - (Run 2/4 Runs)]-----------------------------------
+Input Coordinates:
+Series([], )
+....................................................................................................
+Output Coordinates:
+Output 1    0.205323
+Output 2    0.003772
+----------------------------------[Candidate 111 - (Run 3/4 Runs)]----------------------------------
+Input Coordinates:
+Series([], )
+....................................................................................................
+Output Coordinates:
+Output 1    0.166771
+Output 2    0.003899
+----------------------------------[Candidate 117 - (Run 4/4 Runs)]----------------------------------
+Input Coordinates:
+Series([], )
+....................................................................................................
+Output Coordinates:
+Output 1    0.210936
+Output 2    0.002123
+====================================================================================================
+----------------------------------------------------------------------------------------------------
+Computed objectives of Pareto point 4: 1.612e+00, 8.344e-01
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+                                   [152.49 s - Pareto Point 5/10]                                   
+Running optimization using designer 1's criterion: Maximal Spread while constraining 
+designer 2's criterion: Maximal Spread to be at least as good as the given epsilon: 8.558e-01
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Parameter OutputFlag unchanged
+   Value: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter QCPDual to 1
+   Prev: 0  Min: 0  Max: 1  Default: 0
+Gurobi Optimizer version 9.1.1 build v9.1.1rc0 (win64)
+Thread count: 6 physical cores, 12 logical processors, using up to 12 threads
+Optimize a model with 14644 rows, 244 columns and 44045 nonzeros
+Model fingerprint: 0x97906561
+Variable types: 2 continuous, 242 integer (242 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 3e+00]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [9e-01, 8e+00]
+Presolve removed 3192 rows and 122 columns
+Presolve time: 0.22s
+Presolved: 11452 rows, 122 columns, 33020 nonzeros
+Variable types: 1 continuous, 121 integer (121 binary)
+
+Root relaxation: objective -5.669851e+00, 190 iterations, 0.04 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   -5.66985    0  121          -   -5.66985      -     -    0s
+H    0     0                      -1.2000000   -5.66985   372%     -    3s
+H    0     0                      -1.6000000   -5.66985   254%     -    3s
+     0     0   -3.02843    0   25   -1.60000   -3.02843  89.3%     -    3s
+     0     0   -3.02843    0    6   -1.60000   -3.02843  89.3%     -    3s
+     0     0   -3.02843    0    9   -1.60000   -3.02843  89.3%     -    3s
+     0     0   -3.02843    0    8   -1.60000   -3.02843  89.3%     -    3s
+     0     0   -2.67222    0   10   -1.60000   -2.67222  67.0%     -    3s
+     0     0   -2.67222    0   10   -1.60000   -2.67222  67.0%     -    3s
+     0     0   -2.03961    0    4   -1.60000   -2.03961  27.5%     -    3s
+     0     0   -2.03961    0    4   -1.60000   -2.03961  27.5%     -    3s
+     0     0   -2.02479    0    5   -1.60000   -2.02479  26.5%     -    4s
+
+Cutting planes:
+  Clique: 7
+  MIR: 8
+  Zero half: 1
+
+Explored 1 nodes (566 simplex iterations) in 4.09 seconds
+Thread count was 12 (of 12 available processors)
+
+Solution count 2: -1.6 -1.2 
+No other solutions better than -1.6
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective -1.600000000260e+00, best bound -1.600000000260e+00, gap 0.0000%
+======================================[Maximal Spread Design]=======================================
+Obtained on                             : 2022-10-31 12:37:31.602587
+Criterion Value                         : 1.9999999999999993
+Space of interest                       : input
+Package                                 : cvxpy
+Optimizer                               : GUROBI
+Number of candidate points              : 121
+Number of input dimensions              : 2
+Number of runs                          : 4
+-----------------------------------[Candidate 1 - (Run 1/4 Runs)]-----------------------------------
+Input Coordinates:
+Input 1     10.0
+Input 2    400.0
+....................................................................................................
+Output Coordinates:
+Series([], )
+----------------------------------[Candidate 11 - (Run 2/4 Runs)]-----------------------------------
+Input Coordinates:
+Input 1      10.0
+Input 2    1400.0
+....................................................................................................
+Output Coordinates:
+Series([], )
+----------------------------------[Candidate 111 - (Run 3/4 Runs)]----------------------------------
+Input Coordinates:
+Input 1     30.0
+Input 2    400.0
+....................................................................................................
+Output Coordinates:
+Series([], )
+----------------------------------[Candidate 121 - (Run 4/4 Runs)]----------------------------------
+Input Coordinates:
+Input 1      30.0
+Input 2    1400.0
+....................................................................................................
+Output Coordinates:
+Series([], )
+====================================================================================================
+======================================[Maximal Spread Design]=======================================
+Obtained on                             : 2022-10-31 12:37:49.791346
+Criterion Value                         : 1.0256012078824686
+Space of interest                       : output
+Package                                 : cvxpy
+Optimizer                               : CPLEX
+Number of candidate points              : 121
+Number of output dimensions             : 2
+Number of runs                          : 4
+-----------------------------------[Candidate 9 - (Run 1/4 Runs)]-----------------------------------
+Input Coordinates:
+Series([], )
+....................................................................................................
+Output Coordinates:
+Output 1    0.240921
+Output 2    0.001082
+----------------------------------[Candidate 34 - (Run 2/4 Runs)]-----------------------------------
+Input Coordinates:
+Series([], )
+....................................................................................................
+Output Coordinates:
+Output 1    0.205323
+Output 2    0.003772
+----------------------------------[Candidate 111 - (Run 3/4 Runs)]----------------------------------
+Input Coordinates:
+Series([], )
+....................................................................................................
+Output Coordinates:
+Output 1    0.166771
+Output 2    0.003899
+----------------------------------[Candidate 117 - (Run 4/4 Runs)]----------------------------------
+Input Coordinates:
+Series([], )
+....................................................................................................
+Output Coordinates:
+Output 1    0.210936
+Output 2    0.002123
+====================================================================================================
+----------------------------------------------------------------------------------------------------
+Computed objectives of Pareto point 5: 1.600e+00, 8.945e-01
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+                                   [180.84 s - Pareto Point 6/10]                                   
+Running optimization using designer 1's criterion: Maximal Spread while constraining 
+designer 2's criterion: Maximal Spread to be at least as good as the given epsilon: 8.841e-01
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Parameter OutputFlag unchanged
+   Value: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter QCPDual to 1
+   Prev: 0  Min: 0  Max: 1  Default: 0
+Gurobi Optimizer version 9.1.1 build v9.1.1rc0 (win64)
+Thread count: 6 physical cores, 12 logical processors, using up to 12 threads
+Optimize a model with 14644 rows, 244 columns and 44045 nonzeros
+Model fingerprint: 0x31cd84c1
+Variable types: 2 continuous, 242 integer (242 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 3e+00]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [9e-01, 8e+00]
+Presolve removed 3109 rows and 122 columns
+Presolve time: 0.22s
+Presolved: 11535 rows, 122 columns, 33259 nonzeros
+Variable types: 1 continuous, 121 integer (121 binary)
+
+Root relaxation: objective -5.669851e+00, 181 iterations, 0.03 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   -5.66985    0  121          -   -5.66985      -     -    0s
+H    0     0                      -1.4000000   -5.66985   305%     -    0s
+H    0     0                      -1.4000000   -5.66985   305%     -    0s
+H    0     0                      -1.4142136   -5.66985   301%     -    2s
+H    0     0                      -1.4142136   -5.66985   301%     -    2s
+     0     0   -3.02843    0   17   -1.41421   -3.02843   114%     -    3s
+     0     0   -3.02843    0    6   -1.41421   -3.02843   114%     -    3s
+     0     0   -3.02843    0    8   -1.41421   -3.02843   114%     -    3s
+     0     0   -3.02843    0    9   -1.41421   -3.02843   114%     -    3s
+     0     0   -2.97329    0    9   -1.41421   -2.97329   110%     -    3s
+H    0     0                      -1.6000000   -2.97329  85.8%     -    3s
+     0     0   -2.33848    0   10   -1.60000   -2.33848  46.2%     -    3s
+     0     0   -1.89737    0    9   -1.60000   -1.89737  18.6%     -    3s
+     0     0   -1.89737    0    4   -1.60000   -1.89737  18.6%     -    3s
+     0     0   -1.84391    0    4   -1.60000   -1.84391  15.2%     -    3s
+     0     0   -1.70880    0    6   -1.60000   -1.70880  6.80%     -    3s
+
+Cutting planes:
+  Clique: 7
+  MIR: 5
+
+Explored 1 nodes (540 simplex iterations) in 3.56 seconds
+Thread count was 12 (of 12 available processors)
+
+Solution count 3: -1.6 -1.41421 -1.4 
+No other solutions better than -1.6
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective -1.600000000000e+00, best bound -1.600000000000e+00, gap 0.0000%
+======================================[Maximal Spread Design]=======================================
+Obtained on                             : 2022-10-31 12:37:31.602587
+Criterion Value                         : 1.9999999999999993
+Space of interest                       : input
+Package                                 : cvxpy
+Optimizer                               : GUROBI
+Number of candidate points              : 121
+Number of input dimensions              : 2
+Number of runs                          : 4
+-----------------------------------[Candidate 1 - (Run 1/4 Runs)]-----------------------------------
+Input Coordinates:
+Input 1     10.0
+Input 2    400.0
+....................................................................................................
+Output Coordinates:
+Series([], )
+----------------------------------[Candidate 11 - (Run 2/4 Runs)]-----------------------------------
+Input Coordinates:
+Input 1      10.0
+Input 2    1400.0
+....................................................................................................
+Output Coordinates:
+Series([], )
+----------------------------------[Candidate 111 - (Run 3/4 Runs)]----------------------------------
+Input Coordinates:
+Input 1     30.0
+Input 2    400.0
+....................................................................................................
+Output Coordinates:
+Series([], )
+----------------------------------[Candidate 121 - (Run 4/4 Runs)]----------------------------------
+Input Coordinates:
+Input 1      30.0
+Input 2    1400.0
+....................................................................................................
+Output Coordinates:
+Series([], )
+====================================================================================================
+======================================[Maximal Spread Design]=======================================
+Obtained on                             : 2022-10-31 12:37:49.791346
+Criterion Value                         : 1.0256012078824686
+Space of interest                       : output
+Package                                 : cvxpy
+Optimizer                               : CPLEX
+Number of candidate points              : 121
+Number of output dimensions             : 2
+Number of runs                          : 4
+-----------------------------------[Candidate 9 - (Run 1/4 Runs)]-----------------------------------
+Input Coordinates:
+Series([], )
+....................................................................................................
+Output Coordinates:
+Output 1    0.240921
+Output 2    0.001082
+----------------------------------[Candidate 34 - (Run 2/4 Runs)]-----------------------------------
+Input Coordinates:
+Series([], )
+....................................................................................................
+Output Coordinates:
+Output 1    0.205323
+Output 2    0.003772
+----------------------------------[Candidate 111 - (Run 3/4 Runs)]----------------------------------
+Input Coordinates:
+Series([], )
+....................................................................................................
+Output Coordinates:
+Output 1    0.166771
+Output 2    0.003899
+----------------------------------[Candidate 117 - (Run 4/4 Runs)]----------------------------------
+Input Coordinates:
+Series([], )
+....................................................................................................
+Output Coordinates:
+Output 1    0.210936
+Output 2    0.002123
+====================================================================================================
+----------------------------------------------------------------------------------------------------
+Computed objectives of Pareto point 6: 1.600e+00, 8.945e-01
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+                                   [211.11 s - Pareto Point 7/10]                                   
+Running optimization using designer 1's criterion: Maximal Spread while constraining 
+designer 2's criterion: Maximal Spread to be at least as good as the given epsilon: 9.124e-01
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Parameter OutputFlag unchanged
+   Value: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter QCPDual to 1
+   Prev: 0  Min: 0  Max: 1  Default: 0
+Gurobi Optimizer version 9.1.1 build v9.1.1rc0 (win64)
+Thread count: 6 physical cores, 12 logical processors, using up to 12 threads
+Optimize a model with 14644 rows, 244 columns and 44045 nonzeros
+Model fingerprint: 0x6763045b
+Variable types: 2 continuous, 242 integer (242 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 3e+00]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [9e-01, 8e+00]
+Presolve removed 2953 rows and 122 columns
+Presolve time: 0.23s
+Presolved: 11691 rows, 122 columns, 33721 nonzeros
+Variable types: 1 continuous, 121 integer (121 binary)
+
+Root relaxation: objective -5.669851e+00, 202 iterations, 0.04 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   -5.66985    0  121          -   -5.66985      -     -    0s
+H    0     0                      -1.4000000   -5.66985   305%     -    2s
+H    0     0                      -1.4000000   -3.02843   116%     -    3s
+H    0     0                      -1.4000000   -3.02843   116%     -    3s
+     0     0   -1.78885    0   25   -1.40000   -1.78885  27.8%     -    3s
+     0     0   -1.61245    0    9   -1.40000   -1.61245  15.2%     -    3s
+     0     0   -1.61245    0    8   -1.40000   -1.61245  15.2%     -    3s
+H    0     0                      -1.4142136   -1.41421  0.00%     -    3s
+     0     0   -1.41421    0    8   -1.41421   -1.41421  0.00%     -    3s
+
+Cutting planes:
+  Gomory: 12
+  Clique: 1
+  MIR: 8
+  Relax-and-lift: 19
+
+Explored 1 nodes (504 simplex iterations) in 3.44 seconds
+Thread count was 12 (of 12 available processors)
+
+Solution count 3: -1.41421 -1.4 -1.4 
+No other solutions better than -1.41421
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective -1.414213562373e+00, best bound -1.414213562373e+00, gap 0.0000%
+======================================[Maximal Spread Design]=======================================
+Obtained on                             : 2022-10-31 12:37:31.602587
+Criterion Value                         : 1.9999999999999993
+Space of interest                       : input
+Package                                 : cvxpy
+Optimizer                               : GUROBI
+Number of candidate points              : 121
+Number of input dimensions              : 2
+Number of runs                          : 4
+-----------------------------------[Candidate 1 - (Run 1/4 Runs)]-----------------------------------
+Input Coordinates:
+Input 1     10.0
+Input 2    400.0
+....................................................................................................
+Output Coordinates:
+Series([], )
+----------------------------------[Candidate 11 - (Run 2/4 Runs)]-----------------------------------
+Input Coordinates:
+Input 1      10.0
+Input 2    1400.0
+....................................................................................................
+Output Coordinates:
+Series([], )
+----------------------------------[Candidate 111 - (Run 3/4 Runs)]----------------------------------
+Input Coordinates:
+Input 1     30.0
+Input 2    400.0
+....................................................................................................
+Output Coordinates:
+Series([], )
+----------------------------------[Candidate 121 - (Run 4/4 Runs)]----------------------------------
+Input Coordinates:
+Input 1      30.0
+Input 2    1400.0
+....................................................................................................
+Output Coordinates:
+Series([], )
+====================================================================================================
+======================================[Maximal Spread Design]=======================================
+Obtained on                             : 2022-10-31 12:37:49.791346
+Criterion Value                         : 1.0256012078824686
+Space of interest                       : output
+Package                                 : cvxpy
+Optimizer                               : CPLEX
+Number of candidate points              : 121
+Number of output dimensions             : 2
+Number of runs                          : 4
+-----------------------------------[Candidate 9 - (Run 1/4 Runs)]-----------------------------------
+Input Coordinates:
+Series([], )
+....................................................................................................
+Output Coordinates:
+Output 1    0.240921
+Output 2    0.001082
+----------------------------------[Candidate 34 - (Run 2/4 Runs)]-----------------------------------
+Input Coordinates:
+Series([], )
+....................................................................................................
+Output Coordinates:
+Output 1    0.205323
+Output 2    0.003772
+----------------------------------[Candidate 111 - (Run 3/4 Runs)]----------------------------------
+Input Coordinates:
+Series([], )
+....................................................................................................
+Output Coordinates:
+Output 1    0.166771
+Output 2    0.003899
+----------------------------------[Candidate 117 - (Run 4/4 Runs)]----------------------------------
+Input Coordinates:
+Series([], )
+....................................................................................................
+Output Coordinates:
+Output 1    0.210936
+Output 2    0.002123
+====================================================================================================
+----------------------------------------------------------------------------------------------------
+Computed objectives of Pareto point 7: 1.414e+00, 9.218e-01
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+                                   [240.75 s - Pareto Point 8/10]                                   
+Running optimization using designer 1's criterion: Maximal Spread while constraining 
+designer 2's criterion: Maximal Spread to be at least as good as the given epsilon: 9.407e-01
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Parameter OutputFlag unchanged
+   Value: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter QCPDual to 1
+   Prev: 0  Min: 0  Max: 1  Default: 0
+Gurobi Optimizer version 9.1.1 build v9.1.1rc0 (win64)
+Thread count: 6 physical cores, 12 logical processors, using up to 12 threads
+Optimize a model with 14644 rows, 244 columns and 44045 nonzeros
+Model fingerprint: 0xda84fd64
+Variable types: 2 continuous, 242 integer (242 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 3e+00]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [9e-01, 8e+00]
+Presolve removed 2821 rows and 122 columns
+Presolve time: 0.22s
+Presolved: 11823 rows, 122 columns, 34113 nonzeros
+Variable types: 1 continuous, 121 integer (121 binary)
+
+Root relaxation: objective -5.669851e+00, 178 iterations, 0.04 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   -5.66985    0  121          -   -5.66985      -     -    0s
+H    0     0                      -0.8944272   -5.66985   534%     -    3s
+H    0     0                      -1.2000000   -5.66985   372%     -    3s
+H    0     0                      -1.4000000   -5.66985   305%     -    3s
+H    0     0                      -1.4142136   -5.66985   301%     -    3s
+H    0     0                      -1.4142136   -5.66985   301%     -    3s
+     0     0   -1.41421    0   22   -1.41421   -1.41421  0.00%     -    3s
+
+Cutting planes:
+  Gomory: 4
+  Relax-and-lift: 4
+
+Explored 1 nodes (404 simplex iterations) in 3.63 seconds
+Thread count was 12 (of 12 available processors)
+
+Solution count 4: -1.41421 -1.4 -1.2 -0.894427 
+No other solutions better than -1.41421
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective -1.414213562615e+00, best bound -1.414213562615e+00, gap 0.0000%
+======================================[Maximal Spread Design]=======================================
+Obtained on                             : 2022-10-31 12:37:31.602587
+Criterion Value                         : 1.9999999999999993
+Space of interest                       : input
+Package                                 : cvxpy
+Optimizer                               : GUROBI
+Number of candidate points              : 121
+Number of input dimensions              : 2
+Number of runs                          : 4
+-----------------------------------[Candidate 1 - (Run 1/4 Runs)]-----------------------------------
+Input Coordinates:
+Input 1     10.0
+Input 2    400.0
+....................................................................................................
+Output Coordinates:
+Series([], )
+----------------------------------[Candidate 11 - (Run 2/4 Runs)]-----------------------------------
+Input Coordinates:
+Input 1      10.0
+Input 2    1400.0
+....................................................................................................
+Output Coordinates:
+Series([], )
+----------------------------------[Candidate 111 - (Run 3/4 Runs)]----------------------------------
+Input Coordinates:
+Input 1     30.0
+Input 2    400.0
+....................................................................................................
+Output Coordinates:
+Series([], )
+----------------------------------[Candidate 121 - (Run 4/4 Runs)]----------------------------------
+Input Coordinates:
+Input 1      30.0
+Input 2    1400.0
+....................................................................................................
+Output Coordinates:
+Series([], )
+====================================================================================================
+======================================[Maximal Spread Design]=======================================
+Obtained on                             : 2022-10-31 12:37:49.791346
+Criterion Value                         : 1.0256012078824686
+Space of interest                       : output
+Package                                 : cvxpy
+Optimizer                               : CPLEX
+Number of candidate points              : 121
+Number of output dimensions             : 2
+Number of runs                          : 4
+-----------------------------------[Candidate 9 - (Run 1/4 Runs)]-----------------------------------
+Input Coordinates:
+Series([], )
+....................................................................................................
+Output Coordinates:
+Output 1    0.240921
+Output 2    0.001082
+----------------------------------[Candidate 34 - (Run 2/4 Runs)]-----------------------------------
+Input Coordinates:
+Series([], )
+....................................................................................................
+Output Coordinates:
+Output 1    0.205323
+Output 2    0.003772
+----------------------------------[Candidate 111 - (Run 3/4 Runs)]----------------------------------
+Input Coordinates:
+Series([], )
+....................................................................................................
+Output Coordinates:
+Output 1    0.166771
+Output 2    0.003899
+----------------------------------[Candidate 117 - (Run 4/4 Runs)]----------------------------------
+Input Coordinates:
+Series([], )
+....................................................................................................
+Output Coordinates:
+Output 1    0.210936
+Output 2    0.002123
+====================================================================================================
+----------------------------------------------------------------------------------------------------
+Computed objectives of Pareto point 8: 1.414e+00, 9.432e-01
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+                                   [271.01 s - Pareto Point 9/10]                                   
+Running optimization using designer 1's criterion: Maximal Spread while constraining 
+designer 2's criterion: Maximal Spread to be at least as good as the given epsilon: 9.690e-01
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Parameter OutputFlag unchanged
+   Value: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter QCPDual to 1
+   Prev: 0  Min: 0  Max: 1  Default: 0
+Gurobi Optimizer version 9.1.1 build v9.1.1rc0 (win64)
+Thread count: 6 physical cores, 12 logical processors, using up to 12 threads
+Optimize a model with 14644 rows, 244 columns and 44045 nonzeros
+Model fingerprint: 0xe6da1104
+Variable types: 2 continuous, 242 integer (242 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 3e+00]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 8e+00]
+Presolve removed 2732 rows and 122 columns
+Presolve time: 0.23s
+Presolved: 11912 rows, 122 columns, 34404 nonzeros
+Variable types: 1 continuous, 121 integer (121 binary)
+
+Root relaxation: objective -5.669851e+00, 188 iterations, 0.04 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   -5.66985    0  121          -   -5.66985      -     -    0s
+H    0     0                      -0.6324555   -5.66985   796%     -    3s
+H    0     0                      -1.1661904   -5.66985   386%     -    3s
+H    0     0                      -1.2000000   -5.66985   372%     -    3s
+H    0     0                      -1.2165525   -5.66985   366%     -    3s
+H    0     0                      -1.2649111   -5.66985   348%     -    3s
+H    0     0                      -1.2649111   -5.66985   348%     -    3s
+H    0     0                      -1.4000000   -5.66985   305%     -    3s
+
+Cutting planes:
+  Gomory: 2
+  Relax-and-lift: 6
+
+Explored 1 nodes (302 simplex iterations) in 3.98 seconds
+Thread count was 12 (of 12 available processors)
+
+Solution count 6: -1.4 -1.26491 -1.21655 ... -0.632456
+No other solutions better than -1.4
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective -1.400000000000e+00, best bound -1.400000000000e+00, gap 0.0000%
+======================================[Maximal Spread Design]=======================================
+Obtained on                             : 2022-10-31 12:37:31.602587
+Criterion Value                         : 1.9999999999999993
+Space of interest                       : input
+Package                                 : cvxpy
+Optimizer                               : GUROBI
+Number of candidate points              : 121
+Number of input dimensions              : 2
+Number of runs                          : 4
+-----------------------------------[Candidate 1 - (Run 1/4 Runs)]-----------------------------------
+Input Coordinates:
+Input 1     10.0
+Input 2    400.0
+....................................................................................................
+Output Coordinates:
+Series([], )
+----------------------------------[Candidate 11 - (Run 2/4 Runs)]-----------------------------------
+Input Coordinates:
+Input 1      10.0
+Input 2    1400.0
+....................................................................................................
+Output Coordinates:
+Series([], )
+----------------------------------[Candidate 111 - (Run 3/4 Runs)]----------------------------------
+Input Coordinates:
+Input 1     30.0
+Input 2    400.0
+....................................................................................................
+Output Coordinates:
+Series([], )
+----------------------------------[Candidate 121 - (Run 4/4 Runs)]----------------------------------
+Input Coordinates:
+Input 1      30.0
+Input 2    1400.0
+....................................................................................................
+Output Coordinates:
+Series([], )
+====================================================================================================
+======================================[Maximal Spread Design]=======================================
+Obtained on                             : 2022-10-31 12:37:49.791346
+Criterion Value                         : 1.0256012078824686
+Space of interest                       : output
+Package                                 : cvxpy
+Optimizer                               : CPLEX
+Number of candidate points              : 121
+Number of output dimensions             : 2
+Number of runs                          : 4
+-----------------------------------[Candidate 9 - (Run 1/4 Runs)]-----------------------------------
+Input Coordinates:
+Series([], )
+....................................................................................................
+Output Coordinates:
+Output 1    0.240921
+Output 2    0.001082
+----------------------------------[Candidate 34 - (Run 2/4 Runs)]-----------------------------------
+Input Coordinates:
+Series([], )
+....................................................................................................
+Output Coordinates:
+Output 1    0.205323
+Output 2    0.003772
+----------------------------------[Candidate 111 - (Run 3/4 Runs)]----------------------------------
+Input Coordinates:
+Series([], )
+....................................................................................................
+Output Coordinates:
+Output 1    0.166771
+Output 2    0.003899
+----------------------------------[Candidate 117 - (Run 4/4 Runs)]----------------------------------
+Input Coordinates:
+Series([], )
+....................................................................................................
+Output Coordinates:
+Output 1    0.210936
+Output 2    0.002123
+====================================================================================================
+----------------------------------------------------------------------------------------------------
+Computed objectives of Pareto point 9: 1.400e+00, 1.006e+00
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+                                  [300.22 s - Pareto Point 10/10]                                   
+Running optimization using designer 1's criterion: Maximal Spread while constraining 
+designer 2's criterion: Maximal Spread to be at least as good as the given epsilon: 9.973e-01
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Parameter OutputFlag unchanged
+   Value: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter QCPDual to 1
+   Prev: 0  Min: 0  Max: 1  Default: 0
+Gurobi Optimizer version 9.1.1 build v9.1.1rc0 (win64)
+Thread count: 6 physical cores, 12 logical processors, using up to 12 threads
+Optimize a model with 14644 rows, 244 columns and 44045 nonzeros
+Model fingerprint: 0x17a50641
+Variable types: 2 continuous, 242 integer (242 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 3e+00]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 8e+00]
+Presolve removed 2600 rows and 122 columns
+Presolve time: 0.22s
+Presolved: 12044 rows, 122 columns, 34876 nonzeros
+Variable types: 1 continuous, 121 integer (121 binary)
+
+Root relaxation: objective -5.669851e+00, 173 iterations, 0.04 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   -5.66985    0  121          -   -5.66985      -     -    0s
+H    0     0                      -0.8944272   -5.66985   534%     -    3s
+H    0     0                      -1.1661904   -5.66985   386%     -    3s
+H    0     0                      -1.2165525   -5.66985   366%     -    3s
+H    0     0                      -1.4000000   -5.66985   305%     -    3s
+
+Cutting planes:
+  Gomory: 3
+  Relax-and-lift: 5
+
+Explored 1 nodes (290 simplex iterations) in 3.76 seconds
+Thread count was 12 (of 12 available processors)
+
+Solution count 4: -1.4 -1.21655 -1.16619 -0.894427 
+No other solutions better than -1.4
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective -1.400000000240e+00, best bound -1.400000000240e+00, gap 0.0000%
+======================================[Maximal Spread Design]=======================================
+Obtained on                             : 2022-10-31 12:37:31.602587
+Criterion Value                         : 1.9999999999999993
+Space of interest                       : input
+Package                                 : cvxpy
+Optimizer                               : GUROBI
+Number of candidate points              : 121
+Number of input dimensions              : 2
+Number of runs                          : 4
+-----------------------------------[Candidate 1 - (Run 1/4 Runs)]-----------------------------------
+Input Coordinates:
+Input 1     10.0
+Input 2    400.0
+....................................................................................................
+Output Coordinates:
+Series([], )
+----------------------------------[Candidate 11 - (Run 2/4 Runs)]-----------------------------------
+Input Coordinates:
+Input 1      10.0
+Input 2    1400.0
+....................................................................................................
+Output Coordinates:
+Series([], )
+----------------------------------[Candidate 111 - (Run 3/4 Runs)]----------------------------------
+Input Coordinates:
+Input 1     30.0
+Input 2    400.0
+....................................................................................................
+Output Coordinates:
+Series([], )
+----------------------------------[Candidate 121 - (Run 4/4 Runs)]----------------------------------
+Input Coordinates:
+Input 1      30.0
+Input 2    1400.0
+....................................................................................................
+Output Coordinates:
+Series([], )
+====================================================================================================
+======================================[Maximal Spread Design]=======================================
+Obtained on                             : 2022-10-31 12:37:49.791346
+Criterion Value                         : 1.0256012078824686
+Space of interest                       : output
+Package                                 : cvxpy
+Optimizer                               : CPLEX
+Number of candidate points              : 121
+Number of output dimensions             : 2
+Number of runs                          : 4
+-----------------------------------[Candidate 9 - (Run 1/4 Runs)]-----------------------------------
+Input Coordinates:
+Series([], )
+....................................................................................................
+Output Coordinates:
+Output 1    0.240921
+Output 2    0.001082
+----------------------------------[Candidate 34 - (Run 2/4 Runs)]-----------------------------------
+Input Coordinates:
+Series([], )
+....................................................................................................
+Output Coordinates:
+Output 1    0.205323
+Output 2    0.003772
+----------------------------------[Candidate 111 - (Run 3/4 Runs)]----------------------------------
+Input Coordinates:
+Series([], )
+....................................................................................................
+Output Coordinates:
+Output 1    0.166771
+Output 2    0.003899
+----------------------------------[Candidate 117 - (Run 4/4 Runs)]----------------------------------
+Input Coordinates:
+Series([], )
+....................................................................................................
+Output Coordinates:
+Output 1    0.210936
+Output 2    0.002123
+====================================================================================================
+----------------------------------------------------------------------------------------------------
+Computed objectives of Pareto point 10: 1.400e+00, 1.006e+00
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Completed bi-objective optimization for 10 Pareto points after 330.41 seconds
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
